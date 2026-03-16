@@ -995,13 +995,13 @@
       <div class="card proof-card reveal">
         <div class="card-tag">Public Work</div>
         <div class="proof-metric">Writeups, Labs, Tooling</div>
-        <p>Medium writeups, PortSwigger lab notes, Hack The Box walkthroughs, and GitHub repositories that document how I work through problems.</p>
+        <p>Medium writeups, PortSwigger lab notes, Hack The Box walkthroughs, and private project case studies that document how I work through problems.</p>
         <ul class="proof-list">
           <li>HTB and PortSwigger coverage</li>
           <li>Practical SQLi and recon walkthroughs</li>
           <li>Public learning trail for recruiters and peers</li>
         </ul>
-        <div class="proof-note">Medium + GitHub + labs</div>
+        <div class="proof-note">Medium + case studies + labs</div>
       </div>
 
       <div class="card proof-card reveal">
@@ -1176,50 +1176,50 @@
     </div>
 
     <div class="repo-header reveal">
-      <h3 style="font-family:var(--mono);font-size:.95rem;color:var(--green);letter-spacing:.08em;text-transform:uppercase;"># GitHub Projects</h3>
-      <p>Songul-Kizilay | 98 stars | security tooling, writeups, and research notes</p>
+      <h3 style="font-family:var(--mono);font-size:.95rem;color:var(--green);letter-spacing:.08em;text-transform:uppercase;"># Private Project Case Studies</h3>
+      <p>Public portfolio, private build logic. This section shows outcomes, scope, and stack without exposing the underlying project code.</p>
     </div>
 
     <div class="repo-grid">
-      <a class="repo-card reveal" href="https://github.com/Songul-Kizilay/unionhunter" target="_blank" rel="noopener noreferrer">
-        <h3>unionhunter</h3>
-        <p>SQL injection reconnaissance tooling built around UNION-style testing, useful when you want fast feedback before deeper manual exploitation.</p>
+      <div class="repo-card reveal">
+        <h3>SQLi Recon Helper</h3>
+        <p>Private Python workflow for UNION-based SQL injection setup, used to shorten column testing, data placement checks, and manual validation loops.</p>
         <div class="repo-meta">
           <span>Python</span>
           <span>SQLi</span>
-          <span>MIT</span>
+          <span>Private case study</span>
         </div>
-      </a>
+      </div>
 
-      <a class="repo-card reveal" href="https://github.com/Songul-Kizilay/xfcheck" target="_blank" rel="noopener noreferrer">
-        <h3>xfcheck</h3>
-        <p>Validates whether backends trust X-Forwarded headers, making it useful for proxy chain analysis and header-based behavior testing.</p>
+      <div class="repo-card reveal">
+        <h3>Header Trust Analysis</h3>
+        <p>Research tooling for testing X-Forwarded handling and reverse proxy trust assumptions across real-world backends and lab environments.</p>
         <div class="repo-meta">
           <span>Python</span>
           <span>Header trust</span>
-          <span>Research tooling</span>
+          <span>Private workflow</span>
         </div>
-      </a>
+      </div>
 
-      <a class="repo-card reveal" href="https://github.com/Songul-Kizilay/PortswiggerAllLabs" target="_blank" rel="noopener noreferrer">
-        <h3>PortswiggerAllLabs</h3>
-        <p>A practical knowledge base for Web Security Academy labs, documenting the repeatable thought process behind exploitation rather than just final answers.</p>
+      <div class="repo-card reveal">
+        <h3>Security Lab Knowledge Base</h3>
+        <p>Structured notes and repeatable attack logic collected from PortSwigger, HTB, and bug bounty testing, kept as a working operator reference.</p>
         <div class="repo-meta">
           <span>Writeups</span>
           <span>Labs</span>
-          <span>MIT</span>
+          <span>Private notes</span>
         </div>
-      </a>
+      </div>
 
-      <a class="repo-card reveal" href="https://github.com/Songul-Kizilay/favicon.hash" target="_blank" rel="noopener noreferrer">
-        <h3>favicon.hash</h3>
-        <p>A compact recon helper for fingerprinting related assets through favicon hashes, useful when infrastructure mapping needs fast clustering.</p>
+      <div class="repo-card reveal">
+        <h3>Recon Fingerprinting Notes</h3>
+        <p>Case-study level documentation around asset clustering, favicon-based fingerprinting, and infrastructure mapping methodology.</p>
         <div class="repo-meta">
-          <span>Python</span>
           <span>Recon</span>
-          <span>MIT</span>
+          <span>Infrastructure</span>
+          <span>Code on request</span>
         </div>
-      </a>
+      </div>
     </div>
   </div>
 </section>
@@ -1274,7 +1274,6 @@
       <div class="cta-links">
         <a href="mailto:songulkizilay46@gmail.com" class="btn btn-primary">Email</a>
         <a href="https://www.linkedin.com/in/songulozugurler/" class="btn btn-outline" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://github.com/Songul-Kizilay" class="btn btn-outline" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="https://medium.com/@songulkizilay" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Medium</a>
       </div>
     </div>
@@ -1284,7 +1283,6 @@
 <!-- FOOTER -->
 <footer>
   <ul class="footer-links">
-    <li><a href="https://github.com/Songul-Kizilay" target="_blank" rel="noopener noreferrer">GitHub</a></li>
     <li><a href="https://www.linkedin.com/in/songulozugurler/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
     <li><a href="https://medium.com/@songulkizilay" target="_blank" rel="noopener noreferrer">Medium</a></li>
     <li><a href="mailto:songulkizilay46@gmail.com">Contact</a></li>
@@ -1466,16 +1464,16 @@
     projects: ['Bug Bounty Recon Workflow', 'unionhunter', 'Detection And Research Notes'],
     writeups: ['/#writeups', 'Latest vulnerability writeups, HTB walkthroughs, and PortSwigger lab notes'],
     blog: ['/blog.html', 'Archive page with filters, search, and all published posts'],
-    tools: ['/#tools', 'Selected security tools, GitHub projects, and practical research work'],
+    tools: ['/#tools', 'Selected case studies, private workflows, and practical research work'],
     experience: ['/about.html', 'Red team, blue team, SOC support, mentoring, and operations'],
     certs: ['CEH Practical', 'BGA Penetration Tester Training Program', 'CCNA: Intro to Networks', 'AWS Security Fundamentals'],
-    github: ['github.com/Songul-Kizilay', 'Featured: unionhunter, xfcheck, PortswiggerAllLabs, favicon.hash'],
+    github: ['Project code is not public on this site.', 'Case studies are visible, deeper access is available on request.'],
     medium: ['medium.com/@songulkizilay', 'Writeups, walkthroughs, and security research posts'],
     linkedin: ['linkedin.com/in/songulozugurler', 'Security profile, experience, and certifications'],
     lang: ['/index.html -> English', '/tr/index.html -> Turkish'],
     cv: ['/about.html', 'Experience, certifications, and operator profile overview'],
     flag: ['flag{nice_try_operator}', 'Opening decoy image...'],
-    contact: ['songulkizilay46@gmail.com', 'github.com/Songul-Kizilay', 'medium.com/@songulkizilay', 'linkedin.com/in/songulozugurler'],
+    contact: ['songulkizilay46@gmail.com', 'medium.com/@songulkizilay', 'linkedin.com/in/songulozugurler'],
     sudo: ['Permission denied.', 'Nice try :)']
   };
 
@@ -1487,7 +1485,6 @@
     tools: { type: 'hash', target: '#tools' },
     experience: { type: 'same-tab', target: 'about.html#experience' },
     certs: { type: 'same-tab', target: 'about.html#certifications' },
-    github: { type: 'new-tab', target: 'https://github.com/Songul-Kizilay' },
     medium: { type: 'new-tab', target: 'https://medium.com/@songulkizilay' },
     linkedin: { type: 'new-tab', target: 'https://www.linkedin.com/in/songulozugurler/' },
     lang: { type: 'same-tab', target: 'tr/index.html' },
