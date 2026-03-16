@@ -6,48 +6,48 @@
   <title>Arşiv | Song&uuml;l &Ouml;z&uuml;g&uuml;rler</title>
   <meta name="description" content="Songül Özügürler'in writeup, PortSwigger lab, HTB, ofansif web güvenliği ve pratik proof of work arşivi." />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-  <style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}:root{--green:#00ff88;--cyan:#00d4ff;--red:#ff4757;--bg:#0a0e0f;--bg2:#0f1416;--bg3:#141a1c;--border:rgba(0,255,136,.12);--text:#c9d1d9;--text-dim:#8b949e;--mono:'IBM Plex Mono','JetBrains Mono',monospace;--sans:'IBM Plex Sans','Inter',system-ui,sans-serif}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.7}#particles-canvas{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:flex-start;padding:1rem 2rem;background:rgba(10,14,15,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}.nav-logo{font-family:var(--mono);font-size:.95rem;color:var(--green);text-decoration:none;letter-spacing:.05em;margin-right:auto}.nav-logo span{color:var(--text-dim)}.nav-links{display:flex;gap:2rem;list-style:none;margin-left:0}.nav-links a{font-family:var(--mono);font-size:.8rem;color:var(--text-dim);text-decoration:none;letter-spacing:.08em;transition:color .2s}.nav-links a:hover,.nav-links a.active{color:var(--green)}.nav-actions{display:flex;align-items:center;gap:.75rem;margin-left:.75rem}.nav-btn{display:inline-flex;align-items:center;justify-content:center;width:2.4rem;height:2.4rem;border:1px solid var(--border);border-radius:6px;background:transparent;color:var(--text-dim);font-family:var(--mono);text-decoration:none;cursor:pointer;transition:all .2s}.nav-btn:hover{color:var(--green);border-color:var(--green)}.nav-btn.is-active{color:var(--green);border-color:var(--green)}.nav-menu-btn{display:none}.page-wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:6rem 1.5rem 4rem}.page-header{margin-bottom:2rem}.page-header h1{font-family:var(--mono);font-size:1.7rem;color:var(--green);margin-bottom:.45rem;letter-spacing:.04em}.page-header p{font-size:.92rem;color:var(--text-dim);max-width:760px;line-height:1.8}.archive-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:1rem;margin-bottom:2rem}.archive-panel,.archive-signal{background:rgba(15,20,22,.92);border:1px solid var(--border);border-radius:10px;padding:1.15rem 1.2rem}.archive-eyebrow{display:inline-block;font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--green);border:1px solid var(--green);border-radius:999px;padding:.3rem .7rem;margin-bottom:.85rem}.archive-panel p:last-of-type{margin-top:.65rem}.archive-mini{display:grid;gap:.75rem}.archive-mini-card{border:1px solid var(--border);border-radius:8px;padding:.85rem .9rem;background:rgba(255,255,255,.02)}.archive-mini-card h3{font-family:var(--mono);font-size:.74rem;color:var(--green);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.35rem}.archive-mini-card p{font-size:.82rem;color:var(--text-dim);line-height:1.6}.filter-bar{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem}.filter-btn{font-family:var(--mono);font-size:.72rem;padding:.3rem .8rem;border-radius:3px;border:1px solid var(--border);background:transparent;color:var(--text-dim);cursor:pointer;letter-spacing:.08em;transition:all .2s}.filter-btn span{opacity:.6;margin-left:.3rem}.filter-btn:hover{border-color:var(--green);color:var(--green)}.filter-btn.active{background:var(--green);color:#000;border-color:var(--green);font-weight:700}.filter-btn.active span{opacity:.7}.search-box{margin-bottom:1.5rem}.search-box input{width:100%;font-family:var(--mono);font-size:.85rem;background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:.7rem 1rem;color:var(--text);outline:none;transition:border-color .2s}.search-box input:focus{border-color:var(--green)}.search-box input::placeholder{color:var(--text-dim)}.articles-list{display:flex;flex-direction:column;gap:.7rem}.article-item{display:grid;grid-template-columns:auto 1fr auto;gap:.8rem 1rem;align-items:start;background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:1rem 1.2rem;text-decoration:none;color:inherit;transition:border-color .2s,transform .15s}.article-item:hover{border-color:var(--green);transform:translateX(5px)}.article-meta{display:flex;flex-direction:column;gap:.3rem;min-width:90px}.article-cat{font-family:var(--mono);font-size:.62rem;padding:.15rem .5rem;border-radius:2px;border:1px solid;text-transform:uppercase;letter-spacing:.1em;white-space:nowrap;text-align:center}.article-date{font-family:var(--mono);font-size:.65rem;color:var(--text-dim);white-space:nowrap}.article-body h3{font-family:var(--mono);font-size:.88rem;color:#fff;margin-bottom:.25rem;line-height:1.4}.article-body p{font-size:.78rem;color:var(--text-dim);line-height:1.5}.arrow{color:var(--green);font-family:var(--mono);font-size:.9rem;align-self:center}.hidden{display:none!important}.reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}.reveal.visible{opacity:1;transform:none}.count-label{font-family:var(--mono);font-size:.75rem;color:var(--text-dim);margin:0 0 1rem}pre,code{overflow-x:auto}@media(max-width:600px){nav{padding:.9rem 1rem;flex-wrap:wrap}.nav-actions{margin-left:auto}.nav-menu-btn{display:inline-flex;align-items:center;justify-content:center}.nav-links{display:none;width:100%;flex-direction:column;gap:.5rem;padding-top:.8rem}.nav-links.open{display:flex}.nav-links a{font-size:.88rem;padding:.45rem 0}.page-wrap{padding:5.8rem 1rem 3rem}.archive-panel,.archive-signal,.article-item{padding:1rem}.filter-btn{padding:.45rem .75rem}.archive-grid{grid-template-columns:1fr}.article-item{grid-template-columns:1fr auto}.article-meta{flex-direction:row;align-items:center;grid-column:1/-1}.page-header p,.article-body p{font-size:.95rem;line-height:1.8}}</style>
+  <style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}:root{--aa:#00ff88;--ac:#00d4ff;--ad:#ff4757;--ae:#0a0e0f;--af:#0f1416;--ag:#141a1c;--ah:rgba(0,255,136,.12);--ai:#c9d1d9;--aj:#8b949e;--ak:'IBM Plex Mono','JetBrains Mono',monospace;--al:'IBM Plex Sans','Inter',system-ui,sans-serif}html{scroll-behavior:smooth}body{background:var(--ae);color:var(--ai);font-family:var(--al);line-height:1.7}#p0{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:flex-start;padding:1rem 2rem;background:rgba(10,14,15,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--ah)}.nav-logo{font-family:var(--ak);font-size:.95rem;color:var(--aa);text-decoration:none;letter-spacing:.05em;margin-right:auto}.nav-logo span{color:var(--aj)}.n0{display:flex;gap:2rem;list-style:none;margin-left:0}.n0 a{font-family:var(--ak);font-size:.8rem;color:var(--aj);text-decoration:none;letter-spacing:.08em;transition:color .2s}.n0 a:hover,.n0 a.active{color:var(--aa)}.n1{display:flex;align-items:center;gap:.75rem;margin-left:.75rem}.n3{display:inline-flex;align-items:center;justify-content:center;width:2.4rem;height:2.4rem;border:1px solid var(--ah);border-radius:6px;background:transparent;color:var(--aj);font-family:var(--ak);text-decoration:none;cursor:pointer;transition:all .2s}.n3:hover{color:var(--aa);border-color:var(--aa)}.n3.is-active{color:var(--aa);border-color:var(--aa)}.n2{display:none}.z0{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:6rem 1.5rem 4rem}.z1{margin-bottom:2rem}.z1 h1{font-family:var(--ak);font-size:1.7rem;color:var(--aa);margin-bottom:.45rem;letter-spacing:.04em}.z1 p{font-size:.92rem;color:var(--aj);max-width:760px;line-height:1.8}.y0{display:grid;grid-template-columns:1.2fr .8fr;gap:1rem;margin-bottom:2rem}.y1,.y2{background:rgba(15,20,22,.92);border:1px solid var(--ah);border-radius:10px;padding:1.15rem 1.2rem}.y3{display:inline-block;font-family:var(--ak);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--aa);border:1px solid var(--aa);border-radius:999px;padding:.3rem .7rem;margin-bottom:.85rem}.y1 p:last-of-type{margin-top:.65rem}.y4{display:grid;gap:.75rem}.y5{border:1px solid var(--ah);border-radius:8px;padding:.85rem .9rem;background:rgba(255,255,255,.02)}.y5 h3{font-family:var(--ak);font-size:.74rem;color:var(--aa);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.35rem}.y5 p{font-size:.82rem;color:var(--aj);line-height:1.6}.y6{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem}.y7{font-family:var(--ak);font-size:.72rem;padding:.3rem .8rem;border-radius:3px;border:1px solid var(--ah);background:transparent;color:var(--aj);cursor:pointer;letter-spacing:.08em;transition:all .2s}.y7 span{opacity:.6;margin-left:.3rem}.y7:hover{border-color:var(--aa);color:var(--aa)}.y7.active{background:var(--aa);color:#000;border-color:var(--aa);font-weight:700}.y7.active span{opacity:.7}.y8{margin-bottom:1.5rem}.y8 input{width:100%;font-family:var(--ak);font-size:.85rem;background:var(--af);border:1px solid var(--ah);border-radius:6px;padding:.7rem 1rem;color:var(--ai);outline:none;transition:border-color .2s}.y8 input:focus{border-color:var(--aa)}.y8 input::placeholder{color:var(--aj)}.a7{display:flex;flex-direction:column;gap:.7rem}.a5{display:grid;grid-template-columns:auto 1fr auto;gap:.8rem 1rem;align-items:start;background:var(--af);border:1px solid var(--ah);border-radius:6px;padding:1rem 1.2rem;text-decoration:none;color:inherit;transition:border-color .2s,transform .15s}.a5:hover{border-color:var(--aa);transform:translateX(5px)}.a0{display:flex;flex-direction:column;gap:.3rem;min-width:90px}.a1{font-family:var(--ak);font-size:.62rem;padding:.15rem .5rem;border-radius:2px;border:1px solid;text-transform:uppercase;letter-spacing:.1em;white-space:nowrap;text-align:center}.a2{font-family:var(--ak);font-size:.65rem;color:var(--aj);white-space:nowrap}.a3 h3{font-family:var(--ak);font-size:.88rem;color:#fff;margin-bottom:.25rem;line-height:1.4}.a3 p{font-size:.78rem;color:var(--aj);line-height:1.5}.arrow{color:var(--aa);font-family:var(--ak);font-size:.9rem;align-self:center}.hidden{display:none!important}.v0{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}.v0.v1{opacity:1;transform:none}.y9{font-family:var(--ak);font-size:.75rem;color:var(--aj);margin:0 0 1rem}pre,code{overflow-x:auto}@media(max-width:600px){nav{padding:.9rem 1rem;flex-wrap:wrap}.n1{margin-left:auto}.n2{display:inline-flex;align-items:center;justify-content:center}.n0{display:none;width:100%;flex-direction:column;gap:.5rem;padding-top:.8rem}.n0.open{display:flex}.n0 a{font-size:.88rem;padding:.45rem 0}.z0{padding:5.8rem 1rem 3rem}.y1,.y2,.a5{padding:1rem}.y7{padding:.45rem .75rem}.y0{grid-template-columns:1fr}.a5{grid-template-columns:1fr auto}.a0{flex-direction:row;align-items:center;grid-column:1/-1}.z1 p,.a3 p{font-size:.95rem;line-height:1.8}}</style>
 </head>
 <body>
-<canvas id="particles-canvas"></canvas>
+<canvas id="p0"></canvas>
 <nav>
   <a href="index.html" class="nav-logo">songul<span>@</span>sec<span>:~$</span></a>
-  <ul class="nav-links" id="nav-links">
-    <li><a href="index.html#writeups">yazilar</a></li>
+  <ul class="n0" id="n0">
+    <li><a href="index.html#writeups">yazılar</a></li>
     <li><a href="blog.html" class="active">blog</a></li>
-    <li><a href="index.html#tools">araclar</a></li>
-    <li><a href="about.html">hakkimda</a></li>
+    <li><a href="index.html#tools">araçlar</a></li>
+    <li><a href="about.html">hakkımda</a></li>
   </ul>
-  <div class="nav-actions">
-    <a class="nav-btn" href="../blog.html" aria-label="English version">EN</a>
-    <a class="nav-btn is-active" href="blog.html" aria-label="Turkish version">TR</a>
-    <button class="nav-btn nav-menu-btn" id="menu-toggle" type="button" aria-label="Toggle menu">&#8801;</button>
+  <div class="n1">
+    <a class="n3" href="../blog.html" aria-label="English version">EN</a>
+    <a class="n3 is-active" href="blog.html" aria-label="Turkish version">TR</a>
+    <button class="n3 n2" id="m0" type="button" aria-label="Toggle menu">&#8801;</button>
   </div>
 </nav>
 
-<div class="page-wrap">
-  <div class="page-header">
+<div class="z0">
+  <div class="z1">
     <h1># Araştırma Arşivi</h1>
     <p>Bu arşiv portfolyonun kanıt katmanı. PortSwigger lab çözümleri, Hack The Box walkthrough'ları, ofansif web güvenliği notları ve kısa güvenlik yazıları burada; yani iddianın değil işin kendisi.</p>
   </div>
 
-  <div class="archive-grid">
-    <div class="archive-panel reveal">
-      <span class="archive-eyebrow">Sinyal Akışı</span>
+  <div class="y0">
+    <div class="y1 v0">
+      <span class="y3">Sinyal Akışı</span>
       <p>Bir güvenlik profilini değerlendirmenin en hızlı yolu yaptığı işleri okumaktır. Burada exploit walkthrough'ları, SQLi notları, recon yazıları, saldırı yolu gözlemleri ve lab çözümleri bir arada duruyor.</p>
       <p>Bazı yazılar orijinal dilinde bırakıldı; amaç yapay çeviri değil, doğrudan proof of work göstermek.</p>
     </div>
-    <div class="archive-signal reveal">
-      <div class="archive-mini">
-        <div class="archive-mini-card">
+    <div class="y2 v0">
+      <div class="y4">
+        <div class="y5">
           <h3>İçerik</h3>
           <p>PortSwigger, HTB, THM, seçili operasyon notları, sertifika ve web güvenliği başlıklarında 96 içerik var.</p>
         </div>
-        <div class="archive-mini-card">
+        <div class="y5">
           <h3>Kimin İçin</h3>
           <p>Recruiter, hiring manager ve teknik ekiplerin portfolyo iddiası yerine doğrudan işi görmek istediği anlar için.</p>
         </div>
-        <div class="archive-mini-card">
+        <div class="y5">
           <h3>Hızlı Kullanım</h3>
           <p>Zafiyet ismi, lab veya kategoriyle arama yapıp en güçlü yazılara doğrudan geçebilirsin.</p>
         </div>
@@ -55,1084 +55,1084 @@
     </div>
   </div>
 
-  <div class="search-box">
-    <input type="text" id="search" placeholder="Zafiyet, lab, makine veya konu ara... (SQL injection, HTB, XSS)" />
+  <div class="y8">
+    <input type="text" id="sr0" placeholder="Zafiyet, lab, makine veya konu ara... (SQL injection, HTB, XSS)" />
   </div>
 
-  <div class="filter-bar">
-    <button class="filter-btn active" data-cat="all">Tümü <span>96</span></button>
-        <button class="filter-btn" data-cat="PortSwigger" style="--cat-color:#00d4ff;">PortSwigger <span>40</span></button>
-        <button class="filter-btn" data-cat="HTB" style="--cat-color:#ff4757;">HackTheBox <span>6</span></button>
-        <button class="filter-btn" data-cat="TryHackMe" style="--cat-color:#ff6b35;">TryHackMe <span>7</span></button>
-        <button class="filter-btn" data-cat="Blue Team" style="--cat-color:#a78bfa;">Blue Team <span>9</span></button>
-        <button class="filter-btn" data-cat="Web Security" style="--cat-color:#00ff88;">Web Security <span>4</span></button>
-        <button class="filter-btn" data-cat="CTF" style="--cat-color:#ffd700;">CTF <span>3</span></button>
-        <button class="filter-btn" data-cat="Sertifika" style="--cat-color:#00cc6a;">Sertifika <span>2</span></button>
-        <button class="filter-btn" data-cat="Makale" style="--cat-color:#8b949e;">Makale <span>25</span></button>
+  <div class="y6">
+    <button class="y7 active" data-cat="all">Tümü <span>96</span></button>
+        <button class="y7" data-cat="PortSwigger" style="--cat-color:#00d4ff;">PortSwigger <span>40</span></button>
+        <button class="y7" data-cat="HTB" style="--cat-color:#ff4757;">HackTheBox <span>6</span></button>
+        <button class="y7" data-cat="TryHackMe" style="--cat-color:#ff6b35;">TryHackMe <span>7</span></button>
+        <button class="y7" data-cat="Blue Team" style="--cat-color:#a78bfa;">Mavi Takım <span>9</span></button>
+        <button class="y7" data-cat="Web Security" style="--cat-color:#00ff88;">Web Güvenliği <span>4</span></button>
+        <button class="y7" data-cat="CTF" style="--cat-color:#ffd700;">CTF <span>3</span></button>
+        <button class="y7" data-cat="Sertifika" style="--cat-color:#00cc6a;">Sertifika <span>2</span></button>
+        <button class="y7" data-cat="Makale" style="--cat-color:#8b949e;">Makale <span>25</span></button>
 
   </div>
 
-  <p class="count-label" id="count-label">96 içerik gösteriliyor</p>
+  <p class="y9" id="y9">96 içerik gösteriliyor</p>
 
-  <div class="articles-list" id="articles-list">
-      <a href="../posts/2026-02-20_DNS-Zone-Transfer-Nedir--AXFR-A-----Nas-l--al---r--a9fac396e74f.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#8b949e;border-color:#8b949e;">Makale</span>
-          <span class="article-date">Feb 20, 2026</span>
+  <div class="a7" id="a7">
+      <a href="../posts/2026-02-20_DNS-Zone-Transfer-Nedir--AXFR-A-----Nas-l--al---r--a9fac396e74f.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#8b949e;border-color:#8b949e;">Makale</span>
+          <span class="a2">Feb 20, 2026</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>DNS Zone Transfer Nedir AXFR Açığı Nasıl Çalışır</h3>
           <p>DNS çoğu zaman sadece “domain → IP çeviren sistem” olarak anlatılır. Ama işin biraz daha derinine indiğinizde, DNS aslında bir…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2026-02-18_Web-Proxy-lerine-Giri--660731f8424e.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#8b949e;border-color:#8b949e;">Makale</span>
-          <span class="article-date">Feb 18, 2026</span>
+      <a href="../posts/2026-02-18_Web-Proxy-lerine-Giri--660731f8424e.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#8b949e;border-color:#8b949e;">Makale</span>
+          <span class="a2">Feb 18, 2026</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Web Proxy’lerine Giriş</h3>
           <p>Günümüzde modern web ve mobil uygulamaların çoğu, sürekli olarak arka uç (back-end) sunuculara bağlanarak veri gönderip alır ve bu verileri…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2026-02-17_Cross-Site-Request-Forgery--CSRF--9f95ab2f013b.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00ff88;border-color:#00ff88;">Web Security</span>
-          <span class="article-date">Feb 17, 2026</span>
+      <a href="../posts/2026-02-17_Cross-Site-Request-Forgery--CSRF--9f95ab2f013b.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00ff88;border-color:#00ff88;">Web Güvenliği</span>
+          <span class="a2">Feb 17, 2026</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Cross-Site Request Forgery (CSRF)</h3>
           <p>Filtrelenmemiş kullanıcı girdisinin neden olduğu üçüncü front-end zafiyet türü Cross-Site Request Forgery (CSRF)’dir. CSRF saldırıları…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2026-02-17_Cross-Site-Scripting--XSS--3e1ef0d5d958.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00ff88;border-color:#00ff88;">Web Security</span>
-          <span class="article-date">Feb 17, 2026</span>
+      <a href="../posts/2026-02-17_Cross-Site-Scripting--XSS--3e1ef0d5d958.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00ff88;border-color:#00ff88;">Web Güvenliği</span>
+          <span class="a2">Feb 17, 2026</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Cross-Site Scripting (XSS)</h3>
           <p>XSS (Cross-Site Scripting) Nedir</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2026-02-16_Geli-tirme-Framework-leri-ve-API-ler--Development-Frameworks---APIs--42ecd8dab2ba.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#8b949e;border-color:#8b949e;">Makale</span>
-          <span class="article-date">Feb 16, 2026</span>
+      <a href="../posts/2026-02-16_Geli-tirme-Framework-leri-ve-API-ler--Development-Frameworks---APIs--42ecd8dab2ba.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#8b949e;border-color:#8b949e;">Makale</span>
+          <span class="a2">Feb 16, 2026</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Geliştirme Framework’leri ve API’ler (Development Frameworks &amp; APIs)</h3>
           <p>Web sunucularının farklı dillerde web uygulamalarını barındırabilmesinin yanında, web uygulamasının temel dosyalarını ve işlevlerini…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2026-02-14_Backend--Sunucular---Backend-Servers--8749d8de58ef.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#8b949e;border-color:#8b949e;">Makale</span>
-          <span class="article-date">Feb 14, 2026</span>
+      <a href="../posts/2026-02-14_Backend--Sunucular---Backend-Servers--8749d8de58ef.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#8b949e;border-color:#8b949e;">Makale</span>
+          <span class="a2">Feb 14, 2026</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Backend  Sunucuları (Backend Servers)</h3>
           
                   <p>Backend sunucuların istekleri nasıl işlediğini, uygulama mantığını nasıl çalıştırdığını ve görünen arayüzü arka taraftaki altyapıya nasıl bağladığını anlatıyor.</p>
 </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2026-02-14_Veritabanlar---Databases--ac137974e2b0.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#8b949e;border-color:#8b949e;">Makale</span>
-          <span class="article-date">Feb 14, 2026</span>
+      <a href="../posts/2026-02-14_Veritabanlar---Databases--ac137974e2b0.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#8b949e;border-color:#8b949e;">Makale</span>
+          <span class="a2">Feb 14, 2026</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Veritabanları (Databases)</h3>
           <p>Web uygulamaları, web uygulamasıyla ilgili çeşitli içerik ve bilgileri saklamak için back-end veritabanlarını kullanır. Bu; resimler ve…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2026-02-13_HTML-Injection-8ac0bc44aa32.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00ff88;border-color:#00ff88;">Web Security</span>
-          <span class="article-date">Feb 13, 2026</span>
+      <a href="../posts/2026-02-13_HTML-Injection-8ac0bc44aa32.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00ff88;border-color:#00ff88;">Web Güvenliği</span>
+          <span class="a2">Feb 13, 2026</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>HTML Injection</h3>
           <p>Front-end güvenliğinin bir diğer büyük kısmı, kabul edilen kullanıcı girdisini doğrulamak (validate) ve temizlemektir (sanitize). Çoğu…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2026-02-13_Web-Application-Layout-fd58fee421e2.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#8b949e;border-color:#8b949e;">Makale</span>
-          <span class="article-date">Feb 13, 2026</span>
+      <a href="../posts/2026-02-13_Web-Application-Layout-fd58fee421e2.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#8b949e;border-color:#8b949e;">Makale</span>
+          <span class="a2">Feb 13, 2026</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Web Application Layout</h3>
           <p>1) Web App’ler Neden Aynı Değil</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2026-02-09_HyperText-Transfer-Protocol--HTTP--notlar--232d9507ce47.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#8b949e;border-color:#8b949e;">Makale</span>
-          <span class="article-date">Feb 09, 2026</span>
+      <a href="../posts/2026-02-09_HyperText-Transfer-Protocol--HTTP--notlar--232d9507ce47.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#8b949e;border-color:#8b949e;">Makale</span>
+          <span class="a2">Feb 09, 2026</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>HyperText Transfer Protocol (HTTP) notları</h3>
           <p>HTTP Notları</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2026-02-09_Introduction-to-Web-Applications-9ef4b6ee5e48.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#8b949e;border-color:#8b949e;">Makale</span>
-          <span class="article-date">Feb 09, 2026</span>
+      <a href="../posts/2026-02-09_Introduction-to-Web-Applications-9ef4b6ee5e48.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#8b949e;border-color:#8b949e;">Makale</span>
+          <span class="a2">Feb 09, 2026</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Introduction to Web Applications</h3>
           <p>Giriş (Introduction)</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2026-02-07_HTTP-Header-lar--2cca90b0c841.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#8b949e;border-color:#8b949e;">Makale</span>
-          <span class="article-date">Feb 07, 2026</span>
+      <a href="../posts/2026-02-07_HTTP-Header-lar--2cca90b0c841.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#8b949e;border-color:#8b949e;">Makale</span>
+          <span class="a2">Feb 07, 2026</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>HTTP Header’ları</h3>
           <p>Önceki bölümde HTTP istekleri ve response header’larıyla ilgili örnekler görmüştük. Bu HTTP header’ları, istemci ile sunucu arasında bilgi…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2026-02-06_HTTP-2-downgrading-e8e1b6464f9e.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#8b949e;border-color:#8b949e;">Makale</span>
-          <span class="article-date">Feb 06, 2026</span>
+      <a href="../posts/2026-02-06_HTTP-2-downgrading-e8e1b6464f9e.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#8b949e;border-color:#8b949e;">Makale</span>
+          <span class="a2">Feb 06, 2026</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>HTTP/2 downgrading</h3>
           <p>HTTP/2 hâlâ görece yeni bir protokol olduğu için, onu destekleyen web server’lar çoğu zaman yalnızca HTTP/1 konuşabilen legacy back-end…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2026-02-06_Hypertext-Transfer-Protocol-Secure--HTTPS--c86ae580edb5.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#8b949e;border-color:#8b949e;">Makale</span>
-          <span class="article-date">Feb 06, 2026</span>
+      <a href="../posts/2026-02-06_Hypertext-Transfer-Protocol-Secure--HTTPS--c86ae580edb5.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#8b949e;border-color:#8b949e;">Makale</span>
+          <span class="a2">Feb 06, 2026</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Hypertext Transfer Protocol Secure (HTTPS)</h3>
           <p>HTTP’nin en büyük dezavantajlarından biri, tüm verilerin clear-text (şifrelenmemiş) olarak iletilmesidir. Bu da kaynak ile hedef arasında…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2026-02-03_HyperText-Transfer-Protocol--HTTP--16d7c7281527.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#8b949e;border-color:#8b949e;">Makale</span>
-          <span class="article-date">Feb 03, 2026</span>
+      <a href="../posts/2026-02-03_HyperText-Transfer-Protocol--HTTP--16d7c7281527.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#8b949e;border-color:#8b949e;">Makale</span>
+          <span class="a2">Feb 03, 2026</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>HyperText Transfer Protocol (HTTP)</h3>
           <p>Günümüzde kullandığımız uygulamaların büyük çoğunluğu — hem web hem de mobil uygulamalar — sürekli olarak internetle etkileşim hâlindedir…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2026-02-03_WEB-REQUESTS---CHEAT-SHEET-cf49afe354b3.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#8b949e;border-color:#8b949e;">Makale</span>
-          <span class="article-date">Feb 03, 2026</span>
+      <a href="../posts/2026-02-03_WEB-REQUESTS---CHEAT-SHEET-cf49afe354b3.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#8b949e;border-color:#8b949e;">Makale</span>
+          <span class="a2">Feb 03, 2026</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>WEB REQUESTS — CHEAT SHEET</h3>
           <p>Request Header / Parametre / Veri Gönderme</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2026-01-19_Bscp-Portswigger-Konu-Liste-3e9f205658a5.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
-          <span class="article-date">Jan 19, 2026</span>
+      <a href="../posts/2026-01-19_Bscp-Portswigger-Konu-Liste-3e9f205658a5.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
+          <span class="a2">Jan 19, 2026</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Bscp Portswigger Konu Liste</h3>
           <p>1-Foothold (İlk Erişim — Uygulamaya Girme)</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2026-01-17_Lab--SQL-injection-UNION-attack--determining-the-number-of-columns-returned-by-the-query-8eaf99659788.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
-          <span class="article-date">Jan 17, 2026</span>
+      <a href="../posts/2026-01-17_Lab--SQL-injection-UNION-attack--determining-the-number-of-columns-returned-by-the-query-8eaf99659788.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
+          <span class="a2">Jan 17, 2026</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Lab: SQL injection UNION attack, determining the number of columns returned by the query</h3>
           <p>Bu lab, ürün kategori filtresinde bir SQL injection zafiyeti içeriyor. Sorgu sonuçları sayfada göründüğü için, UNION kullanarak başka…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2026-01-16_Lab--SQL-injection-vulnerability-allowing-login-bypass-cb52d007d51e.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
-          <span class="article-date">Jan 16, 2026</span>
+      <a href="../posts/2026-01-16_Lab--SQL-injection-vulnerability-allowing-login-bypass-cb52d007d51e.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
+          <span class="a2">Jan 16, 2026</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Lab: SQL injection vulnerability allowing login bypass</h3>
           <p>Bu labda, uygulamanın login fonksiyonunda bulunan bir SQL Injection zafiyetini inceledim. Ama mesele sadece klasik bir SQLi değildi; asıl…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2026-01-15_Lab--SQL-injection-vulnerability-in-WHERE-clause-allowing-retrieval-of-hidden-data-fa70a496a7f8.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
-          <span class="article-date">Jan 15, 2026</span>
+      <a href="../posts/2026-01-15_Lab--SQL-injection-vulnerability-in-WHERE-clause-allowing-retrieval-of-hidden-data-fa70a496a7f8.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
+          <span class="a2">Jan 15, 2026</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Lab: SQL injection vulnerability in WHERE clause allowing retrieval of hidden data</h3>
           <p>Bu laboratuvar, ürün kategori filtresinde bir SQL enjeksiyon açığı içermektedir. Kullanıcı bir kategori seçtiğinde, uygulama aşağıdaki gibi…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2026-01-14_SQL-Injection--SQLi----Notlar-m-6431eb4bcdda.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00ff88;border-color:#00ff88;">Web Security</span>
-          <span class="article-date">Jan 14, 2026</span>
+      <a href="../posts/2026-01-14_SQL-Injection--SQLi----Notlar-m-6431eb4bcdda.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00ff88;border-color:#00ff88;">Web Güvenliği</span>
+          <span class="a2">Jan 14, 2026</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>SQL Injection (SQLi) — Notlarım</h3>
           <p>SQLi, uygulamanın veritabanına attığı SQL sorgusuna kullanıcı girdisi üzerinden müdahale edebilmen demek. Sonuç: Normalde göremeyeceğin…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2026-01-13_Lab--Bypassing-access-controls-using-email-address-parsing-discrepancies-836c99d4c7f8.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
-          <span class="article-date">Jan 13, 2026</span>
+      <a href="../posts/2026-01-13_Lab--Bypassing-access-controls-using-email-address-parsing-discrepancies-836c99d4c7f8.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
+          <span class="a2">Jan 13, 2026</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Lab: Bypassing access controls using email address parsing discrepancies</h3>
           <p>Bu labda ilk bakışta oldukça basit görünen bir kontrol var: “Sadece ginandjuice.shop domain’ine sahip email adresleriyle kayıt…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2026-01-12_Lab--Authentication-bypass-via-encryption-oracle-dcab43bb72b4.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
-          <span class="article-date">Jan 12, 2026</span>
+      <a href="../posts/2026-01-12_Lab--Authentication-bypass-via-encryption-oracle-dcab43bb72b4.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
+          <span class="a2">Jan 12, 2026</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Lab: Authentication bypass via encryption oracle</h3>
           <p>Bu labda, kullanıcılara bir encryption oracle (şifreleme/çözme oracle’ı) açığa çıkaran bir mantık hatası bulunuyor. Labı çözmek için bu…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2026-01-07_Lab--Flawed-enforcement-of-business-rules-220d95b7fbb2.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
-          <span class="article-date">Jan 07, 2026</span>
+      <a href="../posts/2026-01-07_Lab--Flawed-enforcement-of-business-rules-220d95b7fbb2.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
+          <span class="a2">Jan 07, 2026</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Lab: Flawed enforcement of business rules</h3>
           <p>Lab: Flawed enforcement of business rules Seviye: APPRENTICE Bu labda problem teknik bir exploitten çok, satın alma akışında yanlış…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2026-01-07_Lab--Infinite-money-logic-flaw-657460cc6f32.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
-          <span class="article-date">Jan 07, 2026</span>
+      <a href="../posts/2026-01-07_Lab--Infinite-money-logic-flaw-657460cc6f32.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
+          <span class="a2">Jan 07, 2026</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Lab: Infinite money logic flaw</h3>
           
                   <p>PortSwigger business logic lab'ında satın alma akışındaki doğrulama hatasıyla nasıl limitsiz kredi üretilebildiğini gösteren çözüm.</p>
 </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2026-01-05_Lab--Authentication-bypass-via-flawed-state-machine-2e9328604ba9.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
-          <span class="article-date">Jan 05, 2026</span>
+      <a href="../posts/2026-01-05_Lab--Authentication-bypass-via-flawed-state-machine-2e9328604ba9.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
+          <span class="a2">Jan 05, 2026</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Lab: Authentication bypass via flawed state machine</h3>
           <p>Bu labda, login sürecindeki adımların belirli bir sırayla kesinlikle gerçekleşeceği varsayımına dayanan hatalı bir state machine bulunuyor…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2026-01-05_Lab--Insufficient-workflow-validation-94b7f069fbec.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
-          <span class="article-date">Jan 05, 2026</span>
+      <a href="../posts/2026-01-05_Lab--Insufficient-workflow-validation-94b7f069fbec.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
+          <span class="a2">Jan 05, 2026</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Lab: Insufficient workflow validation</h3>
           <p>Bu labda, bir e-ticaret uygulamasında satın alma sürecinin ne kadar varsayıma dayalı kurgulandığını fark ettim. İlk bakışta her şey normal…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2026-01-04_Lab--2FA-simple-bypass-eca7ba98b463.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
-          <span class="article-date">Jan 04, 2026</span>
+      <a href="../posts/2026-01-04_Lab--2FA-simple-bypass-eca7ba98b463.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
+          <span class="a2">Jan 04, 2026</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Lab: 2FA simple bypass</h3>
           <p>Bu labda, uygulamada iki faktörlü kimlik doğrulama (2FA) bulunmasına rağmen, bu mekanizmanın gerçek anlamda zorunlu tutulmadığı bir mantık…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2026-01-04_Lab--Password-reset-broken-logic-7fd8d1bed622.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
-          <span class="article-date">Jan 04, 2026</span>
+      <a href="../posts/2026-01-04_Lab--Password-reset-broken-logic-7fd8d1bed622.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
+          <span class="a2">Jan 04, 2026</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Lab: Password reset broken logic</h3>
           <p>Bu labda, uygulamanın şifre sıfırlama (password reset) mekanizmasında bulunan bir mantık hatası bulunuyor. Şifre sıfırlama sürecinde…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2026-01-03_Lab--Inconsistent-security-controls-ef826b01eb7e.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
-          <span class="article-date">Jan 03, 2026</span>
+      <a href="../posts/2026-01-03_Lab--Inconsistent-security-controls-ef826b01eb7e.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
+          <span class="a2">Jan 03, 2026</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Lab: Inconsistent security controls</h3>
           <p>Bu labda, uygulamadaki tutarsız güvenlik kontrolleri nedeniyle normalde yalnızca şirket çalışanlarına açık olması gereken admin…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2026-01-03_Lab--Weak-isolation-on-dual-use-endpoint-7fab9d7d1411.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
-          <span class="article-date">Jan 03, 2026</span>
+      <a href="../posts/2026-01-03_Lab--Weak-isolation-on-dual-use-endpoint-7fab9d7d1411.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
+          <span class="a2">Jan 03, 2026</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Lab: Weak isolation on dual-use endpoint</h3>
           <p>Bu labda, uygulamanın kullanıcının yetki seviyesini belirlerken istemciden gelen girdilere güvenmesi nedeniyle ortaya çıkan bir mantık…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2026-01-02_Lab--Inconsistent-handling-of-exceptional-input-dc8477aa780b.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
-          <span class="article-date">Jan 02, 2026</span>
+      <a href="../posts/2026-01-02_Lab--Inconsistent-handling-of-exceptional-input-dc8477aa780b.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
+          <span class="a2">Jan 02, 2026</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Lab: Inconsistent handling of exceptional input</h3>
           <p>Bu labda uygulama, kullanıcı girdilerini yeterince doğrulamıyor. Özellikle hesap kayıt (registration) sürecinde bulunan bir mantık hatası…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2026-01-02_Lab--Low-level-logic-flaw-3df7e6d374ae.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
-          <span class="article-date">Jan 02, 2026</span>
+      <a href="../posts/2026-01-02_Lab--Low-level-logic-flaw-3df7e6d374ae.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
+          <span class="a2">Jan 02, 2026</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Lab: Low-level logic flaw</h3>
           <p>Bu labda, satın alma sürecinde kullanıcıdan gelen verilerin yeterince doğrulanmaması nedeniyle oluşan bir business logic flaw bulunuyor…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2025-12-18_Lab--High-level-logic-vulnerability-12b4b7af81d2.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
-          <span class="article-date">Dec 18, 2025</span>
+      <a href="../posts/2025-12-18_Lab--High-level-logic-vulnerability-12b4b7af81d2.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
+          <span class="a2">Dec 18, 2025</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Lab: High-level logic vulnerability</h3>
           <p>PortSwigger Write-up: High-level logic vulnerability (Negatif Quantity ile Sepet Manipülasyonu)</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2025-12-17_Lab--2FA-broken-logic-a41b70b3708f.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
-          <span class="article-date">Dec 17, 2025</span>
+      <a href="../posts/2025-12-17_Lab--2FA-broken-logic-a41b70b3708f.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
+          <span class="a2">Dec 17, 2025</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Lab: 2FA broken logic</h3>
           <p>Bu lab’da, iki faktörlü kimlik doğrulama (2FA) mekanizmasının hatalı bir mantıkla uygulanması nedeniyle nasıl bypass edilebildiğini…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2025-12-17_Lab--Excessive-trust-in-client-side-controls-35789e360b87.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
-          <span class="article-date">Dec 17, 2025</span>
+      <a href="../posts/2025-12-17_Lab--Excessive-trust-in-client-side-controls-35789e360b87.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
+          <span class="a2">Dec 17, 2025</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Lab: Excessive trust in client-side controls</h3>
           <p>Bu lab’da, uygulamanın satın alma sürecinde client tarafından gönderilen verilere aşırı güvenmesi nedeniyle ortaya çıkan bir business logic…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2025-12-16_Business-logic-vulnerabilities-----mant----zafiyetleri--392e1107eaa2.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#8b949e;border-color:#8b949e;">Makale</span>
-          <span class="article-date">Dec 16, 2025</span>
+      <a href="../posts/2025-12-16_Business-logic-vulnerabilities-----mant----zafiyetleri--392e1107eaa2.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#8b949e;border-color:#8b949e;">Makale</span>
+          <span class="a2">Dec 16, 2025</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Business logic vulnerabilities (İş mantığı zafiyetleri)</h3>
           <p>Bu bölümde, iş mantığı zafiyetleri kavramını tanıtacağız ve bu zafiyetlerin, kullanıcı davranışları hakkında yapılan hatalı varsayımlar…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2025-12-16_Lab--User-ID-controlled-by-request-parameter--with-unpredictable-user-IDs-79ad7563b9c3.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
-          <span class="article-date">Dec 16, 2025</span>
+      <a href="../posts/2025-12-16_Lab--User-ID-controlled-by-request-parameter--with-unpredictable-user-IDs-79ad7563b9c3.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
+          <span class="a2">Dec 16, 2025</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Lab: User ID controlled by request parameter, with unpredictable user IDs</h3>
           <p>Bu labda, kullanıcı hesap sayfasında yatay yetki yükseltme zafiyeti bulunuyor ancak kullanıcılar GUID değerleriyle tanımlanıyor. Amaç…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2025-12-15_Lab--Multi-step-process-with-no-access-control-on-one-step-44b23fe80959.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
-          <span class="article-date">Dec 15, 2025</span>
+      <a href="../posts/2025-12-15_Lab--Multi-step-process-with-no-access-control-on-one-step-44b23fe80959.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
+          <span class="a2">Dec 15, 2025</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Lab: Multi-step process with no access control on one step</h3>
           <p>Bu labda, bir kullanıcının rolünü değiştirmek için kullanılan çok adımlı (multi-step) bir süreçte hatalı erişim kontrolleri bulunuyor…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2025-12-15_Lab--Referer-based-access-control-54c633f83db2.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
-          <span class="article-date">Dec 15, 2025</span>
+      <a href="../posts/2025-12-15_Lab--Referer-based-access-control-54c633f83db2.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
+          <span class="a2">Dec 15, 2025</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Lab: Referer-based access control</h3>
           <p>Bu labda, bazı admin fonksiyonlarına erişimin HTTP Referer header’ına göre kontrol edildiği hatalı bir access control mekanizması…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2025-12-14_Lab--User-ID-controlled-by-request-parameter-with-data-leakage-in-redirect-4ae70b603a16.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
-          <span class="article-date">Dec 14, 2025</span>
+      <a href="../posts/2025-12-14_Lab--User-ID-controlled-by-request-parameter-with-data-leakage-in-redirect-4ae70b603a16.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
+          <span class="a2">Dec 14, 2025</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Lab: User ID controlled by request parameter with data leakage in redirect</h3>
           <p>Bu lab, yönlendirme (redirect) yanıtının gövdesinde hassas bilgilerin sızdırıldığı bir access control zafiyeti içeriyor.</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2025-12-14_Lab--User-ID-controlled-by-request-parameter-with-password-disclosure-582a70ad0300.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
-          <span class="article-date">Dec 14, 2025</span>
+      <a href="../posts/2025-12-14_Lab--User-ID-controlled-by-request-parameter-with-password-disclosure-582a70ad0300.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
+          <span class="a2">Dec 14, 2025</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Lab: User ID controlled by request parameter with password disclosure</h3>
           <p>Bu lab’de, kullanıcı hesap sayfasında mevcut kullanıcının parolasının maskelenmiş (●●●) şekilde input alanına otomatik olarak doldurulduğu…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2025-12-13_Lab--Insecure-direct-object-references-b682887eb59f.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
-          <span class="article-date">Dec 13, 2025</span>
+      <a href="../posts/2025-12-13_Lab--Insecure-direct-object-references-b682887eb59f.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
+          <span class="a2">Dec 13, 2025</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Lab: Insecure direct object references</h3>
           
                   <p>Tahmin edilebilir nesne referansları yüzünden başka kullanıcı verisine erişilen bir IDOR senaryosunun adım adım walkthrough'u.</p>
 </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2025-12-13_Lab--User-ID-controlled-by-request-parameter-b94365292c75.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
-          <span class="article-date">Dec 13, 2025</span>
+      <a href="../posts/2025-12-13_Lab--User-ID-controlled-by-request-parameter-b94365292c75.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
+          <span class="a2">Dec 13, 2025</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Lab: User ID controlled by request parameter</h3>
           <p>Bu yazıda PortSwigger Web Security Academy üzerinde yer alan “User ID controlled by request parameter” laboratuvarının çözümünü…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2025-12-12_Lab--Method-based-access-control-can-be-circumvented-18f855c5c313.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
-          <span class="article-date">Dec 12, 2025</span>
+      <a href="../posts/2025-12-12_Lab--Method-based-access-control-can-be-circumvented-18f855c5c313.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
+          <span class="a2">Dec 12, 2025</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Lab: Method-based access control can be circumvented</h3>
           <p>Bu yazıda PortSwigger Web Security Academy’deki bir laboratuvarın çözümünü ele alıyorum. Laboratuvarın temel konusu, uygulamanın erişim…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2025-12-12_Lab--Unprotected-admin-functionality-with-unpredictable-URL-6a45d874ecf7.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
-          <span class="article-date">Dec 12, 2025</span>
+      <a href="../posts/2025-12-12_Lab--Unprotected-admin-functionality-with-unpredictable-URL-6a45d874ecf7.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
+          <span class="a2">Dec 12, 2025</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Lab: Unprotected admin functionality with unpredictable URL</h3>
           <p>Bu yazıda PortSwigger’daki “Unprotected admin functionality with unpredictable URL” labını nasıl çözdüğümü anlatacağım. Lab aslında oldukça…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2025-12-11_Lab--URL-based-access-control-can-be-circumvented-d77cd5f29bc0.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
-          <span class="article-date">Dec 11, 2025</span>
+      <a href="../posts/2025-12-11_Lab--URL-based-access-control-can-be-circumvented-d77cd5f29bc0.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
+          <span class="a2">Dec 11, 2025</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Lab: URL-based access control can be circumvented</h3>
-          <p>Bu web uygulamasında /admin altında korumasız bir yönetici paneli bulunuyor. Ancak front-end tarafında, dışarıdan gelen isteklerin /admin…</p>
+          <p>Bu web uygulamasında /admin altında korumasız bir yönetici s1i bulunuyor. Ancak front-end tarafında, dışarıdan gelen isteklerin /admin…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2025-12-11_Lab--User-role-controlled-by-request-parameter-256c2ee638e1.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
-          <span class="article-date">Dec 11, 2025</span>
+      <a href="../posts/2025-12-11_Lab--User-role-controlled-by-request-parameter-256c2ee638e1.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
+          <span class="a2">Dec 11, 2025</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Lab: User role controlled by request parameter</h3>
-          <p>Bu yazıda PortSwigger’daki “User role controlled by request parameter” labının çözümünü anlatıyorum. Bu labda admin paneli /admin altında…</p>
+          <p>Bu yazıda PortSwigger’daki “User role controlled by request parameter” labının çözümünü anlatıyorum. Bu labda admin s1i /admin altında…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2025-12-08_Lab--User-role-can-be-modified-in-user-profile-6bcf0def68c0.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
-          <span class="article-date">Dec 08, 2025</span>
+      <a href="../posts/2025-12-08_Lab--User-role-can-be-modified-in-user-profile-6bcf0def68c0.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
+          <span class="a2">Dec 08, 2025</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Lab: User role can be modified in user profile</h3>
-          <p>Bu labda /admin altında bir admin paneli bulunuyor ve bu panel yalnızca roleid değeri 2 olan kullanıcılar tarafından erişilebiliyor. Bizden…</p>
+          <p>Bu labda /admin altında bir admin s1i bulunuyor ve bu s1 yalnızca roleid değeri 2 olan kullanıcılar tarafından erişilebiliyor. Bizden…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2025-12-07_Access-control-c079684269e4.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#8b949e;border-color:#8b949e;">Makale</span>
-          <span class="article-date">Dec 07, 2025</span>
+      <a href="../posts/2025-12-07_Access-control-c079684269e4.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#8b949e;border-color:#8b949e;">Makale</span>
+          <span class="a2">Dec 07, 2025</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Access control</h3>
           <p>Access control, bir kişinin veya bir şeyin hangi işlemleri yapmaya veya hangi kaynaklara erişmeye yetkili olduğunu belirleyen…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2025-12-07_Lab--Unprotected-admin-functionality-45673049a592.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
-          <span class="article-date">Dec 07, 2025</span>
+      <a href="../posts/2025-12-07_Lab--Unprotected-admin-functionality-45673049a592.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
+          <span class="a2">Dec 07, 2025</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Lab: Unprotected admin functionality</h3>
-          <p>Bu labde koruma altına alınmamış bir admin paneli bulunuyor.</p>
+          <p>Bu labde koruma altına alınmamış bir admin s1i bulunuyor.</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2025-12-03_Broken-Brute-Force-Protection--Multiple-Credentials-per-Request--EXPERT----Ad-m-Ad-m---z-m-6ca26671c3d7.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#8b949e;border-color:#8b949e;">Makale</span>
-          <span class="article-date">Dec 03, 2025</span>
+      <a href="../posts/2025-12-03_Broken-Brute-Force-Protection--Multiple-Credentials-per-Request--EXPERT----Ad-m-Ad-m---z-m-6ca26671c3d7.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#8b949e;border-color:#8b949e;">Makale</span>
+          <span class="a2">Dec 03, 2025</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Broken Brute-Force Protection: Multiple Credentials per Request (EXPERT) — Adım Adım Çözüm</h3>
           <p>Merhaba! Bugün PortSwigger’daki “Broken brute‑force protection, multiple credentials per request” labını çözdüm ve gerçekten ilginç bir…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2025-12-02_Lab--Password-Reset-Poisoning-via-Middleware-5e71121ed420.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
-          <span class="article-date">Dec 02, 2025</span>
+      <a href="../posts/2025-12-02_Lab--Password-Reset-Poisoning-via-Middleware-5e71121ed420.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
+          <span class="a2">Dec 02, 2025</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Lab: Password Reset Poisoning via Middleware</h3>
           <p>URL ile Şifre Sıfırlama</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2025-12-02_Portswigger-Authentication-vulnerabilities-46-of-55-80e5ee49dc8f.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
-          <span class="article-date">Dec 02, 2025</span>
+      <a href="../posts/2025-12-02_Portswigger-Authentication-vulnerabilities-46-of-55-80e5ee49dc8f.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
+          <span class="a2">Dec 02, 2025</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Portswigger Authentication vulnerabilities 46 of 55</h3>
           <p>Kullanıcı parolalarını değiştirme</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2025-12-01_Portswigger---Authentication-vulnerabilities-04a67d67f13f.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
-          <span class="article-date">Dec 01, 2025</span>
+      <a href="../posts/2025-12-01_Portswigger---Authentication-vulnerabilities-04a67d67f13f.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
+          <span class="a2">Dec 01, 2025</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Portswigger : Authentication vulnerabilities</h3>
           <p>Parola Sıfırlama İşlemleri</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2025-11-30_Oturumu-A--k-Tutma-6e5017ba1717.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#8b949e;border-color:#8b949e;">Makale</span>
-          <span class="article-date">Nov 30, 2025</span>
+      <a href="../posts/2025-11-30_Oturumu-A--k-Tutma-6e5017ba1717.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#8b949e;border-color:#8b949e;">Makale</span>
+          <span class="a2">Nov 30, 2025</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Oturumu Açık Tutma</h3>
           <p>Bazı nadir durumlarda, çerez içinde hash’lenmiş bile olsa, bir kullanıcının gerçek parolasını düz metin olarak elde etmek mümkün olabilir…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2025-11-29_Portswigger-Lab--Brute-forcing-a-stay-logged-in-cookie-99c841c14b97.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
-          <span class="article-date">Nov 29, 2025</span>
+      <a href="../posts/2025-11-29_Portswigger-Lab--Brute-forcing-a-stay-logged-in-cookie-99c841c14b97.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
+          <span class="a2">Nov 29, 2025</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Portswigger Lab: Brute-forcing a stay-logged-in cookie</h3>
           <p>PortSwigger’daki “Brute-forcing a stay-logged-in cookie” labine başladım ve bu yazıda hem mantığını hem de çözüme giden yaklaşımı…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2025-11-28_Portswigger---Flawed-two-factor-verification-logic-e69fa0238b2a.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
-          <span class="article-date">Nov 28, 2025</span>
+      <a href="../posts/2025-11-28_Portswigger---Flawed-two-factor-verification-logic-e69fa0238b2a.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
+          <span class="a2">Nov 28, 2025</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Portswigger : Flawed two-factor verification logic</h3>
           <p>Bazen 2FA (two-factor authentication) adımlarındaki hatalı mantık nedeniyle, kullanıcı ilk giriş adımını doğru şekilde tamamlasa bile, web…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2025-11-27_HTTP-Basic-Authentication-5b6834963d11.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#8b949e;border-color:#8b949e;">Makale</span>
-          <span class="article-date">Nov 27, 2025</span>
+      <a href="../posts/2025-11-27_HTTP-Basic-Authentication-5b6834963d11.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#8b949e;border-color:#8b949e;">Makale</span>
+          <span class="a2">Nov 27, 2025</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>HTTP Basic Authentication</h3>
           <p>User rate limiting</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2025-11-27_Portswigger---Account-locking--Hesap-Kilitleme--e082f1bd842b.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
-          <span class="article-date">Nov 27, 2025</span>
+      <a href="../posts/2025-11-27_Portswigger---Account-locking--Hesap-Kilitleme--e082f1bd842b.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
+          <span class="a2">Nov 27, 2025</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Portswigger : Account locking (Hesap Kilitleme)</h3>
           <p>Web sitelerinin brute-force saldırılarını engellemek için kullandığı yöntemlerden biri, belirli şüpheli koşullar gerçekleştiğinde —…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2025-11-25_Broken-brute-force-protection--IP-block----Writeup-cd48d5f17770.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#8b949e;border-color:#8b949e;">Makale</span>
-          <span class="article-date">Nov 25, 2025</span>
+      <a href="../posts/2025-11-25_Broken-brute-force-protection--IP-block----Writeup-cd48d5f17770.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#8b949e;border-color:#8b949e;">Makale</span>
+          <span class="a2">Nov 25, 2025</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Broken brute-force protection (IP block) — Writeup</h3>
           <p>Portswigger Lab Writeup</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2025-11-24_Portswigger-Academy-Lab----Username-enumeration-via-response-timing-Writeup-df23aeea8bd8.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
-          <span class="article-date">Nov 24, 2025</span>
+      <a href="../posts/2025-11-24_Portswigger-Academy-Lab----Username-enumeration-via-response-timing-Writeup-df23aeea8bd8.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
+          <span class="a2">Nov 24, 2025</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Portswigger Academy Lab :  Username enumeration via response timing Writeup</h3>
           <p>Merhaba Size bugün PortSwigger’daki “Username Enumeration via Response Timing” labını anlatacağım. Labın konusu kısaca şu: Uygulamanın…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2025-11-21_Portswigger-Academy---Lab--Username-enumeration-via-subtly-different-responses-a60157feda4b.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
-          <span class="article-date">Nov 21, 2025</span>
+      <a href="../posts/2025-11-21_Portswigger-Academy---Lab--Username-enumeration-via-subtly-different-responses-a60157feda4b.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00d4ff;border-color:#00d4ff;">PortSwigger</span>
+          <span class="a2">Nov 21, 2025</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Portswigger Academy — Lab: Username enumeration via subtly different responses</h3>
           <p>Bu lab aslında dışarıdan bakınca güvenli gibi dursa da, içerisinde kullanıcı adı enumerasyonu ve parola brute-force yapılmasına izin veren…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2025-11-19_Kimlik-Do-rulama-Zafiyetlerine-Giri---Modern-Web-Uygulamalar-nda-G-r-len-Yayg-n-Hatalar-9fdced04ae58.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#8b949e;border-color:#8b949e;">Makale</span>
-          <span class="article-date">Nov 19, 2025</span>
+      <a href="../posts/2025-11-19_Kimlik-Do-rulama-Zafiyetlerine-Giri---Modern-Web-Uygulamalar-nda-G-r-len-Yayg-n-Hatalar-9fdced04ae58.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#8b949e;border-color:#8b949e;">Makale</span>
+          <span class="a2">Nov 19, 2025</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Kimlik Doğrulama Zafiyetlerine Giriş: Modern Web Uygulamalarında Görülen Yaygın Hatalar</h3>
           
                   <p>Modern web uygulamalarında brute force, login mantığı ve oturum akışı tarafında görülen yaygın kimlik doğrulama zaafiyetlerine giriş.</p>
 </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2025-06-20_Hackthebox-Nibbles-Writeup-0feb6141baf1.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#ff4757;border-color:#ff4757;">HackTheBox</span>
-          <span class="article-date">Jun 20, 2025</span>
+      <a href="../posts/2025-06-20_Hackthebox-Nibbles-Writeup-0feb6141baf1.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#ff4757;border-color:#ff4757;">HackTheBox</span>
+          <span class="a2">Jun 20, 2025</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Hackthebox Nibbles Writeup</h3>
           <p>Herkese merhaba! Bugün Hack The Box’taki Nibbles makinesini çözeceğiz. Bu makine, web tarama ve yetki yükseltme için harika bir pratik…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2025-06-12_Hackthebox-Shocker-Writeup-3bdf669d5834.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#ff4757;border-color:#ff4757;">HackTheBox</span>
-          <span class="article-date">Jun 12, 2025</span>
+      <a href="../posts/2025-06-12_Hackthebox-Shocker-Writeup-3bdf669d5834.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#ff4757;border-color:#ff4757;">HackTheBox</span>
+          <span class="a2">Jun 12, 2025</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Hackthebox Shocker Writeup</h3>
           
-                  <p>HTB Shocker makinesinde enumeration, CGI üzerinden istismar ve ilk ayaktan shell almaya giden sürecin pratik özeti.</p>
+                  <p>HTB Shocker makinesinde enumeration, CGI üzerinden istismar ve ilk ayaktan s0 almaya giden sürecin pratik özeti.</p>
 </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2026-02-27_Cap-Htb-Writeup-407ab0bf17be.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#ff4757;border-color:#ff4757;">HackTheBox</span>
-          <span class="article-date">Jun 11, 2025</span>
+      <a href="../posts/2026-02-27_Cap-Htb-Writeup-407ab0bf17be.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#ff4757;border-color:#ff4757;">HackTheBox</span>
+          <span class="a2">Jun 11, 2025</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Hackthebox Cap Writeup</h3>
           <p>Bu yazıda Hack The Box platformundaki Cap adlı makineyi adım adım nasıl çözdüğümü paylaşacağım. Hem başlangıç seviyesinde ağ analizi hem…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2025-06-09_Hack-The-Box--Valentine-261815f7fc87.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#ff4757;border-color:#ff4757;">HackTheBox</span>
-          <span class="article-date">Jun 09, 2025</span>
+      <a href="../posts/2025-06-09_Hack-The-Box--Valentine-261815f7fc87.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#ff4757;border-color:#ff4757;">HackTheBox</span>
+          <span class="a2">Jun 09, 2025</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Hack The Box: Valentine</h3>
           <p>Bugün sizlere Hack The Box’ta çözdüğüm Valentine makinesiyle ilgili deneyimlerimi paylaşmak istiyorum. Bu makine, HTB’nin en eski…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2025-06-03_Hack-The-Box-Lame-Makinesi----Easy-Level-328af5bc2349.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#ff4757;border-color:#ff4757;">HackTheBox</span>
-          <span class="article-date">Jun 03, 2025</span>
+      <a href="../posts/2025-06-03_Hack-The-Box-Lame-Makinesi----Easy-Level-328af5bc2349.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#ff4757;border-color:#ff4757;">HackTheBox</span>
+          <span class="a2">Jun 03, 2025</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Hack The Box Lame Makinesi —  Easy Level</h3>
           <p>Bugün sizlere Hack The Box’ta çözdüğüm ve özellikle başlangıç seviyesindeki arkadaşlara önerdiğim Lame makinesiyle ilgili deneyimlerimi…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2024-08-22_Letsdefend----Phishing-Email-Analysis-Walkthrough-Path-bc512f625909.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#a78bfa;border-color:#a78bfa;">Blue Team</span>
-          <span class="article-date">Aug 22, 2024</span>
+      <a href="../posts/2024-08-22_Letsdefend----Phishing-Email-Analysis-Walkthrough-Path-bc512f625909.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#a78bfa;border-color:#a78bfa;">Mavi Takım</span>
+          <span class="a2">Aug 22, 2024</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Letsdefend :  Phishing Email Analysis Walkthrough Path</h3>
           <p>Introduction to Phishing</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2024-07-11_Elasticsearch-8bced32765b8.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#a78bfa;border-color:#a78bfa;">Blue Team</span>
-          <span class="article-date">Jul 11, 2024</span>
+      <a href="../posts/2024-07-11_Elasticsr0-8bced32765b8.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#a78bfa;border-color:#a78bfa;">Mavi Takım</span>
+          <span class="a2">Jul 11, 2024</span>
         </div>
-        <div class="article-body">
-          <h3>Elasticsearch</h3>
-          <p>Elasticsearch, “bir indeks”, “bir arama motoru”, “analitik veritabanı”, “büyük veri çözümü” gibi çeşitli tanımlarla açıklanabilir…</p>
+        <div class="a3">
+          <h3>Elasticsr0</h3>
+          <p>Elasticsr0, “bir indeks”, “bir arama motoru”, “analitik veritabanı”, “büyük veri çözümü” gibi çeşitli tanımlarla açıklanabilir…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2024-07-04_Atomic-Red-Team-ed50554c53f0.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#a78bfa;border-color:#a78bfa;">Blue Team</span>
-          <span class="article-date">Jul 04, 2024</span>
+      <a href="../posts/2024-07-04_Atomic-Red-Team-ed50554c53f0.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#a78bfa;border-color:#a78bfa;">Mavi Takım</span>
+          <span class="a2">Jul 04, 2024</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Atomic Red Team</h3>
           
                   <p>Atomic Red Team'in ATT&CK odaklı test mantığını ve blue team görünürlüğünü doğrulamak için nasıl kullanılabildiğini anlatıyor.</p>
 </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2024-06-23_Blue-Team-Notlar-m---6-ebadad5cac43.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#a78bfa;border-color:#a78bfa;">Blue Team</span>
-          <span class="article-date">Jun 23, 2024</span>
+      <a href="../posts/2024-06-23_Blue-Team-Notlar-m---6-ebadad5cac43.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#a78bfa;border-color:#a78bfa;">Mavi Takım</span>
+          <span class="a2">Jun 23, 2024</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Blue Team Notlarım — 6</h3>
-          <p>Elasticsearch: Nedir, Nasıl Çalışır ve Ne İçin Kullanılır</p>
+          <p>Elasticsr0: Nedir, Nasıl Çalışır ve Ne İçin Kullanılır</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2024-06-20_Blue-Team-Notlar-m-4-00b4f73d6e40.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#a78bfa;border-color:#a78bfa;">Blue Team</span>
-          <span class="article-date">Jun 20, 2024</span>
+      <a href="../posts/2024-06-20_Blue-Team-Notlar-m-4-00b4f73d6e40.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#a78bfa;border-color:#a78bfa;">Mavi Takım</span>
+          <span class="a2">Jun 20, 2024</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Blue Team Notlarım 4</h3>
           <p>Wazuh</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2024-06-20_Snort-28697758afe3.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#a78bfa;border-color:#a78bfa;">Blue Team</span>
-          <span class="article-date">Jun 20, 2024</span>
+      <a href="../posts/2024-06-20_Snort-28697758afe3.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#a78bfa;border-color:#a78bfa;">Mavi Takım</span>
+          <span class="a2">Jun 20, 2024</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Snort</h3>
           <p>Snort, ağ trafiğini izlemek ve analiz etmek için kullanılan açık kaynaklı bir ağ saldırı tespit ve önleme sistemidir (IDS/IPS). Snort…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2024-06-09_BLUE-TEAM-NOTLARIM---2-449928c9f443.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#a78bfa;border-color:#a78bfa;">Blue Team</span>
-          <span class="article-date">Jun 09, 2024</span>
+      <a href="../posts/2024-06-09_BLUE-TEAM-NOTLARIM---2-449928c9f443.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#a78bfa;border-color:#a78bfa;">Mavi Takım</span>
+          <span class="a2">Jun 09, 2024</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>BLUE TEAM NOTLARIM — 2</h3>
           <p>Olay Müdahalesi Nedir</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2024-06-09_MITRE-ATT-CK-549fa9b92816.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#a78bfa;border-color:#a78bfa;">Blue Team</span>
-          <span class="article-date">Jun 09, 2024</span>
+      <a href="../posts/2024-06-09_MITRE-ATT-CK-549fa9b92816.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#a78bfa;border-color:#a78bfa;">Mavi Takım</span>
+          <span class="a2">Jun 09, 2024</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>MITRE ATT&amp;CK</h3>
           <p>MITRE, framework’u “bir düşmanın saldırı yaşam döngüsünün çeşitli aşamalarını ve hedef aldıkları platformları yansıtan, siber düşman…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2024-06-08_SIEM-254c4b8fefe2.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#a78bfa;border-color:#a78bfa;">Blue Team</span>
-          <span class="article-date">Jun 08, 2024</span>
+      <a href="../posts/2024-06-08_SIEM-254c4b8fefe2.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#a78bfa;border-color:#a78bfa;">Mavi Takım</span>
+          <span class="a2">Jun 08, 2024</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>SIEM</h3>
           <p>SIEM</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2024-05-01_Tryhackme---Pyramid-Of-Pain-Walkthrough-f51a2d3096d1.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#ff6b35;border-color:#ff6b35;">TryHackMe</span>
-          <span class="article-date">May 01, 2024</span>
+      <a href="../posts/2024-05-01_Tryhackme---Pyramid-Of-Pain-Walkthrough-f51a2d3096d1.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#ff6b35;border-color:#ff6b35;">TryHackMe</span>
+          <span class="a2">May 01, 2024</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Tryhackme : Pyramid Of Pain Walkthrough</h3>
           <p>Siber güvenlik alanında bilgi ve becerilerini geliştirmek isteyenler için TryHackMe platformu, Pyramid of Pain odasıyla önemli bir fırsat…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2024-02-18_yorumunuz-i-in-te-ekk-rler-83210717cc1c.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#8b949e;border-color:#8b949e;">Makale</span>
-          <span class="article-date">Feb 18, 2024</span>
+      <a href="../posts/2024-02-18_yorumunuz-i-in-te-ekk-rler-83210717cc1c.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#8b949e;border-color:#8b949e;">Makale</span>
+          <span class="a2">Feb 18, 2024</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>yorumunuz için teşekkürler</h3>
           
                   <p>Orijinal Medium aktarımında yer alan kısa bir not; arşiv bütünlüğünü korumak için listede tutuluyor.</p>
 </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2024-02-17_HTB-ACADEMY---Xss-Basics-edb7e0bb5a64.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#ff4757;border-color:#ff4757;">HackTheBox</span>
-          <span class="article-date">Feb 17, 2024</span>
+      <a href="../posts/2024-02-17_HTB-ACADEMY---Xss-Basics-edb7e0bb5a64.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#ff4757;border-color:#ff4757;">HackTheBox</span>
+          <span class="a2">Feb 17, 2024</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>HTB ACADEMY-  Xss Basics</h3>
           <p>CROSS-SITE SCRIPTING (XSS)</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2024-01-27_Practical-Notes-on-CEH--Certified-Ethical-Hacker--38236e715bad.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00cc6a;border-color:#00cc6a;">Sertifika</span>
-          <span class="article-date">Jan 27, 2024</span>
+      <a href="../posts/2024-01-27_Practical-Notes-on-CEH--Certified-Ethical-Hacker--38236e715bad.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00cc6a;border-color:#00cc6a;">Sertifika</span>
+          <span class="a2">Jan 27, 2024</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Practical Notes on CEH (Certified Ethical Hacker)</h3>
           <p>Introduction: Certified Ethical Hacker (CEH) is a certification program that equips individuals with the skills needed to identify and…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2022-08-22_ceh-notlar-m-6d2888a430d1.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#00cc6a;border-color:#00cc6a;">Sertifika</span>
-          <span class="article-date">Aug 22, 2022</span>
+      <a href="../posts/2022-08-22_ceh-notlar-m-6d2888a430d1.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#00cc6a;border-color:#00cc6a;">Sertifika</span>
+          <span class="a2">Aug 22, 2022</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>ceh notlarım</h3>
           <p>nmblookup</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2022-07-22_Year-of-the-Fox-Writeup-a25efceecd4e.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#ff6b35;border-color:#ff6b35;">TryHackMe</span>
-          <span class="article-date">Jul 22, 2022</span>
+      <a href="../posts/2022-07-22_Year-of-the-Fox-Writeup-a25efceecd4e.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#ff6b35;border-color:#ff6b35;">TryHackMe</span>
+          <span class="a2">Jul 22, 2022</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Year of the Fox Writeup</h3>
           <p>Merhabalar bu yazımda Tryhackmede bulunan Year of the Fox ctfinin çözümünü anlatmaya çalışacağım.</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2022-07-08_Year-of-the-Jellyfish-Writeup-2d57835df613.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#ff6b35;border-color:#ff6b35;">TryHackMe</span>
-          <span class="article-date">Jul 08, 2022</span>
+      <a href="../posts/2022-07-08_Year-of-the-Jellyfish-Writeup-2d57835df613.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#ff6b35;border-color:#ff6b35;">TryHackMe</span>
+          <span class="a2">Jul 08, 2022</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Year of the Jellyfish Writeup</h3>
           <p>Merhabalar bu yazımda Tryhackmede bulunan Year of the Jellyfish ctfinin çözümünü anlatmaya çalışacağım.</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2022-04-27_Osi-Katmanlar--ve-Sald-r--Tipleri-c063efa2dab2.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#8b949e;border-color:#8b949e;">Makale</span>
-          <span class="article-date">Apr 27, 2022</span>
+      <a href="../posts/2022-04-27_Osi-Katmanlar--ve-Sald-r--Tipleri-c063efa2dab2.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#8b949e;border-color:#8b949e;">Makale</span>
+          <span class="a2">Apr 27, 2022</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Osi Katmanları ve Saldırı Tipleri</h3>
           <p>1. Fiziksel Katman</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2022-04-26_Tryhackme-ColddBox--Easy-Write-up-9a025d9363fb.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#ff6b35;border-color:#ff6b35;">TryHackMe</span>
-          <span class="article-date">Apr 26, 2022</span>
+      <a href="../posts/2022-04-26_Tryhackme-ColddBox--Easy-Write-up-9a025d9363fb.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#ff6b35;border-color:#ff6b35;">TryHackMe</span>
+          <span class="a2">Apr 26, 2022</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Tryhackme ColddBox: Easy Write-up</h3>
           <p>Merhabalar bu yazımda Tryhackme de bulunan ColddBox: Easy ctfinin çözümünü anlatacağım . Ctfi bu bağlantıda bulabilirsiniz</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2022-04-25_Oscp-Gaara-Writeup-d34855bce433.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#ffd700;border-color:#ffd700;">CTF</span>
-          <span class="article-date">Apr 25, 2022</span>
+      <a href="../posts/2022-04-25_Oscp-Gaara-Writeup-d34855bce433.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#ffd700;border-color:#ffd700;">CTF</span>
+          <span class="a2">Apr 25, 2022</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Oscp Gaara Writeup</h3>
           <p>Merhabalar bu yazımda Oscp nin Free ctflerinden olan Gaara ctfinin çözümünü anlatacağım 🤗Ctfe şu bağlantıdan ulaşabilirsiniz</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2022-04-22_Ctf-Nedir---60fe8fb5f5e5.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#ffd700;border-color:#ffd700;">CTF</span>
-          <span class="article-date">Apr 22, 2022</span>
+      <a href="../posts/2022-04-22_Ctf-Nedir---60fe8fb5f5e5.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#ffd700;border-color:#ffd700;">CTF</span>
+          <span class="a2">Apr 22, 2022</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Ctf Nedir </h3>
           <p>CTF adıyla bilinen Capture The Flag organizasyonları, siber güvenlikle ilgilenenlerin yeteneklerini test etmek amacıyla güvenli bir ortam…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2022-04-22_Tryhackme-Rehberi-b43f0f7e909f.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#ff6b35;border-color:#ff6b35;">TryHackMe</span>
-          <span class="article-date">Apr 22, 2022</span>
+      <a href="../posts/2022-04-22_Tryhackme-Rehberi-b43f0f7e909f.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#ff6b35;border-color:#ff6b35;">TryHackMe</span>
+          <span class="a2">Apr 22, 2022</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Tryhackme Rehberi</h3>
           <p>Merhabalar ctf e yeni başlayanlar için bir rehber amaçlı seriye başladım . Tüm ctf platformlarının kullanımını anlatmayı amaçlıyorum. Bu…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2022-03-11_Tryhackme-Chocolate-Factory-Writeup-3f36ae958933.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#ff6b35;border-color:#ff6b35;">TryHackMe</span>
-          <span class="article-date">Mar 11, 2022</span>
+      <a href="../posts/2022-03-11_Tryhackme-Chocolate-Factory-Writeup-3f36ae958933.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#ff6b35;border-color:#ff6b35;">TryHackMe</span>
+          <span class="a2">Mar 11, 2022</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Tryhackme Chocolate Factory Writeup</h3>
           <p>Merhabalar bu yazımda Chocolate Factory ctfinin çözümünü anlatıcam.</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2021-10-20_Bwapp---Broken-Auth---Session-Mgmt-Writeup-d22bf3e1faf4.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#ffd700;border-color:#ffd700;">CTF</span>
-          <span class="article-date">Oct 20, 2021</span>
+      <a href="../posts/2021-10-20_Bwapp---Broken-Auth---Session-Mgmt-Writeup-d22bf3e1faf4.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#ffd700;border-color:#ffd700;">CTF</span>
+          <span class="a2">Oct 20, 2021</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Bwapp : Broken Auth &amp; Session Mgmt Writeup</h3>
           <p>Captcha Bypassing</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2021-10-19_Identification-and-Authentication-Failures-22e33bc30d4a.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#8b949e;border-color:#8b949e;">Makale</span>
-          <span class="article-date">Oct 19, 2021</span>
+      <a href="../posts/2021-10-19_Identification-and-Authentication-Failures-22e33bc30d4a.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#8b949e;border-color:#8b949e;">Makale</span>
+          <span class="a2">Oct 19, 2021</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Identification and Authentication Failures</h3>
           <p>Kimlik doğrulama ve oturum yönetimi, kullanıcılara verilere belirli erişimler vermeyi ve oturumları yönetmeyi içerir. Kimlik doğrulamanın…</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2021-10-11_Broken-Access-Control-c2891e64ccda.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#8b949e;border-color:#8b949e;">Makale</span>
-          <span class="article-date">Oct 11, 2021</span>
+      <a href="../posts/2021-10-11_Broken-Access-Control-c2891e64ccda.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#8b949e;border-color:#8b949e;">Makale</span>
+          <span class="a2">Oct 11, 2021</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>Broken Access Control</h3>
           <p>Erişim Kontrolü nedir </p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2021-10-06_OWASP-Top-10-Tryhackme-Writeup-6c4e7256064f.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#ff6b35;border-color:#ff6b35;">TryHackMe</span>
-          <span class="article-date">Oct 06, 2021</span>
+      <a href="../posts/2021-10-06_OWASP-Top-10-Tryhackme-Writeup-6c4e7256064f.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#ff6b35;border-color:#ff6b35;">TryHackMe</span>
+          <span class="a2">Oct 06, 2021</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>OWASP Top 10 Tryhackme Writeup</h3>
           <p>Task 1 — Tanıtım</p>
         </div>
         <span class="arrow">→</span>
       </a>
-      <a href="../posts/2021-09-08_MX-Linux--nceleme-f9925b593299.html" class="article-item reveal">
-        <div class="article-meta">
-          <span class="article-cat" style="color:#8b949e;border-color:#8b949e;">Makale</span>
-          <span class="article-date">Sep 08, 2021</span>
+      <a href="../posts/2021-09-08_MX-Linux--nceleme-f9925b593299.html" class="a5 v0">
+        <div class="a0">
+          <span class="a1" style="color:#8b949e;border-color:#8b949e;">Makale</span>
+          <span class="a2">Sep 08, 2021</span>
         </div>
-        <div class="article-body">
+        <div class="a3">
           <h3>MX Linux İnceleme</h3>
           <p>MX Linux, antiX ve eski MEPIS toplulukları arasında, her bir dağıtımdan gelen en iyi araçları ve yetenekleri kullanan, ortak bir…</p>
         </div>
@@ -1141,6 +1141,6 @@
   </div>
 </div>
 
-<script>(function(){const canvas = document.getElementById('particles-canvas');const ctx = canvas.getContext('2d');let W, H, mouse = { x: -9999, y: -9999 };const PARTICLE_COUNT = 156;const LINK_DIST = 125;const REPULSE_DIST = 135;const SPEED = 0.16;const ESCAPE_FORCE = 0.40;const WANDER_FORCE = 0.006;const COLOR = '0, 255, 136';let particles = [];function resize() {W = canvas.width = window.innerWidth;H = canvas.height = window.innerHeight;}function Particle() {this.x = Math.random() * W;this.y = Math.random() * H;this.vx = (Math.random() - 0.5) * SPEED;this.vy = (Math.random() - 0.5) * SPEED;this.r = Math.random() * 1.8 + 0.8;this.angle = Math.random() * Math.PI * 2;this.spin = (Math.random() - 0.5) * 0.10;}Particle.prototype.update = function () {this.angle += this.spin;this.vx += Math.cos(this.angle) * WANDER_FORCE;this.vy += Math.sin(this.angle) * WANDER_FORCE;const dx = this.x - mouse.x;const dy = this.y - mouse.y;const dist = Math.sqrt(dx * dx + dy * dy);if (dist < REPULSE_DIST && dist > 0) {const force = Math.pow((REPULSE_DIST - dist) / REPULSE_DIST, 1.7);this.vx += (dx / dist) * force * ESCAPE_FORCE;this.vy += (dy / dist) * force * ESCAPE_FORCE;}const spd = Math.sqrt(this.vx * this.vx + this.vy * this.vy);if (spd > 1.45) { this.vx = (this.vx / spd) * 1.45; this.vy = (this.vy / spd) * 1.45; }this.vx *= 0.992;this.vy *= 0.992;this.x += this.vx;this.y += this.vy;if (this.x < 0) this.x = W;if (this.x > W) this.x = 0;if (this.y < 0) this.y = H;if (this.y > H) this.y = 0;};function init() {particles = [];for (let i = 0; i < PARTICLE_COUNT; i++) particles.push(new Particle());}function draw() {ctx.clearRect(0, 0, W, H);for (let i = 0; i < particles.length; i++) {for (let j = i + 1; j < particles.length; j++) {const dx = particles[i].x - particles[j].x;const dy = particles[i].y - particles[j].y;const dist = Math.sqrt(dx * dx + dy * dy);if (dist < LINK_DIST) {const alpha = (1 - dist / LINK_DIST) * 0.16;ctx.strokeStyle = `rgba(${COLOR}, ${alpha})`;ctx.lineWidth = 0.95;ctx.beginPath();ctx.moveTo(particles[i].x, particles[i].y);ctx.lineTo(particles[j].x, particles[j].y);ctx.stroke();}}}particles.forEach(particle => {particle.update();ctx.beginPath();ctx.arc(particle.x, particle.y, particle.r, 0, Math.PI * 2);ctx.fillStyle = `rgba(${COLOR}, 0.38)`;ctx.fill();});requestAnimationFrame(draw);}window.addEventListener('resize', () => { resize(); init(); });window.addEventListener('mousemove', event => { mouse.x = event.clientX; mouse.y = event.clientY; });window.addEventListener('mouseleave', () => { mouse.x = -9999; mouse.y = -9999; });resize();init();draw();const navLinks = document.getElementById('nav-links');document.getElementById('menu-toggle').addEventListener('click', () => navLinks.classList.toggle('open'));navLinks.querySelectorAll('a').forEach(link => {link.addEventListener('click', () => navLinks.classList.remove('open'));});const items = document.querySelectorAll('.article-item');const btns = document.querySelectorAll('.filter-btn');const search = document.getElementById('search');const countLabel = document.getElementById('count-label');function update(){const activeCat = document.querySelector('.filter-btn.active').dataset.cat;const q = search.value.toLowerCase();let visible = 0;items.forEach(item => {const cat = item.querySelector('.article-cat').textContent.trim();const text = item.textContent.toLowerCase();const catMatch = activeCat === 'all' || cat.includes(activeCat) || activeCat === cat;const searchMatch = !q || text.includes(q);if (catMatch && searchMatch) { item.classList.remove('hidden'); visible++; }else item.classList.add('hidden');});countLabel.textContent = visible + ' içerik gösteriliyor';}btns.forEach(btn => btn.addEventListener('click', () => {btns.forEach(b => b.classList.remove('active'));btn.classList.add('active');update();}));const urlCat = new URLSearchParams(window.location.search).get('cat');if (urlCat) {const target = [...btns].find(b => b.dataset.cat === urlCat);if (target) { btns.forEach(b => b.classList.remove('active')); target.classList.add('active'); }}search.addEventListener('input', update);const obs = new IntersectionObserver(entries => {entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });}, {threshold:.05});document.querySelectorAll('.reveal').forEach(el => obs.observe(el));})();</script>
+<script>(function(){const canvas = document.getElementById('p0');const ctx = canvas.getContext('2d');let W, H, mouse = { x: -9999, y: -9999 };const PARTICLE_COUNT = 156;const LINK_DIST = 125;const REPULSE_DIST = 135;const SPEED = 0.16;const ESCAPE_FORCE = 0.40;const WANDER_FORCE = 0.006;const COLOR = '0, 255, 136';let particles = [];function resize() {W = canvas.width = window.innerWidth;H = canvas.height = window.innerHeight;}function Particle() {this.x = Math.random() * W;this.y = Math.random() * H;this.vx = (Math.random() - 0.5) * SPEED;this.vy = (Math.random() - 0.5) * SPEED;this.r = Math.random() * 1.8 + 0.8;this.angle = Math.random() * Math.PI * 2;this.spin = (Math.random() - 0.5) * 0.10;}Particle.prototype.update = function () {this.angle += this.spin;this.vx += Math.cos(this.angle) * WANDER_FORCE;this.vy += Math.sin(this.angle) * WANDER_FORCE;const dx = this.x - mouse.x;const dy = this.y - mouse.y;const dist = Math.sqrt(dx * dx + dy * dy);if (dist < REPULSE_DIST && dist > 0) {const force = Math.pow((REPULSE_DIST - dist) / REPULSE_DIST, 1.7);this.vx += (dx / dist) * force * ESCAPE_FORCE;this.vy += (dy / dist) * force * ESCAPE_FORCE;}const spd = Math.sqrt(this.vx * this.vx + this.vy * this.vy);if (spd > 1.45) { this.vx = (this.vx / spd) * 1.45; this.vy = (this.vy / spd) * 1.45; }this.vx *= 0.992;this.vy *= 0.992;this.x += this.vx;this.y += this.vy;if (this.x < 0) this.x = W;if (this.x > W) this.x = 0;if (this.y < 0) this.y = H;if (this.y > H) this.y = 0;};function init() {particles = [];for (let i = 0; i < PARTICLE_COUNT; i++) particles.push(new Particle());}function draw() {ctx.clearRect(0, 0, W, H);for (let i = 0; i < particles.length; i++) {for (let j = i + 1; j < particles.length; j++) {const dx = particles[i].x - particles[j].x;const dy = particles[i].y - particles[j].y;const dist = Math.sqrt(dx * dx + dy * dy);if (dist < LINK_DIST) {const alpha = (1 - dist / LINK_DIST) * 0.16;ctx.strokeStyle = `rgba(${COLOR}, ${alpha})`;ctx.lineWidth = 0.95;ctx.beginPath();ctx.moveTo(particles[i].x, particles[i].y);ctx.lineTo(particles[j].x, particles[j].y);ctx.stroke();}}}particles.forEach(particle => {particle.update();ctx.beginPath();ctx.arc(particle.x, particle.y, particle.r, 0, Math.PI * 2);ctx.fillStyle = `rgba(${COLOR}, 0.38)`;ctx.fill();});requestAnimationFrame(draw);}window.addEventListener('resize', () => { resize(); init(); });window.addEventListener('mousemove', event => { mouse.x = event.clientX; mouse.y = event.clientY; });window.addEventListener('mouseleave', () => { mouse.x = -9999; mouse.y = -9999; });resize();init();draw();const navLinks = document.getElementById('n0');document.getElementById('m0').addEventListener('click', () => navLinks.classList.toggle('open'));navLinks.querySelectorAll('a').forEach(link => {link.addEventListener('click', () => navLinks.classList.remove('open'));});const items = document.querySelectorAll('.a5');const d2s = document.querySelectorAll('.y7');const sr0 = document.getElementById('sr0');const countLabel = document.getElementById('y9');function update(){const activeCat = document.querySelector('.y7.active').dataset.cat;const q = sr0.value.toLowerCase();let v1 = 0;items.forEach(item => {const cat = item.querySelector('.a1').textContent.trim();const text = item.textContent.toLowerCase();const catMatch = activeCat === 'all' || cat.includes(activeCat) || activeCat === cat;const sr0Match = !q || text.includes(q);if (catMatch && sr0Match) { item.classList.remove('hidden'); v1++; }else item.classList.add('hidden');});countLabel.textContent = v1 + ' içerik gösteriliyor';}d2s.forEach(d2 => d2.addEventListener('click', () => {d2s.forEach(b => b.classList.remove('active'));d2.classList.add('active');update();}));const urlCat = new URLSearchParams(window.location.sr0).get('cat');if (urlCat) {const target = [...d2s].find(b => b.dataset.cat === urlCat);if (target) { d2s.forEach(b => b.classList.remove('active')); target.classList.add('active'); }}sr0.addEventListener('input', update);const obs = new IntersectionObserver(entries => {entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('v1'); obs.unobserve(e.target); } });}, {threshold:.05});document.querySelectorAll('.v0').forEach(el => obs.observe(el));})();</script>
 </body>
 </html>

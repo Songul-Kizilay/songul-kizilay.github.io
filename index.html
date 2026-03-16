@@ -7,305 +7,305 @@
   <meta name="description" content="Security researcher focused on web application security, red team operations, bug bounty, and practical offensive tooling." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}:root{--green:#00ff88;--green-dim:#00cc6a;--cyan:#00d4ff;--red:#ff4757;--bg:#0a0e0f;--bg2:#0f1416;--bg3:#141a1c;--border:rgba(0,255,136,0.12);--text:#c9d1d9;--text-dim:#8b949e;--mono:'JetBrains Mono',monospace;--sans:'Inter',sans-serif}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.7;overflow-x:hidden}#particles-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:flex-start;padding:1rem 2rem;background:rgba(10,14,15,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}.nav-logo{font-family:var(--mono);font-size:0.95rem;color:var(--green);text-decoration:none;letter-spacing:0.05em;margin-right:auto}.nav-logo span{color:var(--text-dim)}.nav-links{display:flex;gap:2rem;list-style:none;margin-left:0}.nav-links a.active{color:var(--green)}.nav-actions{display:flex;align-items:center;gap:0.75rem;margin-left:0.75rem}.nav-btn{display:inline-flex;align-items:center;justify-content:center;width:2.4rem;height:2.4rem;border:1px solid var(--border);border-radius:6px;background:transparent;color:var(--text-dim);font-family:var(--mono);text-decoration:none;cursor:pointer;transition:all 0.2s}.nav-btn.is-active{color:var(--green);border-color:var(--green)}.nav-btn:hover{color:var(--green);border-color:var(--green)}.nav-menu-btn{display:none}.nav-links a{font-family:var(--mono);font-size:0.8rem;color:var(--text-dim);text-decoration:none;letter-spacing:0.08em;transition:color 0.2s}.nav-links a:hover{color:var(--green)}section{position:relative;z-index:1;scroll-margin-top:5.5rem}#hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:6rem 1.5rem 4rem}.hero-inner{max-width:720px}.hero-badge{display:inline-block;font-family:var(--mono);font-size:0.72rem;color:var(--green);border:1px solid var(--green);padding:0.3rem 0.9rem;border-radius:2px;margin-bottom:1.8rem;letter-spacing:0.15em;text-transform:uppercase}.hero-name{font-family:var(--mono);font-size:clamp(2.2rem,6vw,3.8rem);font-weight:700;color:#fff;line-height:1.1;margin-bottom:0.4rem}.hero-name .accent{color:var(--green)}.hero-role{font-family:var(--mono);font-size:1rem;color:var(--cyan);margin-bottom:1.6rem;letter-spacing:0.05em}.hero-value{max-width:760px;margin:0 auto 1.25rem;color:var(--text-dim);font-size:0.96rem;line-height:1.9}.hero-focus{display:flex;flex-wrap:wrap;justify-content:center;gap:0.65rem;margin:0 0 1.8rem}.hero-focus span{font-family:var(--mono);font-size:0.72rem;color:var(--green);border:1px solid var(--border);border-radius:999px;padding:0.35rem 0.75rem;background:rgba(255,255,255,0.02);letter-spacing:0.04em}.terminal-box{background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:1.2rem 1.5rem;text-align:left;margin-bottom:2rem;font-family:var(--mono);font-size:0.85rem;overflow-x:auto}.terminal-top{display:flex;gap:6px;margin-bottom:0.8rem}.dot{width:11px;height:11px;border-radius:50%}.dot-r{background:#ff5f56}.dot-y{background:#ffbd2e}.dot-g{background:#27c93f}.terminal-line{color:var(--text-dim)}.terminal-line .prompt{color:var(--green)}.terminal-line .cmd{color:#fff}.terminal-line .out{color:var(--text)}#typewriter{color:var(--text);white-space:pre-wrap}.terminal-output{min-height:5rem;margin-bottom:0.8rem}.terminal-actions{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.8rem}.terminal-action{border:1px solid var(--border);background:transparent;color:var(--text-dim);padding:0.35rem 0.65rem;border-radius:999px;font-family:var(--mono);font-size:0.72rem;cursor:pointer;transition:all 0.2s}.terminal-action:hover{color:var(--green);border-color:var(--green)}.terminal-input-row{display:flex;gap:0.6rem;flex-wrap:wrap}.terminal-input{flex:1 1 280px;min-width:0;padding:0.7rem 0.9rem;border-radius:4px;border:1px solid var(--border);background:rgba(255,255,255,0.02);color:var(--text);font-family:var(--mono);font-size:0.8rem;outline:none}.terminal-input:focus{border-color:var(--green)}.terminal-submit{cursor:pointer;border:1px solid var(--green);background:var(--green);color:#000;font-family:var(--mono);font-size:0.75rem;padding:0.7rem 1rem;border-radius:4px;font-weight:700}.cursor{display:inline-block;width:8px;height:1em;background:var(--green);animation:blink 1s step-end infinite;vertical-align:text-bottom;margin-left:2px}@keyframes blink{50%{opacity:0}}.hero-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}.btn{font-family:var(--mono);font-size:0.8rem;padding:0.7rem 1.6rem;border-radius:3px;text-decoration:none;letter-spacing:0.08em;transition:all 0.2s;display:inline-block}.btn-primary{background:var(--green);color:#000;font-weight:700}.btn-primary:hover{background:var(--green-dim);transform:translateY(-2px)}.btn-outline{border:1px solid var(--border);color:var(--text-dim)}.btn-outline:hover{border-color:var(--green);color:var(--green);transform:translateY(-2px)}.content-wrap{max-width:1100px;margin:0 auto;padding:0 1.5rem}.section-header{display:flex;align-items:center;gap:1rem;margin-bottom:2.5rem}.section-header h2{font-family:var(--mono);font-size:1.1rem;color:var(--green);letter-spacing:0.08em;text-transform:uppercase;white-space:nowrap}.section-header::after{content:'';flex:1;height:1px;background:var(--border)}.section-copy{max-width:760px;margin:-1.2rem 0 2rem;color:var(--text-dim);font-size:0.9rem;line-height:1.85}#proof{padding:3rem 0 2rem}.proof-card{min-height:100%}.proof-metric{font-family:var(--mono);font-size:1.35rem;color:#fff;margin:0.1rem 0 0.55rem}.proof-note{font-family:var(--mono);font-size:0.74rem;color:var(--green);letter-spacing:0.08em;text-transform:uppercase;margin-top:1rem}.proof-list{margin-top:0.85rem;padding-left:1rem;color:var(--text-dim);font-size:0.8rem;line-height:1.75}.proof-list li + li{margin-top:0.25rem}#writeups{padding:6rem 0 4rem}.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.2rem}.card{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:1.4rem 1.6rem;text-decoration:none;color:inherit;transition:border-color 0.2s,transform 0.2s,box-shadow 0.2s;display:block}.card:hover{border-color:var(--green);transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,255,136,0.08)}.card-tag{font-family:var(--mono);font-size:0.68rem;color:var(--red);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:0.6rem}.card-tag.blue{color:var(--cyan)}.card-tag.green{color:var(--green)}.card h3{font-family:var(--mono);font-size:0.95rem;color:#fff;margin-bottom:0.5rem;line-height:1.4}.card p{font-size:0.82rem;color:var(--text-dim);line-height:1.6}.card-footer{display:flex;align-items:center;justify-content:space-between;margin-top:1rem;padding-top:0.8rem;border-top:1px solid var(--border);font-family:var(--mono);font-size:0.72rem;color:var(--text-dim)}.card-footer .arrow{color:var(--green)}#articles{padding:4rem 0}.articles-list{display:flex;flex-direction:column;gap:0.8rem}.article-item{display:flex;align-items:center;gap:1rem;background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:1rem 1.4rem;text-decoration:none;color:inherit;transition:border-color 0.2s,transform 0.15s}.article-item:hover{border-color:var(--green);transform:translateX(6px)}.article-num{font-family:var(--mono);font-size:0.75rem;color:var(--green);opacity:0.6;min-width:28px}.article-body{flex:1}.article-body h3{font-family:var(--mono);font-size:0.9rem;color:#fff;margin-bottom:0.2rem}.article-body p{font-size:0.8rem;color:var(--text-dim)}.article-tag{font-family:var(--mono);font-size:0.65rem;padding:0.2rem 0.6rem;border-radius:2px;border:1px solid;text-transform:uppercase;letter-spacing:0.1em;white-space:nowrap}.tag-sqli{color:var(--red);border-color:var(--red)}.tag-xss{color:var(--cyan);border-color:var(--cyan)}.tag-recon{color:var(--green);border-color:var(--green)}.tag-blue{color:#a78bfa;border-color:#a78bfa}#tools{padding:4rem 0}.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem}.tool-card{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:1.3rem 1.5rem;transition:border-color 0.2s,transform 0.2s}.tool-card:hover{border-color:var(--cyan);transform:translateY(-3px)}.tool-icon{font-size:1.5rem;margin-bottom:0.7rem}.tool-card h3{font-family:var(--mono);font-size:0.9rem;color:var(--cyan);margin-bottom:0.4rem}.tool-card p{font-size:0.8rem;color:var(--text-dim)}.carousel-shell{position:relative;overflow:hidden}.carousel-track{display:flex;transition:transform 0.3s ease}.carousel-slide{min-width:100%}.carousel-controls{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-top:1rem}.carousel-dots{display:flex;gap:0.5rem}.carousel-dot{width:10px;height:10px;border-radius:50%;border:1px solid var(--border);background:transparent;cursor:pointer}.carousel-dot.active{background:var(--green);border-color:var(--green)}.repo-header{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin:2rem 0 1rem;flex-wrap:wrap}.repo-header p{font-size:0.82rem;color:var(--text-dim);font-family:var(--mono)}.repo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}.repo-card{display:block;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1.2rem 1.3rem;text-decoration:none;color:inherit;transition:transform 0.2s,border-color 0.2s,box-shadow 0.2s}.repo-card:hover{transform:translateY(-4px);border-color:var(--green);box-shadow:0 10px 24px rgba(0,255,136,0.08)}.repo-card h3{font-family:var(--mono);font-size:0.9rem;color:#fff;margin-bottom:0.55rem;line-height:1.45}.repo-card p{font-size:0.8rem;color:var(--text-dim);line-height:1.7;margin-bottom:0.9rem}.repo-meta{display:flex;flex-wrap:wrap;gap:0.45rem}.repo-meta span{font-family:var(--mono);font-size:0.67rem;color:var(--green);border:1px solid var(--border);border-radius:999px;padding:0.24rem 0.58rem}#about{padding:4rem 0 2rem}.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}@media (max-width:640px){.about-grid{grid-template-columns:1fr}}.about-text p{font-size:0.9rem;color:var(--text-dim);margin-bottom:1rem;line-height:1.8}.about-text p span{color:var(--green)}.skills-box{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:1.5rem}.skills-box h3{font-family:var(--mono);font-size:0.78rem;color:var(--green);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1rem}.skill-tags{display:flex;flex-wrap:wrap;gap:0.5rem}.skill-tag{font-family:var(--mono);font-size:0.72rem;color:var(--text-dim);background:var(--bg3);border:1px solid var(--border);padding:0.25rem 0.65rem;border-radius:2px;text-decoration:none;transition:border-color 0.2s,color 0.2s}a.skill-tag:hover{border-color:var(--green);color:var(--green);cursor:pointer}#cta{padding:1rem 0 0}.cta-panel{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;background:linear-gradient(180deg,rgba(15,20,22,0.92),rgba(10,14,15,0.96));border:1px solid var(--border);border-radius:10px;padding:1.7rem}.cta-copy{max-width:620px}.cta-copy h3{font-family:var(--mono);font-size:1rem;color:#fff;margin-bottom:0.65rem}.cta-copy p{color:var(--text-dim);font-size:0.9rem;line-height:1.8}.cta-links{display:flex;flex-wrap:wrap;gap:0.75rem;align-items:center}footer{position:relative;z-index:1;text-align:center;padding:3rem 1.5rem;border-top:1px solid var(--border);margin-top:4rem}.footer-links{display:flex;gap:1.5rem;justify-content:center;margin-bottom:1.2rem;list-style:none}.footer-links a{font-family:var(--mono);font-size:0.8rem;color:var(--text-dim);text-decoration:none;transition:color 0.2s}.footer-links a:hover{color:var(--green)}.footer-copy{font-family:var(--mono);font-size:0.72rem;color:var(--text-dim);opacity:0.5}.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease}.reveal.visible{opacity:1;transform:none}@media (max-width:600px){nav{padding:0.9rem 1rem;flex-wrap:wrap}.nav-actions{margin-left:auto}.nav-menu-btn{display:inline-flex;align-items:center;justify-content:center}.nav-links{display:none;width:100%;flex-direction:column;gap:0.5rem;padding-top:0.8rem}.nav-links.open{display:flex}.nav-links a{font-size:0.88rem;padding:0.45rem 0}.hero-role,.hero-value,.section-copy,.about-text p,.card p,.article-body p,.tool-card p{font-size:0.95rem;line-height:1.8}.hero-name{font-size:clamp(2.4rem,10vw,3.2rem)}.article-item{flex-direction:column;align-items:flex-start}.terminal-input-row{flex-direction:column}}</style>
+  <style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}:root{--aa:#00ff88;--ab:#00cc6a;--ac:#00d4ff;--ad:#ff4757;--ae:#0a0e0f;--af:#0f1416;--ag:#141a1c;--ah:rgba(0,255,136,0.12);--ai:#c9d1d9;--aj:#8b949e;--ak:'JetBrains Mono',monospace;--al:'Inter',sans-serif}html{scroll-behavior:smooth}body{background:var(--ae);color:var(--ai);font-family:var(--al);line-height:1.7;overflow-x:hidden}#p0{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:flex-start;padding:1rem 2rem;background:rgba(10,14,15,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--ah)}.nav-logo{font-family:var(--ak);font-size:0.95rem;color:var(--aa);text-decoration:none;letter-spacing:0.05em;margin-right:auto}.nav-logo span{color:var(--aj)}.n0{display:flex;gap:2rem;list-style:none;margin-left:0}.n0 a.active{color:var(--aa)}.n1{display:flex;align-items:center;gap:0.75rem;margin-left:0.75rem}.n3{display:inline-flex;align-items:center;justify-content:center;width:2.4rem;height:2.4rem;border:1px solid var(--ah);border-radius:6px;background:transparent;color:var(--aj);font-family:var(--ak);text-decoration:none;cursor:pointer;transition:all 0.2s}.n3.is-active{color:var(--aa);border-color:var(--aa)}.n3:hover{color:var(--aa);border-color:var(--aa)}.n2{display:none}.n0 a{font-family:var(--ak);font-size:0.8rem;color:var(--aj);text-decoration:none;letter-spacing:0.08em;transition:color 0.2s}.n0 a:hover{color:var(--aa)}section{position:relative;z-index:1;scroll-margin-top:5.5rem}#s3{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:6rem 1.5rem 4rem}.x0{max-width:720px}.x1{display:inline-block;font-family:var(--ak);font-size:0.72rem;color:var(--aa);border:1px solid var(--aa);padding:0.3rem 0.9rem;border-radius:2px;margin-bottom:1.8rem;letter-spacing:0.15em;text-transform:uppercase}.x2{font-family:var(--ak);font-size:clamp(2.2rem,6vw,3.8rem);font-weight:700;color:#fff;line-height:1.1;margin-bottom:0.4rem}.x2 .accent{color:var(--aa)}.x3{font-family:var(--ak);font-size:1rem;color:var(--ac);margin-bottom:1.6rem;letter-spacing:0.05em}.x4{max-width:760px;margin:0 auto 1.25rem;color:var(--aj);font-size:0.96rem;line-height:1.9}.x5{display:flex;flex-wrap:wrap;justify-content:center;gap:0.65rem;margin:0 0 1.8rem}.x5 span{font-family:var(--ak);font-size:0.72rem;color:var(--aa);border:1px solid var(--ah);border-radius:999px;padding:0.35rem 0.75rem;background:rgba(255,255,255,0.02);letter-spacing:0.04em}.o6{background:var(--ag);border:1px solid var(--ah);border-radius:6px;padding:1.2rem 1.5rem;text-align:left;margin-bottom:2rem;font-family:var(--ak);font-size:0.85rem;overflow-x:auto}.terminal-top{display:flex;gap:6px;margin-bottom:0.8rem}.dot{width:11px;height:11px;border-radius:50%}.dot-r{background:#ff5f56}.dot-y{background:#ffbd2e}.dot-g{background:#27c93f}.terminal-line{color:var(--aj)}.terminal-line .prompt{color:var(--aa)}.terminal-line .cmd{color:#fff}.terminal-line .out{color:var(--ai)}#tw0{color:var(--ai);white-space:pre-wrap}.o0{min-height:5rem;margin-bottom:0.8rem}.o1{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.8rem}.o2{border:1px solid var(--ah);background:transparent;color:var(--aj);padding:0.35rem 0.65rem;border-radius:999px;font-family:var(--ak);font-size:0.72rem;cursor:pointer;transition:all 0.2s}.o2:hover{color:var(--aa);border-color:var(--aa)}.o3{display:flex;gap:0.6rem;flex-wrap:wrap}.o4{flex:1 1 280px;min-width:0;padding:0.7rem 0.9rem;border-radius:4px;border:1px solid var(--ah);background:rgba(255,255,255,0.02);color:var(--ai);font-family:var(--ak);font-size:0.8rem;outline:none}.o4:focus{border-color:var(--aa)}.o5{cursor:pointer;border:1px solid var(--aa);background:var(--aa);color:#000;font-family:var(--ak);font-size:0.75rem;padding:0.7rem 1rem;border-radius:4px;font-weight:700}.cursor{display:inline-block;width:8px;height:1em;background:var(--aa);animation:blink 1s step-end infinite;vertical-align:text-bottom;margin-left:2px}@keyframes blink{50%{opacity:0}}.s3-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}.d2{font-family:var(--ak);font-size:0.8rem;padding:0.7rem 1.6rem;border-radius:3px;text-decoration:none;letter-spacing:0.08em;transition:all 0.2s;display:inline-block}.d0{background:var(--aa);color:#000;font-weight:700}.d0:hover{background:var(--ab);transform:translateY(-2px)}.d1{border:1px solid var(--ah);color:var(--aj)}.d1:hover{border-color:var(--aa);color:var(--aa);transform:translateY(-2px)}.w0{max-width:1100px;margin:0 auto;padding:0 1.5rem}.w1{display:flex;align-items:center;gap:1rem;margin-bottom:2.5rem}.w1 h2{font-family:var(--ak);font-size:1.1rem;color:var(--aa);letter-spacing:0.08em;text-transform:uppercase;white-space:nowrap}.w1::after{content:'';flex:1;height:1px;background:var(--ah)}.w2{max-width:760px;margin:-1.2rem 0 2rem;color:var(--aj);font-size:0.9rem;line-height:1.85}#proof{padding:3rem 0 2rem}.c0{min-height:100%}.c1{font-family:var(--ak);font-size:1.35rem;color:#fff;margin:0.1rem 0 0.55rem}.c2{font-family:var(--ak);font-size:0.74rem;color:var(--aa);letter-spacing:0.08em;text-transform:uppercase;margin-top:1rem}.c3{margin-top:0.85rem;padding-left:1rem;color:var(--aj);font-size:0.8rem;line-height:1.75}.c3 li+li{margin-top:0.25rem}#writeups{padding:6rem 0 4rem}.g0{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.2rem}.card{background:var(--af);border:1px solid var(--ah);border-radius:6px;padding:1.4rem 1.6rem;text-decoration:none;color:inherit;transition:border-color 0.2s,transform 0.2s,box-shadow 0.2s;display:block}.card:hover{border-color:var(--aa);transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,255,136,0.08)}.c5{font-family:var(--ak);font-size:0.68rem;color:var(--ad);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:0.6rem}.c5.blue{color:var(--ac)}.c5.green{color:var(--aa)}.card h3{font-family:var(--ak);font-size:0.95rem;color:#fff;margin-bottom:0.5rem;line-height:1.4}.card p{font-size:0.82rem;color:var(--aj);line-height:1.6}.c4{display:flex;align-items:center;justify-content:space-between;margin-top:1rem;padding-top:0.8rem;border-top:1px solid var(--ah);font-family:var(--ak);font-size:0.72rem;color:var(--aj)}.c4 .arrow{color:var(--aa)}#articles{padding:4rem 0}.a7{display:flex;flex-direction:column;gap:0.8rem}.a5{display:flex;align-items:center;gap:1rem;background:var(--af);border:1px solid var(--ah);border-radius:6px;padding:1rem 1.4rem;text-decoration:none;color:inherit;transition:border-color 0.2s,transform 0.15s}.a5:hover{border-color:var(--aa);transform:translateX(6px)}.a6{font-family:var(--ak);font-size:0.75rem;color:var(--aa);opacity:0.6;min-width:28px}.a3{flex:1}.a3 h3{font-family:var(--ak);font-size:0.9rem;color:#fff;margin-bottom:0.2rem}.a3 p{font-size:0.8rem;color:var(--aj)}.a4{font-family:var(--ak);font-size:0.65rem;padding:0.2rem 0.6rem;border-radius:2px;border:1px solid;text-transform:uppercase;letter-spacing:0.1em;white-space:nowrap}.tag-sqli{color:var(--ad);border-color:var(--ad)}.tag-xss{color:var(--ac);border-color:var(--ac)}.tag-recon{color:var(--aa);border-color:var(--aa)}.tag-blue{color:#a78bfa;border-color:#a78bfa}#tools{padding:4rem 0}.u2{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem}.u0{background:var(--af);border:1px solid var(--ah);border-radius:6px;padding:1.3rem 1.5rem;transition:border-color 0.2s,transform 0.2s}.u0:hover{border-color:var(--ac);transform:translateY(-3px)}.u1{font-size:1.5rem;margin-bottom:0.7rem}.u0 h3{font-family:var(--ak);font-size:0.9rem;color:var(--ac);margin-bottom:0.4rem}.u0 p{font-size:0.8rem;color:var(--aj)}.k0{position:relative;overflow:hidden}.k1{display:flex;transition:transform 0.3s ease}.k2{min-width:100%}.k3{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-top:1rem}.k4{display:flex;gap:0.5rem}.k5{width:10px;height:10px;border-radius:50%;border:1px solid var(--ah);background:transparent;cursor:pointer}.k5.active{background:var(--aa);border-color:var(--aa)}.r0{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin:2rem 0 1rem;flex-wrap:wrap}.r0 p{font-size:0.82rem;color:var(--aj);font-family:var(--ak)}.r1{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}.r2{display:block;background:var(--af);border:1px solid var(--ah);border-radius:10px;padding:1.2rem 1.3rem;text-decoration:none;color:inherit;transition:transform 0.2s,border-color 0.2s,box-shadow 0.2s}.r2:hover{transform:translateY(-4px);border-color:var(--aa);box-shadow:0 10px 24px rgba(0,255,136,0.08)}.r2 h3{font-family:var(--ak);font-size:0.9rem;color:#fff;margin-bottom:0.55rem;line-height:1.45}.r2 p{font-size:0.8rem;color:var(--aj);line-height:1.7;margin-bottom:0.9rem}.repo-meta{display:flex;flex-wrap:wrap;gap:0.45rem}.repo-meta span{font-family:var(--ak);font-size:0.67rem;color:var(--aa);border:1px solid var(--ah);border-radius:999px;padding:0.24rem 0.58rem}#about{padding:4rem 0 2rem}.b0{display:grid;grid-template-columns:1fr 1fr;gap:2rem}@media (max-width:640px){.b0{grid-template-columns:1fr}}.b1 p{font-size:0.9rem;color:var(--aj);margin-bottom:1rem;line-height:1.8}.b1 p span{color:var(--aa)}.b2{background:var(--af);border:1px solid var(--ah);border-radius:6px;padding:1.5rem}.b2 h3{font-family:var(--ak);font-size:0.78rem;color:var(--aa);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1rem}.b3{display:flex;flex-wrap:wrap;gap:0.5rem}.b4{font-family:var(--ak);font-size:0.72rem;color:var(--aj);background:var(--ag);border:1px solid var(--ah);padding:0.25rem 0.65rem;border-radius:2px;text-decoration:none;transition:border-color 0.2s,color 0.2s}a.b4:hover{border-color:var(--aa);color:var(--aa);cursor:pointer}#cta{padding:1rem 0 0}.t0{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;background:linear-gradient(180deg,rgba(15,20,22,0.92),rgba(10,14,15,0.96));border:1px solid var(--ah);border-radius:10px;padding:1.7rem}.t1{max-width:620px}.t1 h3{font-family:var(--ak);font-size:1rem;color:#fff;margin-bottom:0.65rem}.t1 p{color:var(--aj);font-size:0.9rem;line-height:1.8}.t2{display:flex;flex-wrap:wrap;gap:0.75rem;align-items:center}footer{position:relative;z-index:1;text-align:center;padding:3rem 1.5rem;border-top:1px solid var(--ah);margin-top:4rem}.f0{display:flex;gap:1.5rem;justify-content:center;margin-bottom:1.2rem;list-style:none}.f0 a{font-family:var(--ak);font-size:0.8rem;color:var(--aj);text-decoration:none;transition:color 0.2s}.f0 a:hover{color:var(--aa)}.f1{font-family:var(--ak);font-size:0.72rem;color:var(--aj);opacity:0.5}.v0{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease}.v0.v1{opacity:1;transform:none}@media (max-width:600px){nav{padding:0.9rem 1rem;flex-wrap:wrap}.n1{margin-left:auto}.n2{display:inline-flex;align-items:center;justify-content:center}.n0{display:none;width:100%;flex-direction:column;gap:0.5rem;padding-top:0.8rem}.n0.open{display:flex}.n0 a{font-size:0.88rem;padding:0.45rem 0}.x3,.x4,.w2,.b1 p,.card p,.a3 p,.u0 p{font-size:0.95rem;line-height:1.8}.x2{font-size:clamp(2.4rem,10vw,3.2rem)}.a5{flex-direction:column;align-items:flex-start}.o3{flex-direction:column}}</style>
 </head>
 <body>
 
-<canvas id="particles-canvas"></canvas>
+<canvas id="p0"></canvas>
 
 <nav>
   <a href="index.html" class="nav-logo">songul<span>@</span>sec<span>:~$</span></a>
-  <ul class="nav-links" id="nav-links">
+  <ul class="n0" id="n0">
     <li><a href="#writeups">writeups</a></li>
     <li><a href="blog.html">blog</a></li>
     <li><a href="#tools">tools</a></li>
     <li><a href="about.html">about</a></li>
   </ul>
-  <div class="nav-actions">
-    <a class="nav-btn is-active" href="index.html" aria-label="English version">EN</a>
-    <a class="nav-btn" href="tr/index.html" aria-label="Turkish version">TR</a>
-    <button class="nav-btn nav-menu-btn" id="menu-toggle" type="button" aria-label="Toggle menu">&#8801;</button>
+  <div class="n1">
+    <a class="n3 is-active" href="index.html" aria-label="English version">EN</a>
+    <a class="n3" href="tr/index.html" aria-label="Turkish version">TR</a>
+    <button class="n3 n2" id="m0" type="button" aria-label="Toggle menu">&#8801;</button>
   </div>
 </nav>
 
-<section id="hero">
-  <div class="hero-inner">
-    <span class="hero-badge">Red Team Profile</span>
-    <h1 class="hero-name"><span class="accent">Songül</span> Özügürler</h1>
-    <p class="hero-role">Security Researcher | Red Team Oriented</p>
-    <p class="hero-value">I break web applications for fun, then turn findings into repeatable offensive security knowledge. My work centers on web application security, red team thinking, bug bounty validation, and practical tooling for real attack paths.</p>
-    <div class="hero-focus">
+<section id="s3">
+  <div class="x0">
+    <span class="x1">Red Team Profile</span>
+    <h1 class="x2"><span class="accent">Songül</span> Özügürler</h1>
+    <p class="x3">Security Researcher | Red Team Oriented</p>
+    <p class="x4">I break web applications for fun, then turn findings into repeatable offensive security knowledge. My work centers on web application security, red team thinking, bug bounty validation, and practical tooling for real attack paths.</p>
+    <div class="x5">
       <span>Web Application Security</span>
       <span>Red Team Operations</span>
       <span>Offensive Security</span>
       <span>Bug Bounty Research</span>
     </div>
 
-    <div class="terminal-box">
+    <div class="o6">
       <div class="terminal-top">
         <span class="dot dot-r"></span>
         <span class="dot dot-y"></span>
         <span class="dot dot-g"></span>
       </div>
-      <div class="terminal-output" id="terminal-output">
+      <div class="o0" id="o0">
         <div class="terminal-line">
           <span class="prompt">songul@sec:~$ </span><span class="cmd">whoami</span>
         </div>
         <div class="terminal-line" style="margin-bottom:0.5rem">
-          <span class="out" id="typewriter"></span><span class="cursor"></span>
+          <span class="out" id="tw0"></span><span class="cursor"></span>
         </div>
       </div>
-      <div class="terminal-actions">
-        <button class="terminal-action" type="button" data-command="help">help</button>
-        <button class="terminal-action" type="button" data-command="about">about</button>
-        <button class="terminal-action" type="button" data-command="skills">skills</button>
-        <button class="terminal-action" type="button" data-command="projects">projects</button>
-        <button class="terminal-action" type="button" data-command="writeups">writeups</button>
-        <button class="terminal-action" type="button" data-command="blog">blog</button>
-        <button class="terminal-action" type="button" data-command="tools">tools</button>
-        <button class="terminal-action" type="button" data-command="experience">experience</button>
-        <button class="terminal-action" type="button" data-command="certs">certs</button>
-        <button class="terminal-action" type="button" data-command="github">github</button>
-        <button class="terminal-action" type="button" data-command="medium">medium</button>
-        <button class="terminal-action" type="button" data-command="linkedin">linkedin</button>
-        <button class="terminal-action" type="button" data-command="lang">lang</button>
-        <button class="terminal-action" type="button" data-command="cv">cv</button>
-        <button class="terminal-action" type="button" data-command="flag">flag</button>
-        <button class="terminal-action" type="button" data-command="contact">contact</button>
-        <button class="terminal-action" type="button" data-command="clear">clear</button>
-        <button class="terminal-action" type="button" data-command="sudo">sudo</button>
+      <div class="o1">
+        <button class="o2" type="button" data-command="help">help</button>
+        <button class="o2" type="button" data-command="about">about</button>
+        <button class="o2" type="button" data-command="skills">skills</button>
+        <button class="o2" type="button" data-command="projects">projects</button>
+        <button class="o2" type="button" data-command="writeups">writeups</button>
+        <button class="o2" type="button" data-command="blog">blog</button>
+        <button class="o2" type="button" data-command="tools">tools</button>
+        <button class="o2" type="button" data-command="experience">experience</button>
+        <button class="o2" type="button" data-command="certs">certs</button>
+        <button class="o2" type="button" data-command="github">github</button>
+        <button class="o2" type="button" data-command="medium">medium</button>
+        <button class="o2" type="button" data-command="linkedin">linkedin</button>
+        <button class="o2" type="button" data-command="lang">lang</button>
+        <button class="o2" type="button" data-command="cv">cv</button>
+        <button class="o2" type="button" data-command="flag">flag</button>
+        <button class="o2" type="button" data-command="contact">contact</button>
+        <button class="o2" type="button" data-command="clear">clear</button>
+        <button class="o2" type="button" data-command="sudo">sudo</button>
       </div>
-      <form class="terminal-input-row" id="terminal-form">
-        <input class="terminal-input" id="terminal-input" type="text" autocomplete="off" spellcheck="false" placeholder="Try: help, projects, writeups, github, certs" />
-        <button class="terminal-submit" type="submit">Run</button>
+      <form class="o3" id="tf0">
+        <input class="o4" id="o4" type="text" autocomplete="off" spellcheck="false" placeholder="Try: help, projects, writeups, github, certs" />
+        <button class="o5" type="submit">Run</button>
       </form>
     </div>
 
-    <div class="hero-buttons">
-      <a href="#tools" class="btn btn-primary">View Projects</a>
-      <a href="#writeups" class="btn btn-outline">Read Writeups</a>
-      <a href="mailto:songulkizilay46@gmail.com" class="btn btn-outline">Contact Me</a>
+    <div class="s3-buttons">
+      <a href="#tools" class="d2 d0">View Projects</a>
+      <a href="#writeups" class="d2 d1">Read Writeups</a>
+      <a href="mailto:songulkizilay46@gmail.com" class="d2 d1">Contact Me</a>
     </div>
   </div>
 </section>
 
 <section id="proof">
-  <div class="content-wrap">
-    <div class="section-header reveal"><h2># Proof Of Work</h2></div>
-    <p class="section-copy reveal">Security portfolios need evidence, not adjectives. This section surfaces the work behind the profile: reported findings, red team experience, practical tooling, and writeups grounded in offensive security work.</p>
-    <div class="cards-grid">
-      <div class="card proof-card reveal">
-        <div class="card-tag green">Bug Bounty</div>
-        <div class="proof-metric">10 Reported Findings</div>
+  <div class="w0">
+    <div class="w1 v0"><h2># Proof Of Work</h2></div>
+    <p class="w2 v0">Security portfolios need evidence, not adjectives. This section surfaces the work behind the profile: reported findings, red team experience, practical tooling, and writeups grounded in offensive security work.</p>
+    <div class="g0">
+      <div class="card c0 v0">
+        <div class="c5 green">Bug Bounty</div>
+        <div class="c1">10 Reported Findings</div>
         <p>Bugcrowd findings across web, API, infrastructure, and cloud/config exposure issues, built around manual verification and reproducible impact.</p>
-        <ul class="proof-list">
+        <ul class="c3">
           <li>Reflected XSS, open redirect, and CORS misconfiguration</li>
           <li>IDOR and access control issues in API and web flows</li>
           <li>SSRF, exposed services, and origin IP disclosure</li>
           <li>Cloud and configuration weaknesses with report-ready validation</li>
         </ul>
-        <div class="proof-note">Bugcrowd profile: web, API, infra, cloud</div>
+        <div class="c2">Bugcrowd profile: web, API, infra, cloud</div>
       </div>
 
-      <div class="card proof-card reveal">
-        <div class="card-tag blue">Red + Blue</div>
-        <div class="proof-metric">Offensive Context</div>
+      <div class="card c0 v0">
+        <div class="c5 blue">Red + Blue</div>
+        <div class="c1">Offensive Context</div>
         <p>Red team work at Enforsec, supported by earlier security operations exposure that improved reporting discipline and technical context.</p>
-        <ul class="proof-list">
+        <ul class="c3">
           <li>Manual offensive testing and validation</li>
           <li>Attack-path thinking over checklist-only testing</li>
           <li>Operational awareness that improves reporting quality</li>
         </ul>
-        <div class="proof-note">Red team first, operations-aware</div>
+        <div class="c2">Red team first, operations-aware</div>
       </div>
 
-      <div class="card proof-card reveal">
-        <div class="card-tag">Public Work</div>
-        <div class="proof-metric">Writeups, Labs, Tooling</div>
+      <div class="card c0 v0">
+        <div class="c5">Public Work</div>
+        <div class="c1">Writeups, Labs, Tooling</div>
         <p>Medium writeups, PortSwigger lab notes, Hack The Box walkthroughs, and private project case studies that document how I work through problems.</p>
-        <ul class="proof-list">
+        <ul class="c3">
           <li>HTB and PortSwigger coverage</li>
           <li>Practical SQLi and recon walkthroughs</li>
           <li>Public learning trail for recruiters and peers</li>
         </ul>
-        <div class="proof-note">Medium + case studies + labs</div>
+        <div class="c2">Medium + case studies + labs</div>
       </div>
 
-      <div class="card proof-card reveal">
-        <div class="card-tag green">Credentials</div>
-        <div class="proof-metric">CEH Practical + BGA</div>
+      <div class="card c0 v0">
+        <div class="c5 green">Credentials</div>
+        <div class="c1">CEH Practical + BGA</div>
         <p>Formal training paired with hands-on operator habits across pentesting, networking fundamentals, and security operations.</p>
-        <ul class="proof-list">
+        <ul class="c3">
           <li>CEH Practical</li>
           <li>BGA Penetration Tester Training Program</li>
           <li>CCNA: Intro to Networks and AWS Security Fundamentals</li>
         </ul>
-        <div class="proof-note">Training with practical application</div>
+        <div class="c2">Training with practical application</div>
       </div>
     </div>
   </div>
 </section>
 
 <section id="writeups">
-  <div class="content-wrap">
-    <div class="section-header reveal"><h2># Latest Vulnerability Writeups</h2></div>
-    <p class="section-copy reveal">The fastest way to judge a security researcher is to read the work. These recent writeups show exploit reasoning, lab process, and how findings are explained clearly.</p>
-    <div class="cards-grid">
-      <a href="posts/2026-02-27_Cap-Htb-Writeup-407ab0bf17be.html" class="card reveal">
-        <div class="card-tag">HackTheBox</div>
+  <div class="w0">
+    <div class="w1 v0"><h2># Latest Vulnerability Writeups</h2></div>
+    <p class="w2 v0">The fastest way to judge a security researcher is to read the work. These recent writeups show exploit reasoning, lab process, and how findings are explained clearly.</p>
+    <div class="g0">
+      <a href="posts/2026-02-27_Cap-Htb-Writeup-407ab0bf17be.html" class="card v0">
+        <div class="c5">HackTheBox</div>
         <h3>Cap HTB Writeup</h3>
         <p>A walkthrough centered on enumeration discipline, service analysis, and the small details that open the door to compromise.</p>
-        <div class="card-footer"><span>Feb 27, 2026 | HTB</span><span class="arrow">-></span></div>
+        <div class="c4"><span>Feb 27, 2026 | HTB</span><span class="arrow">-></span></div>
       </a>
 
-      <a href="posts/2026-03-11_Lab--SQL-injection-UNION-attack--retrieving-multiple-values-in-a-single-column-5b54fabcbbbc.html" class="card reveal">
-        <div class="card-tag blue">PortSwigger</div>
+      <a href="posts/2026-03-11_Lab--SQL-injection-UNION-attack--retrieving-multiple-values-in-a-single-column-5b54fabcbbbc.html" class="card v0">
+        <div class="c5 blue">PortSwigger</div>
         <h3>SQL Injection UNION - Multiple Values In One Column</h3>
         <p>How to collapse multiple pieces of data into a single reflected column when a lab limits direct output paths.</p>
-        <div class="card-footer"><span>Mar 11, 2026 | SQLi</span><span class="arrow">-></span></div>
+        <div class="c4"><span>Mar 11, 2026 | SQLi</span><span class="arrow">-></span></div>
       </a>
 
-      <a href="posts/2026-03-10_Lab--SQL-injection-UNION-attack--retrieving-data-from-other-tables-d984afee2171.html" class="card reveal">
-        <div class="card-tag blue">PortSwigger</div>
+      <a href="posts/2026-03-10_Lab--SQL-injection-UNION-attack--retrieving-data-from-other-tables-d984afee2171.html" class="card v0">
+        <div class="c5 blue">PortSwigger</div>
         <h3>SQL Injection UNION - Retrieving Data From Other Tables</h3>
         <p>Extracting data from alternate tables through UNION-based SQL injection when the application exposes only part of the backend.</p>
-        <div class="card-footer"><span>Mar 10, 2026 | SQLi</span><span class="arrow">-></span></div>
+        <div class="c4"><span>Mar 10, 2026 | SQLi</span><span class="arrow">-></span></div>
       </a>
 
-      <a href="posts/2026-03-09_Lab--SQL-injection-UNION-attack--finding-a-column-containing-text-dba317ce4a28.html" class="card reveal">
-        <div class="card-tag blue">PortSwigger</div>
+      <a href="posts/2026-03-09_Lab--SQL-injection-UNION-attack--finding-a-column-containing-text-dba317ce4a28.html" class="card v0">
+        <div class="c5 blue">PortSwigger</div>
         <h3>SQL Injection UNION - Finding A Text Column</h3>
         <p>A practical method for identifying which reflected column can safely carry string data during UNION-based exploitation.</p>
-        <div class="card-footer"><span>Mar 9, 2026 | SQLi</span><span class="arrow">-></span></div>
+        <div class="c4"><span>Mar 9, 2026 | SQLi</span><span class="arrow">-></span></div>
       </a>
 
-      <a href="posts/2026-02-20_DNS-Zone-Transfer-Nedir--AXFR-A-----Nas-l--al---r--a9fac396e74f.html" class="card reveal">
-        <div class="card-tag green">Recon</div>
+      <a href="posts/2026-02-20_DNS-Zone-Transfer-Nedir--AXFR-A-----Nas-l--al---r--a9fac396e74f.html" class="card v0">
+        <div class="c5 green">Recon</div>
         <h3>DNS Zone Transfer And AXFR Abuse</h3>
         <p>A recon-focused piece on how zone transfer exposure leaks internal visibility and why it still matters during external testing.</p>
-        <div class="card-footer"><span>Feb 20, 2026 | DNS</span><span class="arrow">-></span></div>
+        <div class="c4"><span>Feb 20, 2026 | DNS</span><span class="arrow">-></span></div>
       </a>
 
-      <a href="posts/2026-02-23_Certificate-Transparency-Loglari--CT-Logs--1901b2af6879.html" class="card reveal">
-        <div class="card-tag green">Recon</div>
+      <a href="posts/2026-02-23_Certificate-Transparency-Loglari--CT-Logs--1901b2af6879.html" class="card v0">
+        <div class="c5 green">Recon</div>
         <h3>Certificate Transparency Logs For Recon</h3>
         <p>Using CT logs to spot infrastructure drift, discover exposed subdomains, and widen the attack surface before testing starts.</p>
-        <div class="card-footer"><span>Feb 23, 2026 | Recon</span><span class="arrow">-></span></div>
+        <div class="c4"><span>Feb 23, 2026 | Recon</span><span class="arrow">-></span></div>
       </a>
     </div>
   </div>
 </section>
 
 <section id="articles">
-  <div class="content-wrap">
-    <div class="section-header reveal"><h2># Blog, Labs, And Tutorials</h2></div>
-    <p class="section-copy reveal">Shorter notes and foundational tutorials help show whether someone can explain the why behind the exploit. These posts cover the basics without sounding basic.</p>
-    <div class="articles-list">
-      <a href="posts/2026-02-17_Cross-Site-Scripting--XSS--3e1ef0d5d958.html" class="article-item reveal">
-        <span class="article-num">01</span>
-        <div class="article-body">
+  <div class="w0">
+    <div class="w1 v0"><h2># Blog, Labs, And Tutorials</h2></div>
+    <p class="w2 v0">Shorter notes and foundational tutorials help show whether someone can explain the why behind the exploit. These posts cover the basics without sounding basic.</p>
+    <div class="a7">
+      <a href="posts/2026-02-17_Cross-Site-Scripting--XSS--3e1ef0d5d958.html" class="a5 v0">
+        <span class="a6">01</span>
+        <div class="a3">
           <h3>Cross-Site Scripting (XSS)</h3>
           <p>Core XSS concepts, browser-side impact, and how payload thinking changes across reflected and stored scenarios.</p>
         </div>
-        <span class="article-tag tag-xss">XSS</span>
+        <span class="a4 tag-xss">XSS</span>
       </a>
 
-      <a href="posts/2026-02-18_Web-Proxy-lerine-Giri--660731f8424e.html" class="article-item reveal">
-        <span class="article-num">02</span>
-        <div class="article-body">
+      <a href="posts/2026-02-18_Web-Proxy-lerine-Giri--660731f8424e.html" class="a5 v0">
+        <span class="a6">02</span>
+        <div class="a3">
           <h3>Introduction To Web Proxies</h3>
           <p>Why intercepting traffic matters, how to read requests correctly, and how to make Burp Suite feel like a thinking tool.</p>
         </div>
-        <span class="article-tag tag-recon">Proxy</span>
+        <span class="a4 tag-recon">Proxy</span>
       </a>
 
-      <a href="posts/2026-02-09_DNS--Domain-Name-System--37515fbbeed0.html" class="article-item reveal">
-        <span class="article-num">03</span>
-        <div class="article-body">
+      <a href="posts/2026-02-09_DNS--Domain-Name-System--37515fbbeed0.html" class="a5 v0">
+        <span class="a6">03</span>
+        <div class="a3">
           <h3>DNS Fundamentals</h3>
           <p>A concise primer on the infrastructure layer that shapes recon quality before the first payload is ever sent.</p>
         </div>
-        <span class="article-tag tag-recon">DNS</span>
+        <span class="a4 tag-recon">DNS</span>
       </a>
 
-      <a href="posts/2026-02-10_Virtual-Hosts--VHost--Nedir--0cc1e4c700d8.html" class="article-item reveal">
-        <span class="article-num">04</span>
-        <div class="article-body">
+      <a href="posts/2026-02-10_Virtual-Hosts--VHost--Nedir--0cc1e4c700d8.html" class="a5 v0">
+        <span class="a6">04</span>
+        <div class="a3">
           <h3>Virtual Hosts And Hidden Attack Surface</h3>
-          <p>How VHosts change scope visibility and why they frequently hide forgotten panels, environments, or admin surfaces.</p>
+          <p>How VHosts change scope visibility and why they frequently hide forgotten s1s, environments, or admin surfaces.</p>
         </div>
-        <span class="article-tag tag-recon">Recon</span>
+        <span class="a4 tag-recon">Recon</span>
       </a>
 
-      <a href="posts/2026-02-17_Cross-Site-Request-Forgery--CSRF--9f95ab2f013b.html" class="article-item reveal">
-        <span class="article-num">05</span>
-        <div class="article-body">
+      <a href="posts/2026-02-17_Cross-Site-Request-Forgery--CSRF--9f95ab2f013b.html" class="a5 v0">
+        <span class="a6">05</span>
+        <div class="a3">
           <h3>Cross-Site Request Forgery (CSRF)</h3>
           <p>Request trust, session context, and the conditions that make browser-based state changes exploitable.</p>
         </div>
-        <span class="article-tag tag-blue">CSRF</span>
+        <span class="a4 tag-blue">CSRF</span>
       </a>
 
-      <a href="posts/2026-02-13_HTML-Injection-8ac0bc44aa32.html" class="article-item reveal">
-        <span class="article-num">06</span>
-        <div class="article-body">
+      <a href="posts/2026-02-13_HTML-Injection-8ac0bc44aa32.html" class="a5 v0">
+        <span class="a6">06</span>
+        <div class="a3">
           <h3>HTML Injection</h3>
           <p>Where content rendering bugs sit on the ladder between harmless formatting issues and security-relevant browser behavior.</p>
         </div>
-        <span class="article-tag tag-blue">HTML</span>
+        <span class="a4 tag-blue">HTML</span>
       </a>
     </div>
   </div>
 </section>
 
 <section id="tools">
-  <div class="content-wrap">
-    <div class="section-header reveal"><h2># Projects That Prove The Work</h2></div>
-    <p class="section-copy reveal">Hiring managers do not need ten unfinished repositories. They need a few focused examples that show how you think, automate, and document security work end to end.</p>
-    <div class="carousel-shell reveal">
-      <div class="carousel-track" id="project-track">
-        <div class="carousel-slide">
-          <div class="tool-card">
-            <div class="tool-icon">&#128269;</div>
+  <div class="w0">
+    <div class="w1 v0"><h2># Projects That Prove The Work</h2></div>
+    <p class="w2 v0">Hiring managers do not need ten unfinished repositories. They need a few focused examples that show how you think, automate, and document security work end to end.</p>
+    <div class="k0 v0">
+      <div class="k1" id="k6">
+        <div class="k2">
+          <div class="u0">
+            <div class="u1">&#128269;</div>
             <h3>Bug Bounty Recon Workflow</h3>
             <p>A repeatable recon chain inspired by subfinder, httpx, and nuclei style workflows for widening attack surface and prioritizing manual validation.</p>
           </div>
         </div>
-        <div class="carousel-slide">
-          <div class="tool-card">
-            <div class="tool-icon">&#129514;</div>
+        <div class="k2">
+          <div class="u0">
+            <div class="u1">&#129514;</div>
             <h3>unionhunter</h3>
             <p>A lightweight Python helper for UNION-based SQL injection reconnaissance, column testing, and faster manual exploitation setup.</p>
           </div>
         </div>
-        <div class="carousel-slide">
-          <div class="tool-card">
-            <div class="tool-icon">&#128752;</div>
+        <div class="k2">
+          <div class="u0">
+            <div class="u1">&#128752;</div>
             <h3>Attack Path Notes</h3>
             <p>Research notes that connect reconnaissance, exploit chains, and operator decision-making instead of treating findings as isolated tricks.</p>
           </div>
         </div>
       </div>
-      <div class="carousel-controls">
-        <div class="carousel-dots">
-          <button class="carousel-dot active" type="button" data-slide="0" aria-label="Slide 1"></button>
-          <button class="carousel-dot" type="button" data-slide="1" aria-label="Slide 2"></button>
-          <button class="carousel-dot" type="button" data-slide="2" aria-label="Slide 3"></button>
+      <div class="k3">
+        <div class="k4">
+          <button class="k5 active" type="button" data-slide="0" aria-label="Slide 1"></button>
+          <button class="k5" type="button" data-slide="1" aria-label="Slide 2"></button>
+          <button class="k5" type="button" data-slide="2" aria-label="Slide 3"></button>
         </div>
-        <div class="nav-actions">
-          <button class="nav-btn" id="carousel-prev" type="button" aria-label="Previous slide">&larr;</button>
-          <button class="nav-btn" id="carousel-next" type="button" aria-label="Next slide">&rarr;</button>
+        <div class="n1">
+          <button class="n3" id="k7" type="button" aria-label="Previous slide">&larr;</button>
+          <button class="n3" id="k8" type="button" aria-label="Next slide">&rarr;</button>
         </div>
       </div>
     </div>
 
-    <div class="repo-header reveal">
-      <h3 style="font-family:var(--mono);font-size:.95rem;color:var(--green);letter-spacing:.08em;text-transform:uppercase;"># Private Project Case Studies</h3>
+    <div class="r0 v0">
+      <h3 style="font-family:var(--ak);font-size:.95rem;color:var(--aa);letter-spacing:.08em;text-transform:uppercase;"># Private Project Case Studies</h3>
       <p>Public portfolio, private build logic. This section shows outcomes, scope, and stack without exposing the underlying project code.</p>
     </div>
 
-    <div class="repo-grid">
-      <div class="repo-card reveal">
+    <div class="r1">
+      <div class="r2 v0">
         <h3>SQLi Recon Helper</h3>
         <p>Private Python workflow for UNION-based SQL injection setup, used to shorten column testing, data placement checks, and manual validation loops.</p>
         <div class="repo-meta">
@@ -315,7 +315,7 @@
         </div>
       </div>
 
-      <div class="repo-card reveal">
+      <div class="r2 v0">
         <h3>Header Trust Analysis</h3>
         <p>Research tooling for testing X-Forwarded handling and reverse proxy trust assumptions across real-world backends and lab environments.</p>
         <div class="repo-meta">
@@ -325,7 +325,7 @@
         </div>
       </div>
 
-      <div class="repo-card reveal">
+      <div class="r2 v0">
         <h3>Security Lab Knowledge Base</h3>
         <p>Structured notes and repeatable attack logic collected from PortSwigger, HTB, and bug bounty testing, kept as a working operator reference.</p>
         <div class="repo-meta">
@@ -335,7 +335,7 @@
         </div>
       </div>
 
-      <div class="repo-card reveal">
+      <div class="r2 v0">
         <h3>Recon Fingerprinting Notes</h3>
         <p>Case-study level documentation around asset clustering, favicon-based fingerprinting, and infrastructure mapping methodology.</p>
         <div class="repo-meta">
@@ -349,36 +349,36 @@
 </section>
 
 <section id="about">
-  <div class="content-wrap">
-    <div class="section-header reveal"><h2># Operator Snapshot</h2></div>
-    <div class="about-grid">
-      <div class="about-text reveal">
+  <div class="w0">
+    <div class="w1 v0"><h2># Operator Snapshot</h2></div>
+    <div class="b0">
+      <div class="b1 v0">
         <p><span>Batman University Computer Engineering</span> graduate with a working style shaped by attacker curiosity and offensive validation. My current focus is manual web application pentesting, API security, bug bounty validation, and turning raw findings into usable technical notes.</p>
         <p><span>Enforsec</span> is where the red team side became the center of gravity. Earlier security operations exposure gave me context, but my direction is offensive work: understanding the surface, proving impact, and writing findings that stand up technically.</p>
         <p><span>BITES</span>, <span>Deneyap Türkiye</span>, and <span>CyberHero Academy</span> added monitoring, automation, lab-building, and mentoring experience. The result is a profile built on hands-on security work rather than portfolio aesthetics alone.</p>
         <div style="margin-top:1.5rem">
-          <a href="about.html" class="btn btn-primary" style="font-size:0.75rem">Open About Page</a>
-          <a href="https://medium.com/@songulkizilay" class="btn btn-outline" style="font-size:0.75rem;margin-left:.5rem;" target="_blank" rel="noopener noreferrer">Read Medium</a>
+          <a href="about.html" class="d2 d0" style="font-size:0.75rem">Open About Page</a>
+          <a href="https://medium.com/@songulkizilay" class="d2 d1" style="font-size:0.75rem;margin-left:.5rem;" target="_blank" rel="noopener noreferrer">Read Medium</a>
         </div>
       </div>
-      <div class="skills-box reveal">
+      <div class="b2 v0">
         <h3>&#x25B6; Skills &amp; Focus Areas</h3>
-        <div class="skill-tags">
-          <a href="blog.html?cat=PortSwigger" class="skill-tag">Web Pentesting</a>
-          <a href="blog.html?cat=Web Security" class="skill-tag">Web App Security</a>
-          <a href="blog.html?cat=PortSwigger" class="skill-tag">SQL Injection</a>
-          <a href="posts/2026-02-17_Cross-Site-Scripting--XSS--3e1ef0d5d958.html" class="skill-tag">XSS</a>
-          <a href="posts/2026-02-17_Cross-Site-Request-Forgery--CSRF--9f95ab2f013b.html" class="skill-tag">CSRF</a>
-          <a href="blog.html?cat=Makale" class="skill-tag">Bug Bounty</a>
-          <a href="blog.html?cat=Makale" class="skill-tag">Recon</a>
-          <a href="blog.html?cat=CTF" class="skill-tag">CTF</a>
-          <a href="blog.html?cat=Web Security" class="skill-tag">API Security</a>
-          <a href="blog.html?cat=PortSwigger" class="skill-tag">Burp Suite</a>
-          <a href="blog.html?cat=Makale" class="skill-tag">Red Team</a>
-          <a href="blog.html?cat=Makale" class="skill-tag">Offensive Research</a>
-          <a href="blog.html?cat=Makale" class="skill-tag">Python</a>
-          <a href="blog.html?cat=Makale" class="skill-tag">Bash</a>
-          <a href="https://bugcrowd.com/songulkizilay" target="_blank" rel="noopener noreferrer" class="skill-tag">Bugcrowd</a>
+        <div class="b3">
+          <a href="blog.html?cat=PortSwigger" class="b4">Web Pentesting</a>
+          <a href="blog.html?cat=Web Security" class="b4">Web App Security</a>
+          <a href="blog.html?cat=PortSwigger" class="b4">SQL Injection</a>
+          <a href="posts/2026-02-17_Cross-Site-Scripting--XSS--3e1ef0d5d958.html" class="b4">XSS</a>
+          <a href="posts/2026-02-17_Cross-Site-Request-Forgery--CSRF--9f95ab2f013b.html" class="b4">CSRF</a>
+          <a href="blog.html?cat=Makale" class="b4">Bug Bounty</a>
+          <a href="blog.html?cat=Makale" class="b4">Recon</a>
+          <a href="blog.html?cat=CTF" class="b4">CTF</a>
+          <a href="blog.html?cat=Web Security" class="b4">API Security</a>
+          <a href="blog.html?cat=PortSwigger" class="b4">Burp Suite</a>
+          <a href="blog.html?cat=Makale" class="b4">Red Team</a>
+          <a href="blog.html?cat=Makale" class="b4">Offensive Research</a>
+          <a href="blog.html?cat=Makale" class="b4">Python</a>
+          <a href="blog.html?cat=Makale" class="b4">Bash</a>
+          <a href="https://bugcrowd.com/songulkizilay" target="_blank" rel="noopener noreferrer" class="b4">Bugcrowd</a>
         </div>
       </div>
     </div>
@@ -386,29 +386,29 @@
 </section>
 
 <section id="cta">
-  <div class="content-wrap">
-    <div class="section-header reveal"><h2># Interested In Working Together</h2></div>
-    <div class="cta-panel reveal">
-      <div class="cta-copy">
+  <div class="w0">
+    <div class="w1 v0"><h2># Interested In Working Together</h2></div>
+    <div class="t0 v0">
+      <div class="t1">
         <h3>Need someone who can both find issues and explain them clearly</h3>
         <p>I am building toward security research, junior pentest, and analyst roles where practical testing, clear reporting, and public proof of work actually matter.</p>
       </div>
-      <div class="cta-links">
-        <a href="mailto:songulkizilay46@gmail.com" class="btn btn-primary">Email</a>
-        <a href="https://www.linkedin.com/in/songulozugurler/" class="btn btn-outline" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://medium.com/@songulkizilay" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Medium</a>
+      <div class="t2">
+        <a href="mailto:songulkizilay46@gmail.com" class="d2 d0">Email</a>
+        <a href="https://www.linkedin.com/in/songulozugurler/" class="d2 d1" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://medium.com/@songulkizilay" class="d2 d1" target="_blank" rel="noopener noreferrer">Medium</a>
       </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <ul class="footer-links">
+  <ul class="f0">
     <li><a href="https://www.linkedin.com/in/songulozugurler/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
     <li><a href="https://medium.com/@songulkizilay" target="_blank" rel="noopener noreferrer">Medium</a></li>
     <li><a href="mailto:songulkizilay46@gmail.com">Contact</a></li>
   </ul>
-  <p class="footer-copy">&copy; 2026 Songül Özügürler | Security Researcher</p>
+  <p class="f1">&copy; 2026 Songül Özügürler | Security Researcher</p>
 </footer>
 
 <script>
@@ -419,7 +419,7 @@
     "Web security, bug bounty, and red team operations."
   ];
 
-  const el = document.getElementById("typewriter");
+  const el = document.getElementById("tw0");
   let ci = 0;
   const full = lines.join("\n");
 
@@ -431,18 +431,18 @@
 
   setTimeout(type, 500);
 
-  const menuToggle = document.getElementById("menu-toggle");
-  const navLinks = document.getElementById("nav-links");
+  const menuToggle = document.getElementById("m0");
+  const navLinks = document.getElementById("n0");
   menuToggle.addEventListener("click", () => navLinks.classList.toggle("open"));
   navLinks.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => navLinks.classList.remove("open"));
   });
 
-  const items = document.querySelectorAll(".reveal");
+  const items = document.querySelectorAll(".v0");
   const obs = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
+        entry.target.classList.add("v1");
         obs.unobserve(entry.target);
       }
     });
@@ -450,7 +450,7 @@
   items.forEach((item) => obs.observe(item));
 
   const spySections = document.querySelectorAll("section[id]");
-  const spyLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+  const spyLinks = document.querySelectorAll('.n0 a[href^="#"]');
   const spy = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
@@ -461,9 +461,9 @@
   }, { rootMargin: "-35% 0px -45% 0px", threshold: 0.01 });
   spySections.forEach((section) => spy.observe(section));
 
-  const output = document.getElementById("terminal-output");
-  const form = document.getElementById("terminal-form");
-  const input = document.getElementById("terminal-input");
+  const output = document.getElementById("o0");
+  const form = document.getElementById("tf0");
+  const input = document.getElementById("o4");
 
   const commandMap = {
     help: ["about", "skills", "projects", "writeups", "blog", "tools", "experience", "certs", "github", "medium", "linkedin", "lang", "cv", "flag", "contact", "clear", "sudo"],
@@ -471,11 +471,11 @@
     skills: ["web application security", "red team operations", "offensive validation", "bug bounty", "burp suite", "python / bash"],
     projects: ["Bug Bounty Recon Workflow", "unionhunter", "Attack Path Notes"],
     writeups: ["/#writeups", "Latest vulnerability writeups, HTB walkthroughs, and PortSwigger lab notes"],
-    blog: ["/blog.html", "Archive page with filters, search, and all published posts"],
+    blog: ["/blog.html", "Archive page with filters, sr0, and all published posts"],
     tools: ["/#tools", "Selected case studies, private workflows, and practical research work"],
     experience: ["/about.html", "Red team work, earlier operations context, mentoring, and labs"],
     certs: ["CEH Practical", "BGA Penetration Tester Training Program", "CCNA: Intro to Networks", "AWS Security Fundamentals"],
-    github: ["Project code is not public on this site.", "Case studies are visible, deeper access is available on request."],
+    github: ["Project code is not public on this site.", "Case studies are v1, deeper access is available on request."],
     medium: ["medium.com/@songulkizilay", "Writeups, walkthroughs, and security research posts"],
     linkedin: ["linkedin.com/in/songulozugurler", "Security profile, experience, and certifications"],
     lang: ["/index.html -> English", "/tr/index.html -> Turkish"],
@@ -541,14 +541,14 @@
     input.value = "";
   });
 
-  document.querySelectorAll(".terminal-action").forEach((button) => {
+  document.querySelectorAll(".o2").forEach((button) => {
     button.addEventListener("click", () => runCommand(button.dataset.command));
   });
 
-  const track = document.getElementById("project-track");
-  const dots = document.querySelectorAll(".carousel-dot");
-  const prev = document.getElementById("carousel-prev");
-  const next = document.getElementById("carousel-next");
+  const track = document.getElementById("k6");
+  const dots = document.querySelectorAll(".k5");
+  const prev = document.getElementById("k7");
+  const next = document.getElementById("k8");
   let currentSlide = 0;
 
   function setSlide(index) {
