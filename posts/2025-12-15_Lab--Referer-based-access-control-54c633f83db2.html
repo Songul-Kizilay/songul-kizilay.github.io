@@ -1,0 +1,208 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Lab: Referer-based access control</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        display: block;
+        max-width: min(100%, 640px);
+        width: auto;
+        height: auto;
+        margin: 1.75rem auto;
+      }
+      figure {
+        margin: 1.75rem auto;
+        text-align: center;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      
+body { background: #0a0e0f !important; color: #c9d1d9 !important; }
+h1,h2,h3 { color: #e6edf3 !important; }
+p { color: #c9d1d9 !important; }
+a { color: #00ff88 !important; }
+section, header { background: #0a0e0f !important; }
+article { background: #0a0e0f !important; }
+code { background: #141a1c !important; color: #00ff88 !important; border-radius:3px; padding:1px 4px; }
+pre { background: #141a1c !important; padding:1rem; border-radius:6px; }
+footer p { color: #8b949e !important; font-size:12px; }
+</style></head><body><style>
+:root{--green:#00ff88;--bg:#0a0e0f;--bg2:#0f1416;--border:rgba(0,255,136,.12);--text:#c9d1d9;--mono:'JetBrains Mono',monospace;}
+#sk-nav{position:sticky;top:0;z-index:999;display:flex;align-items:center;justify-content:space-between;padding:.9rem 2rem;background:rgba(10,14,15,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);font-family:var(--mono);}
+#sk-nav a.logo{color:var(--green);text-decoration:none;font-size:.9rem;letter-spacing:.05em;}
+#sk-nav a.logo span{color:#8b949e;}
+#sk-nav .links{display:flex;gap:1.5rem;}
+#sk-nav .links a{color:#8b949e;text-decoration:none;font-size:.78rem;letter-spacing:.08em;transition:color .2s;}
+#sk-nav .links a:hover{color:var(--green);}
+#particles-canvas{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;}
+#sk-nav,article,footer{position:relative;z-index:1;}
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap');
+</style>
+<canvas id="particles-canvas"></canvas><div id="sk-nav">
+  <a class="logo" href="../index.html">songul<span>@</span>sec<span>:~$</span></a>
+  <div class="links">
+    <a href="../index.html#writeups">Writeups</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../index.html#tools">Tools</a>
+    <a href="../index.html#about">About</a>
+  </div>
+</div>
+<article class="h-entry">
+<header>
+<h1 class="p-name">Lab: Referer-based access control</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Bu labda, bazı admin fonksiyonlarına erişimin HTTP Referer header’ına göre kontrol edildiği hatalı bir access control mekanizması…
+</section>
+<section data-field="body" class="e-content">
+<section name="bc0f" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="a1c7" id="a1c7" class="graf graf--h3 graf--leading graf--title">Lab: Referer-based access control</h3><p name="d6cd" id="d6cd" class="graf graf--p graf-after--h3">Bu labda, bazı admin fonksiyonlarına erişimin <strong class="markup--strong markup--p-strong">HTTP Referer header</strong>’ına göre kontrol edildiği hatalı bir access control mekanizması bulunuyor. Uygulama, kullanıcının gerçekten admin olup olmadığını doğrulamak yerine, isteğin <strong class="markup--strong markup--p-strong">hangi sayfadan geldiğini</strong> temel alarak yetkilendirme yapıyor.</p><p name="bded" id="bded" class="graf graf--p graf-after--p">Admin panelinin nasıl çalıştığını anlamak için <strong class="markup--strong markup--p-strong">administrator:admin</strong> bilgileriyle giriş yapılabiliyor. Labı çözmek için ise <strong class="markup--strong markup--p-strong">wiener:peter</strong> hesabıyla giriş yaparak bu hatalı erişim kontrolünü istismar edip kendi hesabımızı <strong class="markup--strong markup--p-strong">admin yetkisine</strong> yükseltmemiz gerekiyor.</p><p name="7270" id="7270" class="graf graf--p graf-after--p">İlk olarak <code class="markup--code markup--p-code">administrator:admin</code> bilgileriyle giriş yaptım. Admin panelinde bir kullanıcının rolünü yükseltirken gönderilen HTTP isteğini Burp Suite ile yakaladım ve <strong class="markup--strong markup--p-strong">Repeater</strong>’a aldım.</p><p name="a02f" id="a02f" class="graf graf--p graf-after--p">Yakalanan istek şu şekildeydi:</p><figure name="8889" id="8889" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*KfSyR2oKgiH_KpRrJJtgqQ.png" data-width="773" data-height="548" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*KfSyR2oKgiH_KpRrJJtgqQ.png"></figure><p name="7e6e" id="7e6e" class="graf graf--p graf-after--figure">Bu noktada dikkatimi çeken şey, uygulamanın <code class="markup--code markup--p-code">/admin-roles</code> endpoint’ine erişimde <strong class="markup--strong markup--p-strong">Referer header’ı kontrol etmesi</strong>, ancak gerçek bir yetkilendirme kontrolü yapmamasıydı.</p><p name="c72c" id="c72c" class="graf graf--p graf-after--p">Daha sonra yeni bir gizli pencere açarak <code class="markup--code markup--p-code">wiener:peter</code> hesabıyla giriş yaptım ve bu kullanıcıya ait <strong class="markup--strong markup--p-strong">session cookie</strong> değerini aldım.</p><figure name="d318" id="d318" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*J66fgJow_03Mf8nJckDrVQ.png" data-width="1404" data-height="130" src="https://cdn-images-1.medium.com/max/800/1*J66fgJow_03Mf8nJckDrVQ.png"></figure><p name="8972" id="8972" class="graf graf--p graf-after--figure">Repeater’daki admin isteğinde şu değişiklikleri yaptım:</p><ul class="postList"><li name="8f04" id="8f04" class="graf graf--li graf-after--p">Admin’e ait <code class="markup--code markup--li-code">session</code> cookie’yi, <strong class="markup--strong markup--li-strong">wiener’a ait session cookie</strong> ile değiştirdim</li><li name="54ab" id="54ab" class="graf graf--li graf-after--li"><code class="markup--code markup--li-code">username=carlos</code> parametresini <code class="markup--code markup--li-code"><strong class="markup--strong markup--li-strong">username=wiener</strong></code> olarak güncelledim . Kritik nokta olarak, <strong class="markup--strong markup--li-strong">Referer header’ı manuel şekilde ayarladım</strong></li></ul><p name="d893" id="d893" class="graf graf--p graf-after--li">Son gönderdiğim istek şu hale geldi:</p><figure name="ecbb" id="ecbb" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*IuA7nprU9h6flKkuBe1cLQ.png" data-width="1142" data-height="457" src="https://cdn-images-1.medium.com/max/800/1*IuA7nprU9h6flKkuBe1cLQ.png"></figure><p name="e381" id="e381" class="graf graf--p graf-after--figure">Bu isteği gönderdiğimde uygulama, Referer header’a güvenerek isteğin yetkili bir admin sayfasından geldiğini varsaydı. Oysa ki Referer başlığı <strong class="markup--strong markup--p-strong">tamamen istemci tarafından kontrol edilebilir</strong> olduğu için, normal bir kullanıcı olmama rağmen rol yükseltme işlemi başarıyla gerçekleşti.Bu sayede <strong class="markup--strong markup--p-strong">wiener</strong> kullanıcısı admin yetkisine yükseltildi ve lab çözüldü.</p><figure name="f1d0" id="f1d0" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*EUOyI6G66FrSicY4stDpEw.png" data-width="1218" data-height="465" src="https://cdn-images-1.medium.com/max/800/1*EUOyI6G66FrSicY4stDpEw.png"></figure><p name="c356" id="c356" class="graf graf--p graf-after--figure">Bu lab, Referer gibi <strong class="markup--strong markup--p-strong">istemci tarafından kolayca manipüle edilebilen HTTP header’larının</strong> access control mekanizması olarak kullanılmasının ne kadar tehlikeli olduğunu net bir şekilde gösteriyor.</p><p name="4e22" id="4e22" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">Özetle:</strong></p><ul class="postList"><li name="57fb" id="57fb" class="graf graf--li graf-after--p">Referer header güvenilir değildir</li><li name="0e11" id="0e11" class="graf graf--li graf-after--li">Yetkilendirme kontrolleri istemci verilerine dayanamaz</li><li name="1ba1" id="1ba1" class="graf graf--li graf-after--li">Her kritik endpoint, <strong class="markup--strong markup--li-strong">sunucu tarafında gerçek rol kontrolü</strong> yapmalıdır</li></ul><p name="af26" id="af26" class="graf graf--p graf-after--li graf--trailing">Aksi halde, bu labda olduğu gibi basit bir header manipülasyonu ile <strong class="markup--strong markup--p-strong">privilege escalation</strong> mümkün hale gelir. Bir sonraki labta görüşmek üzereğŸŒ¸ğŸŒ¸</p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@songulkizilay" class="p-author h-card">Song&uuml;l &Ouml;z&uuml;g&uuml;rler</a> on <a href="https://medium.com/p/54c633f83db2"><time class="dt-published" datetime="2025-12-15T12:10:31.688Z">December 15, 2025</time></a>.</p><p><a href="https://medium.com/@songulkizilay/lab-referer-based-access-control-54c633f83db2" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on March 15, 2026.</p></footer></article><script>
+(function () {
+  const canvas = document.getElementById('particles-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let W, H, mouse = { x: -9999, y: -9999 };
+  const PARTICLE_COUNT = 132;
+  const LINK_DIST = 125;
+  const REPULSE_DIST = 135;
+  const SPEED = 0.16;
+  const ESCAPE_FORCE = 0.40;
+  const WANDER_FORCE = 0.006;
+  const COLOR = '0, 255, 136';
+  let particles = [];
+
+  function resize() {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+
+  function Particle() {
+    this.x = Math.random() * W;
+    this.y = Math.random() * H;
+    this.vx = (Math.random() - 0.5) * SPEED;
+    this.vy = (Math.random() - 0.5) * SPEED;
+    this.r = Math.random() * 1.8 + 0.8;
+    this.angle = Math.random() * Math.PI * 2;
+    this.spin = (Math.random() - 0.5) * 0.08;
+  }
+
+  Particle.prototype.update = function () {
+    this.angle += this.spin;
+    this.vx += Math.cos(this.angle) * WANDER_FORCE;
+    this.vy += Math.sin(this.angle) * WANDER_FORCE;
+    const dx = this.x - mouse.x;
+    const dy = this.y - mouse.y;
+    const dist = Math.sqrt(dx * dx + dy * dy);
+    if (dist < REPULSE_DIST && dist > 0) {
+      const force = Math.pow((REPULSE_DIST - dist) / REPULSE_DIST, 1.7);
+      this.vx += (dx / dist) * force * ESCAPE_FORCE;
+      this.vy += (dy / dist) * force * ESCAPE_FORCE;
+    }
+    const spd = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
+    if (spd > 1.45) {
+      this.vx = (this.vx / spd) * 1.45;
+      this.vy = (this.vy / spd) * 1.45;
+    }
+    this.vx *= 0.992;
+    this.vy *= 0.992;
+    this.x += this.vx;
+    this.y += this.vy;
+    if (this.x < 0) this.x = W;
+    if (this.x > W) this.x = 0;
+    if (this.y < 0) this.y = H;
+    if (this.y > H) this.y = 0;
+  };
+
+  function init() {
+    particles = [];
+    for (let i = 0; i < PARTICLE_COUNT; i++) particles.push(new Particle());
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < LINK_DIST) {
+          const alpha = (1 - dist / LINK_DIST) * 0.14;
+          ctx.strokeStyle = `rgba(${COLOR}, ${alpha})`;
+          ctx.lineWidth = 0.7;
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+    particles.forEach(particle => {
+      particle.update();
+      ctx.beginPath();
+      ctx.arc(particle.x, particle.y, particle.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${COLOR}, 0.48)`;
+      ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+
+  window.addEventListener('resize', () => { resize(); init(); });
+  window.addEventListener('mousemove', event => { mouse.x = event.clientX; mouse.y = event.clientY; });
+  window.addEventListener('mouseleave', () => { mouse.x = -9999; mouse.y = -9999; });
+  resize();
+  init();
+  draw();
+})();
+</script></body></html>

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1600" preserveAspectRatio="xMidYMid slice" style="display:block;width:100vw;height:100vh;background:#17142b" role="img" aria-labelledby="title desc">
+  <title id="title">Close-up duck flag</title>
+  <desc id="desc">A low-angle, close-up duck meme style image for the flag easter egg.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#534f9c"/>
+      <stop offset="48%" stop-color="#312d65"/>
+      <stop offset="100%" stop-color="#171326"/>
+    </linearGradient>
+    <radialGradient id="ambient" cx="70%" cy="18%" r="68%">
+      <stop offset="0%" stop-color="#8f85ff" stop-opacity="0.38"/>
+      <stop offset="100%" stop-color="#8f85ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="duckHead" cx="48%" cy="34%" r="64%">
+      <stop offset="0%" stop-color="#fff0a8"/>
+      <stop offset="100%" stop-color="#d8b448"/>
+    </radialGradient>
+    <radialGradient id="beakTop" cx="50%" cy="42%" r="72%">
+      <stop offset="0%" stop-color="#ffb09d"/>
+      <stop offset="100%" stop-color="#cb7f69"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="900" height="1600" fill="url(#bg)"/>
+  <rect width="900" height="1600" fill="url(#ambient)"/>
+
+  <g opacity="0.75">
+    <circle cx="120" cy="760" r="116" fill="#505876"/>
+    <circle cx="120" cy="760" r="92" fill="none" stroke="#96a0c5" stroke-width="6" opacity="0.7"/>
+    <circle cx="120" cy="760" r="10" fill="#353c58"/>
+    <g stroke="#96a0c5" stroke-width="3" opacity="0.44">
+      <path d="M40 706 L200 814"/>
+      <path d="M38 816 L204 706"/>
+      <path d="M18 760 L222 760"/>
+      <path d="M120 658 L120 862"/>
+    </g>
+  </g>
+
+  <ellipse cx="784" cy="1218" rx="120" ry="56" fill="#56435e" opacity="0.56"/>
+  <path d="M0 1290 C172 1222 450 1208 900 1278 L900 1600 L0 1600 Z" fill="#342238" opacity="0.88"/>
+
+  <g transform="translate(48 376)">
+    <ellipse cx="430" cy="624" rx="268" ry="466" fill="url(#duckHead)"/>
+    <ellipse cx="438" cy="454" rx="246" ry="230" fill="url(#duckHead)"/>
+    <ellipse cx="426" cy="454" rx="208" ry="170" fill="#efd879" opacity="0.48"/>
+
+    <ellipse cx="320" cy="430" rx="18" ry="22" fill="#0e1016"/>
+    <ellipse cx="562" cy="430" rx="18" ry="22" fill="#0e1016"/>
+
+    <ellipse cx="442" cy="640" rx="190" ry="138" fill="url(#beakTop)"/>
+    <ellipse cx="444" cy="596" rx="170" ry="94" fill="#e9a58f"/>
+    <path d="M280 640 C340 678 540 676 606 638" fill="none" stroke="#bf775f" stroke-width="8" stroke-linecap="round"/>
+    <ellipse cx="444" cy="662" rx="118" ry="34" fill="#c6806c" opacity="0.32"/>
+
+    <path d="M254 1086 C230 976 250 862 314 782 C346 744 388 734 402 754 C370 804 348 892 352 1000 C354 1088 330 1140 300 1158 C282 1164 266 1140 254 1086 Z" fill="#d2b24a"/>
+    <path d="M612 1094 C594 970 594 862 632 786 C652 746 694 732 714 748 C692 812 682 892 682 998 C682 1092 664 1138 636 1162 C620 1168 612 1148 612 1094 Z" fill="#d0af47"/>
+  </g>
+
+  <g font-family="'JetBrains Mono', monospace" text-anchor="middle">
+    <text x="450" y="132" fill="#00ff88" font-size="40">songul@sec:~$ flag</text>
+    <text x="450" y="194" fill="#dbe1ef" font-size="28">flag&#123;duck_detected&#125;</text>
+    <text x="450" y="1464" fill="#00ff88" font-size="28">you asked for the flag, duck said no</text>
+  </g>
+</svg>
