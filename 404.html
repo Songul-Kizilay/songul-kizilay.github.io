@@ -3,12 +3,188 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <base href="/" />
   <title>404 | songul@sec</title>
+<<<<<<< HEAD
   <base href="/" />
   <style>:root{color-scheme:dark;--bg:#0a0e0f;--panel:rgba(18,22,26,0.92);--text:#d9e0e7;--dim:#93a4b0;--green:#00ff88;--border:rgba(0,255,136,0.16)}*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:1.25rem;background:radial-gradient(circle at top,rgba(0,255,136,0.08),transparent 30%),linear-gradient(180deg,#11152a 0%,var(--bg) 60%);font-family:"JetBrains Mono",monospace;color:var(--text)}.frame{width:min(94vw,520px);padding:1rem;border:1px solid var(--border);border-radius:20px;background:var(--panel);box-shadow:0 28px 70px rgba(0,0,0,0.45)}.eyebrow{margin:0 0 0.85rem;color:var(--green);font-size:0.82rem;letter-spacing:0.08em;text-transform:uppercase}img{display:block;width:100%;height:auto;border-radius:14px;margin-bottom:1rem}h1{margin:0 0 0.55rem;font-size:clamp(1.35rem,3vw,1.8rem);line-height:1.3}p{margin:0;color:var(--dim);font-size:0.92rem;line-height:1.7}.actions{display:flex;flex-wrap:wrap;gap:0.75rem;margin-top:1.2rem}.btn{display:inline-flex;align-items:center;justify-content:center;min-width:150px;padding:0.85rem 1rem;border-radius:12px;border:1px solid var(--border);color:var(--text);text-decoration:none;transition:all 0.2s ease}.btn:hover{border-color:var(--green);color:var(--green)}.btn-primary{background:var(--green);color:#0a0e0f;border-color:var(--green)}.btn-primary:hover{color:#0a0e0f;filter:brightness(1.04)}</style>
+=======
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0a0e0f;
+      --panel: rgba(18, 22, 26, 0.92);
+      --text: #d9e0e7;
+      --dim: #93a4b0;
+      --green: #00ff88;
+      --border: rgba(0, 255, 136, 0.16);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 1.25rem;
+      background:
+        radial-gradient(circle at top, rgba(0, 255, 136, 0.08), transparent 30%),
+        linear-gradient(180deg, #11152a 0%, var(--bg) 60%);
+      font-family: "JetBrains Mono", monospace;
+      color: var(--text);
+      position: relative;
+      overflow: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 100% 3px, 3px 100%;
+      opacity: 0.08;
+      pointer-events: none;
+    }
+
+    .frame {
+      width: min(94vw, 520px);
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: var(--panel);
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.45);
+      position: relative;
+      z-index: 1;
+    }
+
+    .terminal-top {
+      display: flex;
+      gap: 0.45rem;
+      margin-bottom: 0.95rem;
+    }
+
+    .terminal-dot {
+      width: 0.8rem;
+      height: 0.8rem;
+      border-radius: 999px;
+    }
+
+    .terminal-dot.red { background: #ff5f56; }
+    .terminal-dot.yellow { background: #ffbd2e; }
+    .terminal-dot.green { background: #27c93f; }
+
+    .eyebrow {
+      margin: 0 0 0.85rem;
+      color: var(--green);
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 14px;
+      margin-bottom: 1rem;
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+
+    h1 {
+      margin: 0 0 0.55rem;
+      font-size: clamp(1.35rem, 3vw, 1.8rem);
+      line-height: 1.3;
+    }
+
+    p {
+      margin: 0;
+      color: var(--dim);
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.2rem;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin: 1rem 0 0;
+    }
+
+    .chip {
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.65rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--dim);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .panic-duck {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      margin-top: 1rem;
+      color: var(--green);
+      text-decoration: none;
+      font-size: 0.78rem;
+    }
+
+    .panic-duck img {
+      width: 2.8rem;
+      margin: 0;
+      border-radius: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 150px;
+      padding: 0.85rem 1rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      color: var(--text);
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn:hover {
+      border-color: var(--green);
+      color: var(--green);
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: #0a0e0f;
+      border-color: var(--green);
+    }
+
+    .btn-primary:hover {
+      color: #0a0e0f;
+      filter: brightness(1.04);
+    }
+  </style>
+>>>>>>> 4de8301 (Add achievement modal and stronger matrix/404 visuals)
 </head>
 <body>
   <main class="frame">
+    <div class="terminal-top" aria-hidden="true">
+      <span class="terminal-dot red"></span>
+      <span class="terminal-dot yellow"></span>
+      <span class="terminal-dot green"></span>
+    </div>
     <p class="eyebrow">songul@sec:~$ locate page</p>
     <img src="/assets/404.not.found.png" alt="Funny 404 meme" />
     <h1>404: sayfa kacmis gibi duruyor</h1>
@@ -16,10 +192,25 @@
       Aradigin sey burada degil. Ya link bozuk, ya rota yok, ya da sayfa biraz fazla
       stealth moduna gecmis.
     </p>
+<<<<<<< HEAD
+    <div class="actions">
+      <a class="btn btn-primary" href="/index.html">Ana sayfa</a>
+      <a class="btn" href="/blog.html">Blog arsivi</a>
+=======
+    <div class="meta">
+      <span class="chip">route missing</span>
+      <span class="chip">stealth mode</span>
+      <span class="chip">fallback active</span>
+>>>>>>> 4de8301 (Add achievement modal and stronger matrix/404 visuals)
+    </div>
     <div class="actions">
       <a class="btn btn-primary" href="/index.html">Ana sayfa</a>
       <a class="btn" href="/blog.html">Blog arsivi</a>
     </div>
+    <a class="panic-duck" href="/flag.html">
+      <img src="/assets/duck.flag.jpg" alt="Panic duck" />
+      panic duck protocol
+    </a>
   </main>
 </body>
 </html>

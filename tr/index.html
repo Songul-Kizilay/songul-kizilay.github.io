@@ -1,13 +1,915 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Songül Özügürler | Siber Güvenlik Araştırmacısı</title>
-  <meta name="description" content="Web uygulama güvenliği, red team operasyonları, bug bounty ve pratik ofansif güvenlik araçları odaklı portfolyo." />
+
+  <title>SongÃ¼l Ã–zÃ¼gÃ¼rler | Siber GÃ¼venlik AraÅŸtÄ±rmacÄ±sÄ±</title>
+  <meta name="description" content="Web uygulama gÃ¼venliÄŸi, red team odaÄŸÄ±, bug bounty doÄŸrulamasÄ± ve pratik ofansif araÃ§lar Ã¼zerine kurulu portfolyo." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}:root{--aa:#00ff88;--ab:#00cc6a;--ac:#00d4ff;--ad:#ff4757;--ae:#0a0e0f;--af:#0f1416;--ag:#141a1c;--ah:rgba(0,255,136,0.12);--ai:#c9d1d9;--aj:#8b949e;--ak:'IBM Plex Mono','JetBrains Mono',monospace;--al:'IBM Plex Sans','Inter',system-ui,sans-serif}html{scroll-behavior:smooth}body{background:var(--ae);color:var(--ai);font-family:var(--al);line-height:1.7;overflow-x:hidden}#p0{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}#mx0{position:fixed;inset:0;z-index:140;pointer-events:none;opacity:0;transition:opacity .25s ease}body.mx #mx0{opacity:1}nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:flex-start;padding:1rem 2rem;background:rgba(10,14,15,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--ah)}.nav-logo{font-family:var(--ak);font-size:0.95rem;color:var(--aa);text-decoration:none;letter-spacing:0.05em;margin-right:auto}.nav-logo span{color:var(--aj)}.n0{display:flex;gap:2rem;list-style:none;margin-left:0}.n0 a.active{color:var(--aa)}.n1{display:flex;align-items:center;gap:0.75rem;margin-left:0.75rem}.n3{display:inline-flex;align-items:center;justify-content:center;width:2.4rem;height:2.4rem;border:1px solid var(--ah);border-radius:6px;background:transparent;color:var(--aj);font-family:var(--ak);text-decoration:none;cursor:pointer;transition:all 0.2s}.n3.is-active{color:var(--aa);border-color:var(--aa)}.n3:hover{color:var(--aa);border-color:var(--aa)}.n2{display:none}.n0 a{font-family:var(--ak);font-size:0.8rem;color:var(--aj);text-decoration:none;letter-spacing:0.08em;transition:color 0.2s}.n0 a:hover{color:var(--aa)}section{position:relative;z-index:1;scroll-margin-top:5.5rem}#s3{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:6rem 1.5rem 4rem}.x0{max-width:720px}.x1{display:inline-block;font-family:var(--ak);font-size:0.72rem;color:var(--aa);border:1px solid var(--aa);padding:0.3rem 0.9rem;border-radius:2px;margin-bottom:1.8rem;letter-spacing:0.15em;text-transform:uppercase}.x2{font-family:var(--ak);font-size:clamp(2.2rem,6vw,3.8rem);font-weight:700;color:#fff;line-height:1.1;margin-bottom:0.4rem}.x2 .accent{color:var(--aa)}.x3{font-family:var(--ak);font-size:1rem;color:var(--ac);margin-bottom:1.6rem;letter-spacing:0.05em}.x4{max-width:760px;margin:0 auto 1.25rem;color:var(--aj);font-size:0.96rem;line-height:1.9}.x5{display:flex;flex-wrap:wrap;justify-content:center;gap:0.65rem;margin:0 0 1.8rem}.x5 span{font-family:var(--ak);font-size:0.72rem;color:var(--aa);border:1px solid var(--ah);border-radius:999px;padding:0.35rem 0.75rem;background:rgba(255,255,255,0.02);letter-spacing:0.04em}.m6{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.75rem;max-width:760px;margin:0 auto 1rem}.m7{border:1px solid var(--ah);border-radius:8px;padding:.8rem .85rem;background:rgba(255,255,255,.02)}.m7 strong{display:block;font-family:var(--ak);font-size:1.05rem;color:#fff;margin-bottom:.2rem}.m7 span{display:block;font-family:var(--ak);font-size:.68rem;color:var(--aa);letter-spacing:.08em;text-transform:uppercase}.m8{max-width:760px;margin:0 auto 1.4rem}.m9{border:1px solid var(--ah);border-radius:10px;padding:1rem 1.1rem;background:linear-gradient(180deg,rgba(15,20,22,.82),rgba(10,14,15,.9));text-align:left}.m10{display:inline-block;font-family:var(--ak);font-size:.68rem;color:var(--ac);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.45rem}.m9 p{font-size:.88rem;color:var(--aj);line-height:1.8}.m11{display:flex;gap:.6rem;align-items:center;justify-content:space-between;flex-wrap:wrap;margin:0 0 1.2rem}.m11 p{font-family:var(--ak);font-size:.76rem;color:var(--aj)}.m12{display:flex;gap:.45rem;flex-wrap:wrap}.m12 button{border:1px solid var(--ah);background:transparent;color:var(--aj);padding:.28rem .6rem;border-radius:999px;font-family:var(--ak);font-size:.65rem;cursor:pointer}.m12 button:hover{border-color:var(--aa);color:var(--aa)}@media (max-width:700px){.m6{grid-template-columns:repeat(2,minmax(0,1fr))}}.o6{background:var(--ag);border:1px solid var(--ah);border-radius:6px;padding:1.2rem 1.5rem;text-align:left;margin-bottom:2rem;font-family:var(--ak);font-size:0.85rem;overflow-x:auto}.terminal-top{display:flex;gap:6px;margin-bottom:0.8rem}.dot{width:11px;height:11px;border-radius:50%}.dot-r{background:#ff5f56}.dot-y{background:#ffbd2e}.dot-g{background:#27c93f}.terminal-line{color:var(--aj)}.terminal-line .prompt{color:var(--aa)}.terminal-line .cmd{color:#fff}.terminal-line .out{color:var(--ai)}#tw0{color:var(--ai);white-space:pre-wrap}.o0{min-height:5rem;margin-bottom:0.8rem}.o1{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.8rem}.o2{border:1px solid var(--ah);background:transparent;color:var(--aj);padding:0.35rem 0.65rem;border-radius:999px;font-family:var(--ak);font-size:0.72rem;cursor:pointer;transition:all 0.2s}.o2:hover{color:var(--aa);border-color:var(--aa)}.o3{display:flex;gap:0.6rem;flex-wrap:wrap}.o4{flex:1 1 280px;min-width:0;padding:0.7rem 0.9rem;border-radius:4px;border:1px solid var(--ah);background:rgba(255,255,255,0.02);color:var(--ai);font-family:var(--ak);font-size:0.8rem;outline:none}.o4:focus{border-color:var(--aa)}.o5{cursor:pointer;border:1px solid var(--aa);background:var(--aa);color:#000;font-family:var(--ak);font-size:0.75rem;padding:0.7rem 1rem;border-radius:4px;font-weight:700}.cursor{display:inline-block;width:8px;height:1em;background:var(--aa);animation:blink 1s step-end infinite;vertical-align:text-bottom;margin-left:2px}@keyframes blink{50%{opacity:0}}.s3-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}.d2{font-family:var(--ak);font-size:0.8rem;padding:0.7rem 1.6rem;border-radius:3px;text-decoration:none;letter-spacing:0.08em;transition:all 0.2s;display:inline-block}.d0{background:var(--aa);color:#000;font-weight:700}.d0:hover{background:var(--ab);transform:translateY(-2px)}.d1{border:1px solid var(--ah);color:var(--aj)}.d1:hover{border-color:var(--aa);color:var(--aa);transform:translateY(-2px)}.w0{max-width:1100px;margin:0 auto;padding:0 1.5rem}.w1{display:flex;align-items:center;gap:1rem;margin-bottom:2.5rem}.w1 h2{font-family:var(--ak);font-size:1.1rem;color:var(--aa);letter-spacing:0.08em;text-transform:uppercase;white-space:nowrap}.w1::after{content:'';flex:1;height:1px;background:var(--ah)}.w2{max-width:760px;margin:-1.2rem 0 2rem;color:var(--aj);font-size:0.9rem;line-height:1.85}#proof{padding:3rem 0 2rem}.c0{min-height:100%}.c1{font-family:var(--ak);font-size:1.35rem;color:#fff;margin:0.1rem 0 0.55rem}.c2{font-family:var(--ak);font-size:0.74rem;color:var(--aa);letter-spacing:0.08em;text-transform:uppercase;margin-top:1rem}.c3{margin-top:0.85rem;padding-left:1rem;color:var(--aj);font-size:0.8rem;line-height:1.75}.c3 li+li{margin-top:0.25rem}#writeups{padding:6rem 0 4rem}.g0{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.2rem}.card{background:var(--af);border:1px solid var(--ah);border-radius:6px;padding:1.4rem 1.6rem;text-decoration:none;color:inherit;transition:border-color 0.2s,transform 0.2s,box-shadow 0.2s;display:block}.card:hover{border-color:var(--aa);transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,255,136,0.08)}.c5{font-family:var(--ak);font-size:0.68rem;color:var(--ad);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:0.6rem}.c5.blue{color:var(--ac)}.c5.green{color:var(--aa)}.card h3{font-family:var(--ak);font-size:0.95rem;color:#fff;margin-bottom:0.5rem;line-height:1.4}.card p{font-size:0.82rem;color:var(--aj);line-height:1.6}.c4{display:flex;align-items:center;justify-content:space-between;margin-top:1rem;padding-top:0.8rem;border-top:1px solid var(--ah);font-family:var(--ak);font-size:0.72rem;color:var(--aj)}.c4 .arrow{color:var(--aa)}#articles{padding:4rem 0}.a7{display:flex;flex-direction:column;gap:0.8rem}.a5{display:flex;align-items:center;gap:1rem;background:var(--af);border:1px solid var(--ah);border-radius:6px;padding:1rem 1.4rem;text-decoration:none;color:inherit;transition:border-color 0.2s,transform 0.15s}.a5:hover{border-color:var(--aa);transform:translateX(6px)}.a6{font-family:var(--ak);font-size:0.75rem;color:var(--aa);opacity:0.6;min-width:28px}.a3{flex:1}.a3 h3{font-family:var(--ak);font-size:0.9rem;color:#fff;margin-bottom:0.2rem}.a3 p{font-size:0.8rem;color:var(--aj)}.a4{font-family:var(--ak);font-size:0.65rem;padding:0.2rem 0.6rem;border-radius:2px;border:1px solid;text-transform:uppercase;letter-spacing:0.1em;white-space:nowrap}.tag-sqli{color:var(--ad);border-color:var(--ad)}.tag-xss{color:var(--ac);border-color:var(--ac)}.tag-recon{color:var(--aa);border-color:var(--aa)}.tag-blue{color:#a78bfa;border-color:#a78bfa}#tools{padding:4rem 0}.u2{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem}.u0{background:var(--af);border:1px solid var(--ah);border-radius:6px;padding:1.3rem 1.5rem;transition:border-color 0.2s,transform 0.2s}.u0:hover{border-color:var(--ac);transform:translateY(-3px)}.u1{font-size:1.5rem;margin-bottom:0.7rem}.u0 h3{font-family:var(--ak);font-size:0.9rem;color:var(--ac);margin-bottom:0.4rem}.u0 p{font-size:0.8rem;color:var(--aj)}.k0{position:relative;overflow:hidden}.k1{display:flex;transition:transform 0.3s ease}.k2{min-width:100%}.k3{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-top:1rem}.k4{display:flex;gap:0.5rem}.k5{width:10px;height:10px;border-radius:50%;border:1px solid var(--ah);background:transparent;cursor:pointer}.k5.active{background:var(--aa);border-color:var(--aa)}.r0{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin:2rem 0 1rem;flex-wrap:wrap}.r0 p{font-size:0.82rem;color:var(--aj);font-family:var(--ak)}.r1{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}.r2{display:block;background:var(--af);border:1px solid var(--ah);border-radius:10px;padding:1.2rem 1.3rem;text-decoration:none;color:inherit;transition:transform 0.2s,border-color 0.2s,box-shadow 0.2s}.r2:hover{transform:translateY(-4px);border-color:var(--aa);box-shadow:0 10px 24px rgba(0,255,136,0.08)}.r2 h3{font-family:var(--ak);font-size:0.9rem;color:#fff;margin-bottom:0.55rem;line-height:1.45}.r2 p{font-size:0.8rem;color:var(--aj);line-height:1.7;margin-bottom:0.9rem}.repo-meta{display:flex;flex-wrap:wrap;gap:0.45rem}.repo-meta span{font-family:var(--ak);font-size:0.67rem;color:var(--aa);border:1px solid var(--ah);border-radius:999px;padding:0.24rem 0.58rem}#about{padding:4rem 0 2rem}.b0{display:grid;grid-template-columns:1fr 1fr;gap:2rem}@media (max-width:640px){.b0{grid-template-columns:1fr}}.b1 p{font-size:0.9rem;color:var(--aj);margin-bottom:1rem;line-height:1.8}.b1 p span{color:var(--aa)}.b2{background:var(--af);border:1px solid var(--ah);border-radius:6px;padding:1.5rem}.b2 h3{font-family:var(--ak);font-size:0.78rem;color:var(--aa);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1rem}.b3{display:flex;flex-wrap:wrap;gap:0.5rem}.b4{font-family:var(--ak);font-size:0.72rem;color:var(--aj);background:var(--ag);border:1px solid var(--ah);padding:0.25rem 0.65rem;border-radius:2px;text-decoration:none;transition:border-color 0.2s,color 0.2s}a.b4:hover{border-color:var(--aa);color:var(--aa);cursor:pointer}#cta{padding:1rem 0 0}.t0{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;background:linear-gradient(180deg,rgba(15,20,22,0.92),rgba(10,14,15,0.96));border:1px solid var(--ah);border-radius:10px;padding:1.7rem}.t1{max-width:620px}.t1 h3{font-family:var(--ak);font-size:1rem;color:#fff;margin-bottom:0.65rem}.t1 p{color:var(--aj);font-size:0.9rem;line-height:1.8}.t2{display:flex;flex-wrap:wrap;gap:0.75rem;align-items:center}footer{position:relative;z-index:1;text-align:center;padding:3rem 1.5rem;border-top:1px solid var(--ah);margin-top:4rem}.f0{display:flex;gap:1.5rem;justify-content:center;margin-bottom:1.2rem;list-style:none}.f0 a{font-family:var(--ak);font-size:0.8rem;color:var(--aj);text-decoration:none;transition:color 0.2s}.f0 a:hover{color:var(--aa)}.f1{font-family:var(--ak);font-size:0.72rem;color:var(--aj);opacity:0.5}.v0{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease}.v0.v1{opacity:1;transform:none}@media (max-width:600px){nav{padding:0.9rem 1rem;flex-wrap:wrap}.n1{margin-left:auto}.n2{display:inline-flex;align-items:center;justify-content:center}.n0{display:none;width:100%;flex-direction:column;gap:0.5rem;padding-top:0.8rem}.n0.open{display:flex}.n0 a{font-size:0.88rem;padding:0.45rem 0}.x3,.x4,.w2,.b1 p,.card p,.a3 p,.u0 p{font-size:0.95rem;line-height:1.8}.x2{font-size:clamp(2.4rem,10vw,3.2rem)}.a5{flex-direction:column;align-items:flex-start}.o3{flex-direction:column}}@media(prefers-reduced-motion:reduce){#mx0{display:none!important}}</style>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green: #00ff88;
+      --green-dim: #00cc6a;
+      --cyan: #00d4ff;
+      --red: #ff4757;
+      --bg: #0a0e0f;
+      --bg2: #0f1416;
+      --bg3: #141a1c;
+      --border: rgba(0, 255, 136, 0.12);
+      --text: #c9d1d9;
+      --text-dim: #8b949e;
+      --mono: 'JetBrains Mono', monospace;
+      --sans: 'Inter', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* â”€â”€ PARTICLE CANVAS â”€â”€ */
+    #particles-canvas {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* â”€â”€ NAV â”€â”€ */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 1rem 2rem;
+      background: rgba(10, 14, 15, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: var(--mono);
+      font-size: 0.95rem;
+      color: var(--green);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      margin-right: auto;
+    }
+
+    .nav-logo span { color: var(--text-dim); }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      margin-left: 0;
+    }
+
+    .nav-links a.active { color: var(--green); }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-left: 0.75rem;
+    }
+
+    .nav-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.4rem;
+      height: 2.4rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: transparent;
+      color: var(--text-dim);
+      font-family: var(--mono);
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .nav-btn.is-active {
+      color: var(--green);
+      border-color: var(--green);
+    }
+
+    .nav-btn:hover {
+      color: var(--green);
+      border-color: var(--green);
+    }
+
+    .nav-menu-btn { display: none; }
+
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--green); }
+
+    /* â”€â”€ SECTIONS â”€â”€ */
+    section {
+      position: relative;
+      z-index: 1;
+      scroll-margin-top: 5.5rem;
+    }
+
+    /* â”€â”€ HERO â”€â”€ */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 6rem 1.5rem 4rem;
+    }
+
+    .hero-inner { max-width: 720px; }
+
+    .hero-badge {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--green);
+      border: 1px solid var(--green);
+      padding: 0.3rem 0.9rem;
+      border-radius: 2px;
+      margin-bottom: 1.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .hero-name {
+      font-family: var(--mono);
+      font-size: clamp(2.2rem, 6vw, 3.8rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-name .accent { color: var(--green); }
+
+    .hero-role {
+      font-family: var(--mono);
+      font-size: 1rem;
+      color: var(--cyan);
+      margin-bottom: 1.6rem;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-value {
+      max-width: 760px;
+      margin: 0 auto 1.25rem;
+      color: var(--text-dim);
+      font-size: 0.96rem;
+      line-height: 1.9;
+    }
+
+    .hero-focus {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.65rem;
+      margin: 0 0 1.8rem;
+    }
+
+    .hero-focus span {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--green);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.35rem 0.75rem;
+      background: rgba(255, 255, 255, 0.02);
+      letter-spacing: 0.04em;
+    }
+
+    /* Terminal typewriter */
+    .terminal-box {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.2rem 1.5rem;
+      text-align: left;
+      margin-bottom: 2rem;
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      overflow-x: auto;
+    }
+
+    .terminal-top {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 0.8rem;
+    }
+
+    .dot { width: 11px; height: 11px; border-radius: 50%; }
+    .dot-r { background: #ff5f56; }
+    .dot-y { background: #ffbd2e; }
+    .dot-g { background: #27c93f; }
+
+    .terminal-line { color: var(--text-dim); }
+    .terminal-line .prompt { color: var(--green); }
+    .terminal-line .cmd { color: #fff; }
+    .terminal-line .out { color: var(--text); }
+
+    #typewriter {
+      color: var(--text);
+      white-space: pre-wrap;
+    }
+
+    .terminal-output {
+      min-height: 5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .terminal-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .terminal-action {
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-dim);
+      padding: 0.35rem 0.65rem;
+      border-radius: 999px;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .terminal-action:hover {
+      color: var(--green);
+      border-color: var(--green);
+    }
+
+    .terminal-input-row {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .terminal-input {
+      flex: 1 1 280px;
+      min-width: 0;
+      padding: 0.7rem 0.9rem;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.02);
+      color: var(--text);
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      outline: none;
+    }
+
+    .terminal-input:focus { border-color: var(--green); }
+
+    .terminal-submit {
+      cursor: pointer;
+      border: 1px solid var(--green);
+      background: var(--green);
+      color: #000;
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      padding: 0.7rem 1rem;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+
+    .terminal-sandbox {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .matrix-mode {
+      animation: flicker 0.1s infinite;
+      filter: saturate(1.05) brightness(1.04);
+    }
+
+    .hacked {
+      animation: glitch 0.22s infinite;
+    }
+
+    @keyframes glitch {
+      0% { transform: translate(0); }
+      20% { transform: translate(-2px, 2px); }
+      40% { transform: translate(2px, -2px); }
+      60% { transform: translate(-1px, 1px); }
+      80% { transform: translate(1px, -1px); }
+      100% { transform: translate(0); }
+    }
+
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.985; }
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 8px;
+      height: 1em;
+      background: var(--green);
+      animation: blink 1s step-end infinite;
+      vertical-align: text-bottom;
+      margin-left: 2px;
+    }
+
+    @keyframes blink { 50% { opacity: 0; } }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      padding: 0.7rem 1.6rem;
+      border-radius: 3px;
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      transition: all 0.2s;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: #000;
+      font-weight: 700;
+    }
+
+    .btn-primary:hover { background: var(--green-dim); transform: translateY(-2px); }
+
+    .btn-outline {
+      border: 1px solid var(--border);
+      color: var(--text-dim);
+    }
+
+    .btn-outline:hover { border-color: var(--green); color: var(--green); transform: translateY(-2px); }
+
+    /* â”€â”€ CONTENT WRAPPER â”€â”€ */
+    .content-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* â”€â”€ SECTION HEADER â”€â”€ */
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-header h2 {
+      font-family: var(--mono);
+      font-size: 1.1rem;
+      color: var(--green);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .section-header::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .section-copy {
+      max-width: 760px;
+      margin: -1.2rem 0 2rem;
+      color: var(--text-dim);
+      font-size: 0.9rem;
+      line-height: 1.85;
+    }
+
+    #proof { padding: 3rem 0 2rem; }
+
+    .proof-card {
+      min-height: 100%;
+    }
+
+    .proof-metric {
+      font-family: var(--mono);
+      font-size: 1.35rem;
+      color: #fff;
+      margin: 0.1rem 0 0.55rem;
+    }
+
+    .proof-note {
+      font-family: var(--mono);
+      font-size: 0.74rem;
+      color: var(--green);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 1rem;
+    }
+
+    .proof-list {
+      margin-top: 0.85rem;
+      padding-left: 1rem;
+      color: var(--text-dim);
+      font-size: 0.8rem;
+      line-height: 1.75;
+    }
+
+    .proof-list li + li {
+      margin-top: 0.25rem;
+    }
+
+    /* â”€â”€ WRITEUPS GRID â”€â”€ */
+    #writeups { padding: 6rem 0 4rem; }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.4rem 1.6rem;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+      display: block;
+    }
+
+    .card:hover {
+      border-color: var(--green);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(0, 255, 136, 0.08);
+    }
+
+    .card-tag {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--red);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.6rem;
+    }
+
+    .card-tag.blue { color: var(--cyan); }
+    .card-tag.green { color: var(--green); }
+
+    .card h3 {
+      font-family: var(--mono);
+      font-size: 0.95rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+
+    .card p {
+      font-size: 0.82rem;
+      color: var(--text-dim);
+      line-height: 1.6;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 1rem;
+      padding-top: 0.8rem;
+      border-top: 1px solid var(--border);
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--text-dim);
+    }
+
+    .card-footer .arrow { color: var(--green); }
+
+    /* â”€â”€ ARTICLES â”€â”€ */
+    #articles { padding: 4rem 0; }
+
+    .articles-list { display: flex; flex-direction: column; gap: 0.8rem; }
+
+    .article-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1rem 1.4rem;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s, transform 0.15s;
+    }
+
+    .article-item:hover {
+      border-color: var(--green);
+      transform: translateX(6px);
+    }
+
+    .article-num {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--green);
+      opacity: 0.6;
+      min-width: 28px;
+    }
+
+    .article-body { flex: 1; }
+
+    .article-body h3 {
+      font-family: var(--mono);
+      font-size: 0.9rem;
+      color: #fff;
+      margin-bottom: 0.2rem;
+    }
+
+    .article-body p {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+    }
+
+    .article-tag {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 2px;
+      border: 1px solid;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      white-space: nowrap;
+    }
+
+    .tag-sqli { color: var(--red); border-color: var(--red); }
+    .tag-xss  { color: var(--cyan); border-color: var(--cyan); }
+    .tag-recon { color: var(--green); border-color: var(--green); }
+    .tag-blue { color: #a78bfa; border-color: #a78bfa; }
+
+    /* â”€â”€ TOOLS â”€â”€ */
+    #tools { padding: 4rem 0; }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+
+    .tool-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.3rem 1.5rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .tool-card:hover { border-color: var(--cyan); transform: translateY(-3px); }
+
+    .tool-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .tool-card h3 {
+      font-family: var(--mono);
+      font-size: 0.9rem;
+      color: var(--cyan);
+      margin-bottom: 0.4rem;
+    }
+
+    .tool-card p {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+    }
+
+    .carousel-shell {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.3s ease;
+    }
+
+    .carousel-slide { min-width: 100%; }
+
+    .carousel-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .carousel-dots {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .carousel-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .carousel-dot.active {
+      background: var(--green);
+      border-color: var(--green);
+    }
+
+    .repo-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin: 2rem 0 1rem;
+      flex-wrap: wrap;
+    }
+
+    .repo-header p {
+      font-size: 0.82rem;
+      color: var(--text-dim);
+      font-family: var(--mono);
+    }
+
+    .repo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+
+    .repo-card {
+      display: block;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.2rem 1.3rem;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .repo-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--green);
+      box-shadow: 0 10px 24px rgba(0, 255, 136, 0.08);
+    }
+
+    .repo-card h3 {
+      font-family: var(--mono);
+      font-size: 0.9rem;
+      color: #fff;
+      margin-bottom: 0.55rem;
+      line-height: 1.45;
+    }
+
+    .repo-card p {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      line-height: 1.7;
+      margin-bottom: 0.9rem;
+    }
+
+    .repo-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .repo-meta span {
+      font-family: var(--mono);
+      font-size: 0.67rem;
+      color: var(--green);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.24rem 0.58rem;
+    }
+
+    /* â”€â”€ ABOUT â”€â”€ */
+    #about { padding: 4rem 0 2rem; }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    @media (max-width: 640px) { .about-grid { grid-template-columns: 1fr; } }
+
+    .about-text p {
+      font-size: 0.9rem;
+      color: var(--text-dim);
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+
+    .about-text p span { color: var(--green); }
+
+    .skills-box {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.5rem;
+    }
+
+    .skills-box h3 {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--green);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .skill-tag {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      padding: 0.25rem 0.65rem;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    a.skill-tag:hover {
+      border-color: var(--green);
+      color: var(--green);
+      cursor: pointer;
+    }
+
+    #cta { padding: 1rem 0 0; }
+
+    .cta-panel {
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+      background: linear-gradient(180deg, rgba(15, 20, 22, 0.92), rgba(10, 14, 15, 0.96));
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.7rem;
+    }
+
+    .cta-copy {
+      max-width: 620px;
+    }
+
+    .cta-copy h3 {
+      font-family: var(--mono);
+      font-size: 1rem;
+      color: #fff;
+      margin-bottom: 0.65rem;
+    }
+
+    .cta-copy p {
+      color: var(--text-dim);
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+
+    .cta-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    /* â”€â”€ FOOTER â”€â”€ */
+    footer {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 3rem 1.5rem;
+      border-top: 1px solid var(--border);
+      margin-top: 4rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      margin-bottom: 1.2rem;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--green); }
+
+    .footer-copy {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      opacity: 0.5;
+    }
+
+    /* â”€â”€ SCROLL FADE-IN â”€â”€ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* â”€â”€ RESPONSIVE NAV â”€â”€ */
+    @media (max-width: 600px) {
+      nav {
+        padding: 0.9rem 1rem;
+        flex-wrap: wrap;
+      }
+
+      .nav-actions { margin-left: auto; }
+
+      .nav-menu-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding-top: 0.8rem;
+      }
+
+      .nav-links.open { display: flex; }
+
+      .nav-links a {
+        font-size: 0.88rem;
+        padding: 0.45rem 0;
+      }
+
+      .hero-role,
+      .hero-value,
+      .section-copy,
+      .about-text p,
+      .card p,
+      .article-body p,
+      .tool-card p {
+        font-size: 0.95rem;
+        line-height: 1.8;
+      }
+
+      .hero-name { font-size: clamp(2.4rem, 10vw, 3.2rem); }
+
+      .article-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .terminal-input-row { flex-direction: column; }
+    }
+  </style>
 </head>
 <body>
 
@@ -29,16 +931,19 @@
   </div>
 </nav>
 
-<section id="s3">
-  <div class="x0">
-    <h1 class="x2"><span class="accent">Songül</span> Özügürler</h1>
-    <p class="x3">Siber Güvenlik Araştırmacısı | Red Team Odaklı</p>
-    <p class="x4">Web uygulamalarını zorlamayı seviyorum; bulguları ise raporlanabilir, tekrar üretilebilir ve teknik olarak savunulabilir çıktılara dönüştürüyorum. Odağım web uygulama güvenliği, red team bakışı, bug bounty doğrulaması ve pratik ofansif güvenlik araçları.</p>
-    <div class="x5">
-      <span>Web Uygulama Güvenliği</span>
-      <span>Red Team Operasyonları</span>
-      <span>Ofansif Güvenlik</span>
-      <span>Bug Bounty Araştırması</span>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <span class="hero-badge">OperatÃ¶r Profili</span>
+    <h1 class="hero-name"><span class="accent">SongÃ¼l</span> Ã–zÃ¼gÃ¼rler</h1>
+    <p class="hero-role">Siber GÃ¼venlik AraÅŸtÄ±rmacÄ±sÄ± | Red Team OdaklÄ±</p>
+    <p class="hero-value">Web uygulamalarÄ±nÄ± zorlamayÄ± seviyorum; bulgularÄ± ise raporlanabilir, tekrar Ã¼retilebilir ve teknik olarak savunulabilir Ã§Ä±ktÄ±lara dÃ¶nÃ¼ÅŸtÃ¼rÃ¼yorum. OdaÄŸÄ±m web uygulama gÃ¼venliÄŸi, bug bounty doÄŸrulamasÄ±, red team operasyonlarÄ± ve pratik ofansif araÃ§lar.</p>
+    <div class="hero-focus">
+      <span>Web Uygulama GÃ¼venliÄŸi</span>
+      <span>Red Team OperasyonlarÄ±</span>
+      <span>Ofansif GÃ¼venlik</span>
+      <span>Bug Bounty AraÅŸtÄ±rmasÄ±</span>
     </div>
 
     <div class="m6"><div class="m7"><strong>10</strong><span>Bugcrowd bulgusu</span></div><div class="m7"><strong>96</strong><span>arsiv girdisi</span></div><div class="m7"><strong>4</strong><span>aktif sertifika</span></div><div class="m7"><strong>3</strong><span>ozel vaka calismasi</span></div></div><div class="m8"><div class="m9"><span class="m10">su an baktigim konular</span><p>API erisim kontrolu kenar durumlari, SQLi akisini hizlandiran kisayollar ve recon bilgisini etkiye donusturen saldiri yollari.</p></div></div>
@@ -58,240 +963,237 @@
           <span class="out" id="tw0"></span><span class="cursor"></span>
         </div>
       </div>
-      <div class="o1">
-        <button class="o2" type="button" data-command="help">help</button>
-        <button class="o2" type="button" data-command="about">about</button>
-        <button class="o2" type="button" data-command="skills">skills</button>
-        <button class="o2" type="button" data-command="projects">projects</button>
-        <button class="o2" type="button" data-command="writeups">writeups</button>
-        <button class="o2" type="button" data-command="blog">blog</button>
-        <button class="o2" type="button" data-command="tools">tools</button>
-        <button class="o2" type="button" data-command="experience">experience</button>
-        <button class="o2" type="button" data-command="certs">certs</button>
-        <button class="o2" type="button" data-command="github">github</button>
-        <button class="o2" type="button" data-command="medium">medium</button>
-        <button class="o2" type="button" data-command="linkedin">linkedin</button>
-        <button class="o2" type="button" data-command="lang">lang</button>
-        <button class="o2" type="button" data-command="cv">cv</button>
-        <button class="o2" type="button" data-command="flag">flag</button>
-        <button class="o2" type="button" data-command="contact">contact</button>
-        <button class="o2" type="button" data-command="clear">clear</button>
-        <button class="o2" type="button" data-command="sudo">sudo</button>
-        <button class="o2" type="button" data-command="hack">hack</button>
-        <button class="o2" type="button" data-command="recon">recon</button>
-        <button class="o2" type="button" data-command="matrix">matrix</button>
-        <button class="o2" type="button" data-command="coffee">coffee</button>
-        <button class="o2" type="button" data-command="nmap localhost">nmap</button>
+
+      <div class="terminal-actions">
+        <button class="terminal-action" type="button" data-command="help">help</button>
+        <button class="terminal-action" type="button" data-command="about">about</button>
+        <button class="terminal-action" type="button" data-command="writeups">writeups</button>
+        <button class="terminal-action" type="button" data-command="blog">blog</button>
+        <button class="terminal-action" type="button" data-command="tools">tools</button>
+        <button class="terminal-action" type="button" data-command="contact">contact</button>
+        <button class="terminal-action" type="button" data-command="sudo">sudo</button>
+        <button class="terminal-action" type="button" data-command="hack">hack</button>
+        <button class="terminal-action" type="button" data-command="matrix">matrix</button>
       </div>
-      <div class="m11"><p>Hizli aksiyonlar</p><div class="m12"><button type="button" data-quick="history">history</button><button type="button" data-quick="search xss">search xss</button><button type="button" data-quick="writeups latest">writeups latest</button><button type="button" data-quick="tools featured">tools featured</button></div></div>
-      <form class="o3" id="tf0">
-        <input class="o4" id="o4" type="text" autocomplete="off" spellcheck="false" placeholder="Dene: help, history, search xss, writeups latest" />
-        <button class="o5" type="submit">Çalıştır</button>
+      <form class="terminal-input-row" id="terminal-form">
+        <input class="terminal-input" id="terminal-input" type="text" autocomplete="off" spellcheck="false" placeholder="Dene: help, recon, matrix, search xss" />
+        <button class="terminal-submit" type="submit">Calistir</button>
       </form>
+      <div id="vuln-app" class="terminal-sandbox" aria-hidden="true"></div>
     </div>
 
-    <div class="s3-buttons">
-      <a href="#tools" class="d2 d0">Projeleri Gör</a>
-      <a href="#writeups" class="d2 d1">Writeup'ları Oku</a>
-      <a href="mailto:songulkizilay46@gmail.com" class="d2 d1">İletişime Geç</a>
+
+    <div class="hero-buttons">
+      <a href="#tools" class="btn btn-primary">Projeleri GÃ¶r</a>
+      <a href="#writeups" class="btn btn-outline">Writeup'larÄ± Oku</a>
+      <a href="mailto:songulkizilay46@gmail.com" class="btn btn-outline">Ä°letiÅŸime GeÃ§</a>
     </div>
   </div>
 </section>
 
+
+<!-- PROOF -->
 <section id="proof">
-  <div class="w0">
-    <div class="w1 v0"><h2># Kanıt Katmanı</h2></div>
-    <p class="w2 v0">Siber güvenlik portfolyosunda sıfat değil kanıt gerekir. Bu bölümde profilin arkasındaki somut işler var: raporlanan bulgular, red team odağı, pratik araçlar ve ofansif güvenlik writeup'ları.</p>
-    <div class="g0">
-      <div class="card c0 v0">
-        <div class="c5 green">Bug Bounty</div>
-        <div class="c1">10 Raporlanmış Bulgu</div>
-        <p>Bugcrowd profilimde web, API, altyapı ve cloud/config tarafında; manuel doğrulamayla etkisi netleştirilmiş gerçek güvenlik bulguları yer alıyor.</p>
-        <ul class="c3">
-          <li>Reflected XSS, open redirect ve CORS misconfiguration</li>
-          <li>IDOR ve access control issue örnekleri</li>
-          <li>SSRF, exposed service ve origin IP disclosure</li>
-          <li>Cloud / config zafiyetleri ve savunulabilir raporlama</li>
+  <div class="content-wrap">
+    <div class="section-header reveal"><h2># KanÄ±t KatmanÄ±</h2></div>
+    <p class="section-copy reveal">Siber gÃ¼venlik portfolyosunda sÄ±fat deÄŸil kanÄ±t gerekir. Bu bÃ¶lÃ¼mde profilin arkasÄ±ndaki somut iÅŸler var: raporlanan bulgular, red ve blue team deneyimi, public araÃ§lar ve pratik writeup'lar.</p>
+    <div class="cards-grid">
+      <div class="card proof-card reveal">
+        <div class="card-tag green">Bug Bounty</div>
+        <div class="proof-metric">10 RaporlanmÄ±ÅŸ Bulgu</div>
+        <p>Bugcrowd Ã¼zerinde manuel doÄŸrulama, tekrar Ã¼retilebilir kanÄ±t ve etkisi aÃ§Ä±klanmÄ±ÅŸ rapor mantÄ±ÄŸÄ±yla hazÄ±rlanmÄ±ÅŸ gerÃ§ek bulgular.</p>
+        <ul class="proof-list">
+          <li>GerÃ§ek web attack surface doÄŸrulamasÄ±</li>
+          <li>GÃ¼rÃ¼ltÃ¼lÃ¼ scanner Ã§Ä±ktÄ±sÄ± yerine manuel triage</li>
+          <li>Raporlanabilir ve savunulabilir bulgu akÄ±ÅŸÄ±</li>
         </ul>
-        <div class="c2">Bugcrowd profili: web, API, altyapı, cloud</div>
+        <div class="proof-note">Bugcrowd + gÃ¼venlik araÅŸtÄ±rmasÄ±</div>
       </div>
 
-      <div class="card c0 v0">
-        <div class="c5 blue">Operasyon Bağlamı</div>
-        <div class="c1">Ofansif Perspektif</div>
-        <p>Enforsec tarafındaki red team deneyimi merkezde; önceki güvenlik operasyonu teması ise raporlama disiplinini ve teknik bağlamı güçlendiren bir arka plan olarak duruyor.</p>
-        <ul class="c3">
-          <li>Manuel ofansif test ve doğrulama pratiği</li>
-          <li>Checklist yerine attack-path mantığı</li>
-          <li>Rapor kalitesini artıran operasyon farkındalığı</li>
+      <div class="card proof-card reveal">
+        <div class="card-tag blue">Red + Blue</div>
+        <div class="proof-metric">SaldÄ±rÄ± Ve Tespit Perspektifi</div>
+        <p>Enforsec tarafÄ±nda red team, Infinitum IT ve Ä°Ã§iÅŸleri tarafÄ±nda blue team ve SOC desteÄŸi ile iki tarafÄ± da gÃ¶rmÃ¼ÅŸ bir Ã§alÄ±ÅŸma biÃ§imi.</p>
+        <ul class="proof-list">
+          <li>Ofansif test ve doÄŸrulama tecrÃ¼besi</li>
+          <li>Log, telemetry ve alarm gÃ¶rÃ¼nÃ¼rlÃ¼ÄŸÃ¼</li>
+          <li>Analist bakÄ±ÅŸÄ±yla olay okuma refleksi</li>
         </ul>
-        <div class="c2">Öncelik red team, bağlam operasyon</div>
+        <div class="proof-note">Red team ve operasyonel ba?lam</div>
       </div>
 
-      <div class="card c0 v0">
-        <div class="c5">Görünür İşler</div>
-        <div class="c1">Writeup, Lab, Araç</div>
-        <p>Medium yazıları, PortSwigger lab çözümleri, Hack The Box walkthrough'ları ve özel vaka çalışmaları üzerinden görünür bir öğrenme ve üretim izi.</p>
-        <ul class="c3">
-          <li>HTB ve PortSwigger odaklı içerik</li>
-          <li>SQLi ve recon tabanlı pratik anlatımlar</li>
-          <li>Recruiter ve teknik ekip için görünür kanıt</li>
+      <div class="card proof-card reveal">
+        <div class="card-tag">Public Work</div>
+        <div class="proof-metric">Writeup, Lab, AraÃ§</div>
+        <p>Medium yazÄ±larÄ±, PortSwigger lab Ã§Ã¶zÃ¼mleri, Hack The Box walkthrough'larÄ± ve GitHub reposu Ã¼zerinden gÃ¶rÃ¼nÃ¼r bir Ã¶ÄŸrenme ve Ã¼retim izi.</p>
+        <ul class="proof-list">
+          <li>HTB ve PortSwigger odaklÄ± iÃ§erik</li>
+          <li>SQLi ve recon tabanlÄ± pratik anlatÄ±mlar</li>
+          <li>Recruiter ve teknik ekip iÃ§in gÃ¶rÃ¼nÃ¼r kanÄ±t</li>
         </ul>
-        <div class="c2">Medium + vaka çalışmaları + lab'ler</div>
+        <div class="proof-note">Medium + GitHub + lab'ler</div>
       </div>
 
-      <div class="card c0 v0">
-        <div class="c5 green">Sertifikalar</div>
-        <div class="c1">CEH Practical + BGA</div>
-        <p>Pentest, ağ temelleri ve güvenlik operasyonlarını gerçek uygulamayla birleştiren eğitim çizgisi.</p>
-        <ul class="c3">
+      <div class="card proof-card reveal">
+        <div class="card-tag green">Sertifikalar</div>
+        <div class="proof-metric">CEH Practical + BGA</div>
+        <p>Pentest, aÄŸ temelleri ve gÃ¼venlik operasyonlarÄ±nÄ± gerÃ§ek uygulamayla birleÅŸtiren eÄŸitim Ã§izgisi.</p>
+        <ul class="proof-list">
           <li>CEH Practical</li>
           <li>BGA Penetration Tester Training Program</li>
           <li>CCNA: Intro to Networks ve AWS Security Fundamentals</li>
         </ul>
-        <div class="c2">Eğitim + sahaya temas</div>
+
+        <div class="proof-note">EÄŸitim + sahaya temas</div>
       </div>
     </div>
   </div>
 </section>
 
 <section id="writeups">
-  <div class="w0">
-    <div class="w1 v0"><h2># Son Zafiyet Writeup'ları</h2></div>
-    <p class="w2 v0">Bir güvenlik araştırmacısını anlamanın en hızlı yolu yaptığı işleri okumaktır. Bu seçki, exploit mantığını, lab sürecini ve teknik anlatım kalitesini öne çıkarıyor.</p>
-    <div class="g0">
-      <a href="../posts/2026-02-27_Cap-Htb-Writeup-407ab0bf17be.html" class="card v0">
-        <div class="c5">HackTheBox</div>
+
+  <div class="content-wrap">
+    <div class="section-header reveal"><h2># Son Zafiyet Writeup'larÄ±</h2></div>
+    <p class="section-copy reveal">Bir gÃ¼venlik araÅŸtÄ±rmacÄ±sÄ±nÄ± anlamanÄ±n en hÄ±zlÄ± yolu yaptÄ±ÄŸÄ± iÅŸleri okumaktÄ±r. Bu seÃ§ki, exploit mantÄ±ÄŸÄ±nÄ±, lab sÃ¼recini ve teknik anlatÄ±m kalitesini Ã¶ne Ã§Ä±karÄ±yor.</p>
+    <div class="cards-grid">
+      <a href="../posts/2026-02-27_Cap-Htb-Writeup-407ab0bf17be.html" class="card reveal">
+        <div class="card-tag">HackTheBox</div>
         <h3>Cap HTB Writeup</h3>
-        <p>Enumeration disiplininin neden kritik olduğunu gösteren, servis analizi ve zincirleme düşünce odaklı bir walkthrough.</p>
-        <div class="c4"><span>27 Şub 2026 | HTB</span><span class="arrow">-></span></div>
+        <p>Enumeration disiplininin neden kritik olduÄŸunu gÃ¶steren, servis analizi ve zincirleme dÃ¼ÅŸÃ¼nce odaklÄ± bir walkthrough.</p>
+        <div class="card-footer"><span>27 ub 2026 | HTB</span><span class="arrow">-></span></div>
       </a>
 
-      <a href="../posts/2026-03-11_Lab--SQL-injection-UNION-attack--retrieving-multiple-values-in-a-single-column-5b54fabcbbbc.html" class="card v0">
-        <div class="c5 blue">PortSwigger</div>
-        <h3>SQL Injection UNION - Tek Kolonda Çoklu Veri</h3>
-        <p>Uygulamanın çıktıyı kısıtladığı durumda birden fazla değeri tek kolonda birleştirme mantığını anlatan lab çözümü.</p>
-        <div class="c4"><span>11 Mar 2026 | SQLi</span><span class="arrow">-></span></div>
+      <a href="../posts/2026-03-11_Lab--SQL-injection-UNION-attack--retrieving-multiple-values-in-a-single-column-5b54fabcbbbc.html" class="card reveal">
+        <div class="card-tag blue">PortSwigger</div>
+        <h3>SQL Injection UNION - Tek Kolonda Ã‡oklu Veri</h3>
+        <p>UygulamanÄ±n Ã§Ä±ktÄ±yÄ± kÄ±sÄ±tladÄ±ÄŸÄ± durumda birden fazla deÄŸeri tek kolonda birleÅŸtirme mantÄ±ÄŸÄ±nÄ± anlatan lab Ã§Ã¶zÃ¼mÃ¼.</p>
+        <div class="card-footer"><span>11 Mar 2026 | SQLi</span><span class="arrow">-></span></div>
       </a>
 
-      <a href="../posts/2026-03-10_Lab--SQL-injection-UNION-attack--retrieving-data-from-other-tables-d984afee2171.html" class="card v0">
-        <div class="c5 blue">PortSwigger</div>
-        <h3>SQL Injection UNION - Farklı Tablolardan Veri Çekme</h3>
-        <p>UNION tabanlı SQL injection ile uygulamanın göstermediği tablolardan veri almanın pratik mantığı.</p>
-        <div class="c4"><span>10 Mar 2026 | SQLi</span><span class="arrow">-></span></div>
+      <a href="../posts/2026-03-10_Lab--SQL-injection-UNION-attack--retrieving-data-from-other-tables-d984afee2171.html" class="card reveal">
+        <div class="card-tag blue">PortSwigger</div>
+        <h3>SQL Injection UNION - FarklÄ± Tablolardan Veri Ã‡ekme</h3>
+        <p>UNION tabanlÄ± SQL injection ile uygulamanÄ±n gÃ¶stermediÄŸi tablolardan veri almanÄ±n pratik mantÄ±ÄŸÄ±.</p>
+        <div class="card-footer"><span>10 Mar 2026 | SQLi</span><span class="arrow">-></span></div>
       </a>
 
-      <a href="../posts/2026-03-09_Lab--SQL-injection-UNION-attack--finding-a-column-containing-text-dba317ce4a28.html" class="card v0">
-        <div class="c5 blue">PortSwigger</div>
-        <h3>SQL Injection UNION - Metin Taşıyan Kolonu Bulma</h3>
-        <p>UNION saldırısında string veriyi güvenle taşıyacak kolonu tespit etmenin en temiz yolunu anlatan lab çözümü.</p>
-        <div class="c4"><span>9 Mar 2026 | SQLi</span><span class="arrow">-></span></div>
+      <a href="../posts/2026-03-09_Lab--SQL-injection-UNION-attack--finding-a-column-containing-text-dba317ce4a28.html" class="card reveal">
+        <div class="card-tag blue">PortSwigger</div>
+        <h3>SQL Injection UNION - Metin TaÅŸÄ±yan Kolonu Bulma</h3>
+        <p>UNION saldÄ±rÄ±sÄ±nda string veriyi gÃ¼venle taÅŸÄ±yacak kolonu tespit etmenin en temiz yolunu anlatan lab Ã§Ã¶zÃ¼mÃ¼.</p>
+        <div class="card-footer"><span>9 Mar 2026 | SQLi</span><span class="arrow">-></span></div>
       </a>
 
-      <a href="../posts/2026-02-20_DNS-Zone-Transfer-Nedir--AXFR-A-----Nas-l--al---r--a9fac396e74f.html" class="card v0">
-        <div class="c5 green">Recon</div>
-        <h3>DNS Zone Transfer ve AXFR Açığı</h3>
-        <p>Zone transfer zafiyetinin neden hâlâ önemli olduğunu ve dış testlerde nasıl ciddi görünürlük sağladığını anlatan yazı.</p>
-        <div class="c4"><span>20 Şub 2026 | DNS</span><span class="arrow">-></span></div>
+      <a href="../posts/2026-02-20_DNS-Zone-Transfer-Nedir--AXFR-A-----Nas-l--al---r--a9fac396e74f.html" class="card reveal">
+        <div class="card-tag green">Recon</div>
+        <h3>DNS Zone Transfer ve AXFR AÃ§Ä±ÄŸÄ±</h3>
+        <p>Zone transfer zafiyetinin neden hÃ¢lÃ¢ Ã¶nemli olduÄŸunu ve dÄ±ÅŸ testlerde nasÄ±l ciddi gÃ¶rÃ¼nÃ¼rlÃ¼k saÄŸladÄ±ÄŸÄ±nÄ± anlatan yazÄ±.</p>
+        <div class="card-footer"><span>20 ub 2026 | DNS</span><span class="arrow">-></span></div>
       </a>
 
-      <a href="../posts/2026-02-23_Certificate-Transparency-Loglari--CT-Logs--1901b2af6879.html" class="card v0">
-        <div class="c5 green">Recon</div>
-        <h3>Certificate Transparency Logları ile Recon</h3>
-        <p>CT log kayıtlarının subdomain keşfi ve altyapı görünürlüğü için nasıl kullanılabileceğini anlatan pratik yazı.</p>
-        <div class="c4"><span>23 Şub 2026 | Recon</span><span class="arrow">-></span></div>
+      <a href="../posts/2026-02-23_Certificate-Transparency-Loglari--CT-Logs--1901b2af6879.html" class="card reveal">
+        <div class="card-tag green">Recon</div>
+        <h3>Certificate Transparency LoglarÄ± ile Recon</h3>
+        <p>CT log kayÄ±tlarÄ±nÄ±n subdomain keÅŸfi ve altyapÄ± gÃ¶rÃ¼nÃ¼rlÃ¼ÄŸÃ¼ iÃ§in nasÄ±l kullanÄ±labileceÄŸini anlatan pratik yazÄ±.</p>
+        <div class="card-footer"><span>23 ub 2026 | Recon</span><span class="arrow">-></span></div>
       </a>
     </div>
   </div>
 </section>
 
 <section id="articles">
-  <div class="w0">
-    <div class="w1 v0"><h2># Blog, Lab ve Kısa Notlar</h2></div>
-    <p class="w2 v0">Daha kısa teknik notlar, bir konuyu gerçekten anlayıp anlatabildiğini gösterir. Buradaki yazılar temel konuları yüzeysel değil, güvenlik bakışıyla ele alıyor.</p>
-    <div class="a7">
-      <a href="../posts/2026-02-17_Cross-Site-Scripting--XSS--3e1ef0d5d958.html" class="a5 v0">
-        <span class="a6">01</span>
-        <div class="a3">
+
+  <div class="content-wrap">
+    <div class="section-header reveal"><h2># Blog, Lab ve KÄ±sa Notlar</h2></div>
+    <p class="section-copy reveal">Daha kÄ±sa teknik notlar, bir konuyu gerÃ§ekten anlayÄ±p anlatabildiÄŸini gÃ¶sterir. Buradaki yazÄ±lar temel konularÄ± yÃ¼zeysel deÄŸil, gÃ¼venlik bakÄ±ÅŸÄ±yla ele alÄ±yor.</p>
+    <div class="articles-list">
+      <a href="../posts/2026-02-17_Cross-Site-Scripting--XSS--3e1ef0d5d958.html" class="article-item reveal">
+        <span class="article-num">01</span>
+        <div class="article-body">
           <h3>Cross-Site Scripting (XSS)</h3>
-          <p>XSS mantığı, tarayıcı tarafı etkiler ve payload bakışının reflected ile stored senaryolarda nasıl değiştiği.</p>
+          <p>XSS mantÄ±ÄŸÄ±, tarayÄ±cÄ± tarafÄ± etkiler ve payload bakÄ±ÅŸÄ±nÄ±n reflected ile stored senaryolarda nasÄ±l deÄŸiÅŸtiÄŸi.</p>
         </div>
         <span class="a4 tag-xss">XSS</span>
       </a>
 
-      <a href="../posts/2026-02-18_Web-Proxy-lerine-Giri--660731f8424e.html" class="a5 v0">
-        <span class="a6">02</span>
-        <div class="a3">
-          <h3>Web Proxy'lerine Giriş</h3>
-          <p>Trafik yakalamanın neden kritik olduğu, istekleri nasıl okumak gerektiği ve Burp Suite'in nasıl düşünme aracı hâline geldiği.</p>
+
+      <a href="../posts/2026-02-18_Web-Proxy-lerine-Giri--660731f8424e.html" class="article-item reveal">
+        <span class="article-num">02</span>
+        <div class="article-body">
+          <h3>Web Proxy'lerine GiriÅŸ</h3>
+          <p>Trafik yakalamanÄ±n neden kritik olduÄŸu, istekleri nasÄ±l okumak gerektiÄŸi ve Burp Suite'in nasÄ±l dÃ¼ÅŸÃ¼nme aracÄ± hÃ¢line geldiÄŸi.</p>
         </div>
         <span class="a4 tag-recon">Proxy</span>
       </a>
 
-      <a href="../posts/2026-02-09_DNS--Domain-Name-System--37515fbbeed0.html" class="a5 v0">
-        <span class="a6">03</span>
-        <div class="a3">
+
+      <a href="../posts/2026-02-09_DNS--Domain-Name-System--37515fbbeed0.html" class="article-item reveal">
+        <span class="article-num">03</span>
+        <div class="article-body">
           <h3>DNS Temelleri</h3>
-          <p>Recon kalitesini daha ilk adımdan etkileyen altyapı katmanını sade ama güvenlik odaklı bir dille anlatan giriş yazısı.</p>
+          <p>Recon kalitesini daha ilk adÄ±mdan etkileyen altyapÄ± katmanÄ±nÄ± sade ama gÃ¼venlik odaklÄ± bir dille anlatan giriÅŸ yazÄ±sÄ±.</p>
         </div>
         <span class="a4 tag-recon">DNS</span>
       </a>
 
-      <a href="../posts/2026-02-10_Virtual-Hosts--VHost--Nedir--0cc1e4c700d8.html" class="a5 v0">
-        <span class="a6">04</span>
-        <div class="a3">
+
+      <a href="../posts/2026-02-10_Virtual-Hosts--VHost--Nedir--0cc1e4c700d8.html" class="article-item reveal">
+        <span class="article-num">04</span>
+        <div class="article-body">
           <h3>Virtual Host'lar ve Gizli Attack Surface</h3>
-          <p>VHost yapılarının görünmeyen s1leri, unutulmuş ortamları ve ek saldırı yüzeylerini nasıl saklayabildiği.</p>
+          <p>VHost yapÄ±larÄ±nÄ±n gÃ¶rÃ¼nmeyen panelleri, unutulmuÅŸ ortamlarÄ± ve ek saldÄ±rÄ± yÃ¼zeylerini nasÄ±l saklayabildiÄŸi.</p>
         </div>
         <span class="a4 tag-recon">Recon</span>
       </a>
 
-      <a href="../posts/2026-02-17_Cross-Site-Request-Forgery--CSRF--9f95ab2f013b.html" class="a5 v0">
-        <span class="a6">05</span>
-        <div class="a3">
+
+      <a href="../posts/2026-02-17_Cross-Site-Request-Forgery--CSRF--9f95ab2f013b.html" class="article-item reveal">
+        <span class="article-num">05</span>
+        <div class="article-body">
           <h3>Cross-Site Request Forgery (CSRF)</h3>
-          <p>İstek güveni, oturum bağlamı ve tarayıcı üzerinden state değiştiren işlemlerin hangi koşullarda zafiyete dönüştüğü.</p>
+          <p>Ä°stek gÃ¼veni, oturum baÄŸlamÄ± ve tarayÄ±cÄ± Ã¼zerinden state deÄŸiÅŸtiren iÅŸlemlerin hangi koÅŸullarda zafiyete dÃ¶nÃ¼ÅŸtÃ¼ÄŸÃ¼.</p>
         </div>
-        <span class="a4 tag-blue">CSRF</span>
+        <span class="article-tag tag-blue">CSRF</span>
       </a>
 
-      <a href="../posts/2026-02-13_HTML-Injection-8ac0bc44aa32.html" class="a5 v0">
-        <span class="a6">06</span>
-        <div class="a3">
+      <a href="../posts/2026-02-13_HTML-Injection-8ac0bc44aa32.html" class="article-item reveal">
+        <span class="article-num">06</span>
+        <div class="article-body">
           <h3>HTML Injection</h3>
-          <p>Masum görünen render problemlerinin ne zaman güvenlik açısından anlamlı hâle geldiğini anlatan kısa teknik not.</p>
+          <p>Masum gÃ¶rÃ¼nen render problemlerinin ne zaman gÃ¼venlik aÃ§Ä±sÄ±ndan anlamlÄ± hÃ¢le geldiÄŸini anlatan kÄ±sa teknik not.</p>
         </div>
-        <span class="a4 tag-blue">HTML</span>
+        <span class="article-tag tag-blue">HTML</span>
       </a>
     </div>
   </div>
 </section>
 
 <section id="tools">
-  <div class="w0">
-    <div class="w1 v0"><h2># İşin Gerçek Yüzünü Gösteren Projeler</h2></div>
-    <p class="w2 v0">On tane yarım repo yerine birkaç güçlü örnek daha değerlidir. Buradaki seçki, nasıl düşündüğümü, otomasyon kurduğumu ve güvenlik işini nasıl belgelendirdiğimi gösteriyor.</p>
-    <div class="k0 v0">
-      <div class="k1" id="k6">
-        <div class="k2">
-          <div class="u0">
-            <div class="u1">&#128269;</div>
+
+  <div class="content-wrap">
+    <div class="section-header reveal"><h2># Ä°ÅŸin GerÃ§ek YÃ¼zÃ¼nÃ¼ GÃ¶steren Projeler</h2></div>
+    <p class="section-copy reveal">On tane yarÄ±m repo yerine birkaÃ§ gÃ¼Ã§lÃ¼ Ã¶rnek daha deÄŸerlidir. Buradaki seÃ§ki, nasÄ±l dÃ¼ÅŸÃ¼ndÃ¼ÄŸÃ¼mÃ¼, otomasyon kurduÄŸumu ve gÃ¼venlik iÅŸini nasÄ±l belgelendirdiÄŸimi gÃ¶steriyor.</p>
+    <div class="carousel-shell reveal">
+      <div class="carousel-track" id="project-track">
+        <div class="carousel-slide">
+          <div class="tool-card">
+            <div class="tool-icon">&#128269;</div>
             <h3>Bug Bounty Recon Workflow</h3>
-            <p>subfinder, httpx ve nuclei mantığını birleştiren; attack surface genişletme ve manuel triage için kurgulanmış recon akışı.</p>
+            <p>subfinder, httpx ve nuclei mantÄ±ÄŸÄ±nÄ± birleÅŸtiren; attack surface geniÅŸletme ve manuel triage iÃ§in kurgulanmÄ±ÅŸ recon akÄ±ÅŸÄ±.</p>
           </div>
         </div>
-        <div class="k2">
-          <div class="u0">
-            <div class="u1">&#129514;</div>
+        <div class="carousel-slide">
+          <div class="tool-card">
+            <div class="tool-icon">&#129514;</div>
             <h3>unionhunter</h3>
-            <p>UNION tabanlı SQL injection araştırmalarında kolon testi, veri taşıma ve hızlı manuel doğrulama için geliştirilen hafif Python aracı.</p>
+            <p>UNION tabanlÄ± SQL injection araÅŸtÄ±rmalarÄ±nda kolon testi, veri taÅŸÄ±ma ve hÄ±zlÄ± manuel doÄŸrulama iÃ§in geliÅŸtirilen hafif Python aracÄ±.</p>
           </div>
         </div>
-        <div class="k2">
-          <div class="u0">
-            <div class="u1">&#128752;</div>
-            <h3>Saldırı Yolu Notları</h3>
-            <p>Recon, exploit zinciri ve operatör kararlarını bir araya getiren; bulguları izole teknikler yerine gerçek saldırı akışı içinde anlatan notlar.</p>
+        <div class="carousel-slide">
+          <div class="tool-card">
+            <div class="tool-icon">&#128752;</div>
+            <h3>Detection And Research Notes</h3>
+            <p>Telemetry, saldÄ±rgan davranÄ±ÅŸÄ± ve operasyon baÄŸlamÄ±nÄ± bir araya getiren blue team notlarÄ± ve araÅŸtÄ±rma akÄ±ÅŸÄ±.</p>
           </div>
         </div>
       </div>
@@ -301,53 +1203,58 @@
           <button class="k5" type="button" data-slide="1" aria-label="Slide 2"></button>
           <button class="k5" type="button" data-slide="2" aria-label="Slide 3"></button>
         </div>
-        <div class="n1">
-          <button class="n3" id="k7" type="button" aria-label="Previous slide">&larr;</button>
-          <button class="n3" id="k8" type="button" aria-label="Next slide">&rarr;</button>
+
+        <div class="nav-actions">
+          <button class="nav-btn" id="carousel-prev" type="button" aria-label="Previous slide">&larr;</button>
+          <button class="nav-btn" id="carousel-next" type="button" aria-label="Next slide">&rarr;</button>
         </div>
       </div>
     </div>
 
-    <div class="r0 v0">
-      <h3 style="font-family:var(--ak);font-size:.95rem;color:var(--aa);letter-spacing:.08em;text-transform:uppercase;"># Özel Proje Vaka Çalışmaları</h3>
-      <p>Public görünen kısım portfolyo; gerçek build mantığı private. Burada kod yerine kapsam, çıktı ve teknik yön anlatılıyor.</p>
+
+    <div class="repo-header reveal">
+      <h3 style="font-family:var(--mono);font-size:.95rem;color:var(--green);letter-spacing:.08em;text-transform:uppercase;"># GitHub Projeleri</h3>
+      <p>Songul-Kizilay | 98 yÄ±ldÄ±z | gÃ¼venlik araÃ§larÄ±, writeup'lar ve araÅŸtÄ±rma notlarÄ±</p>
     </div>
 
-    <div class="r1">
-      <div class="r2 v0">
-        <h3>SQLi Recon Helper</h3>
-        <p>UNION tabanlı SQL injection akışlarında kolon testi, veri yerleşimi ve manuel doğrulama döngüsünü kısaltmak için kullanılan private Python workflow.</p>
+    <div class="repo-grid">
+      <a class="repo-card reveal" href="https://github.com/Songul-Kizilay/unionhunter" target="_blank" rel="noopener noreferrer">
+        <h3>unionhunter</h3>
+        <p>UNION tabanlÄ± SQL injection araÅŸtÄ±rmalarÄ± iÃ§in geliÅŸtirilmiÅŸ; hÄ±zlÄ± geri bildirim verip manuel exploit akÄ±ÅŸÄ±nÄ± hÄ±zlandÄ±ran araÃ§.</p>
         <div class="repo-meta">
           <span>Python</span>
           <span>SQLi</span>
-          <span>Private case study</span>
+          <span>MIT</span>
         </div>
       </div>
 
-      <div class="r2 v0">
-        <h3>Header Trust Analysis</h3>
-        <p>X-Forwarded davranışı ve reverse proxy güven varsayımlarını test etmek için kullanılan araştırma akışı ve header trust analiz mantığı.</p>
+
+      <a class="repo-card reveal" href="https://github.com/Songul-Kizilay/xfcheck" target="_blank" rel="noopener noreferrer">
+        <h3>xfcheck</h3>
+        <p>Arka uÃ§larÄ±n X-Forwarded baÅŸlÄ±klarÄ±na gÃ¼venip gÃ¼venmediÄŸini kontrol eden, proxy ve header davranÄ±ÅŸÄ± analizinde faydalÄ± bir araÃ§.</p>
         <div class="repo-meta">
           <span>Python</span>
           <span>Header trust</span>
-          <span>Private workflow</span>
+          <span>AraÅŸtÄ±rma aracÄ±</span>
         </div>
       </div>
 
-      <div class="r2 v0">
-        <h3>Security Lab Knowledge Base</h3>
-        <p>PortSwigger, HTB ve bug bounty süreçlerinden biriken; tekrar edilebilir saldırı mantığını saklayan operatör notları ve çalışma referansı.</p>
+
+      <a class="repo-card reveal" href="https://github.com/Songul-Kizilay/PortswiggerAllLabs" target="_blank" rel="noopener noreferrer">
+        <h3>PortswiggerAllLabs</h3>
+        <p>Web Security Academy lab'leri iÃ§in sadece cevap deÄŸil, exploit dÃ¼ÅŸÃ¼nce zincirini de belgeleyen pratik bir bilgi arÅŸivi.</p>
         <div class="repo-meta">
           <span>Writeup</span>
           <span>Lab</span>
-          <span>Private notes</span>
+          <span>MIT</span>
         </div>
-      </div>
+      </a>
 
-      <div class="r2 v0">
-        <h3>Recon Fingerprinting Notes</h3>
-        <p>Favicon tabanlı fingerprinting, asset clustering ve altyapı haritalama metodolojisini case study seviyesinde anlatan private çalışma notları.</p>
+      <a class="repo-card reveal" href="https://github.com/Songul-Kizilay/favicon.hash" target="_blank" rel="noopener noreferrer">
+        <h3>favicon.hash</h3>
+        <p>Favicon hash yaklaÅŸÄ±mÄ±yla benzer altyapÄ±larÄ± kÃ¼melendirmeye yardÄ±mcÄ± olan kÃ¼Ã§Ã¼k ama pratik bir recon aracÄ±.</p>
         <div class="repo-meta">
+          <span>Python</span>
           <span>Recon</span>
           <span>Infrastructure</span>
           <span>Code on request</span>
@@ -358,527 +1265,197 @@
 </section>
 
 <section id="about">
-  <div class="w0">
-    <div class="w1 v0"><h2># Operatör Özeti</h2></div>
-    <div class="b0">
-      <div class="b1 v0">
-        <p><span>Batman Üniversitesi Bilgisayar Mühendisliği</span> mezunuyum. Çalışma biçimim saldırgan merakı ve ofansif doğrulama üzerine kurulu. Şu an ana odağım manuel web application pentest, API güvenliği, bug bounty doğrulaması ve teknik bulguları okunabilir çıktılara dönüştürmek.</p>
-        <p><span>Enforsec</span> red team tarafını merkezime yerleştirdi. Önceki güvenlik operasyonu teması ise bana ek bağlam verdi; ama yönüm net şekilde ofansif işlerde, yani yüzeyi anlamak, etkiyi kanıtlamak ve bulguyu teknik olarak sağlam anlatmak.</p>
-        <p><span>BITES</span>, <span>Deneyap Türkiye</span> ve <span>CyberHero Academy</span> süreçleri de izleme, otomasyon, laboratuvar kurma ve mentorluk tarafını ekledi. Kısacası bu profil görselden değil, sahaya temas eden uygulamalı güvenlik işlerinden oluşuyor.</p>
+
+  <div class="content-wrap">
+    <div class="section-header reveal"><h2># OperatÃ¶r Ã–zeti</h2></div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p><span>Batman Ãœniversitesi Bilgisayar MÃ¼hendisliÄŸi</span> mezunuyum. Ã‡alÄ±ÅŸma biÃ§imim hem saldÄ±rgan merakÄ± hem de savunma gÃ¶rÃ¼nÃ¼rlÃ¼ÄŸÃ¼ ile ÅŸekilleniyor. u an ana odaÄŸÄ±m manuel web application pentest, API gÃ¼venliÄŸi, bug bounty doÄŸrulamasÄ± ve teknik bulgularÄ± okunabilir Ã§Ä±ktÄ±lara dÃ¶nÃ¼ÅŸtÃ¼rmek.</p>
+        <p><span>Enforsec</span> bana red team tarafÄ±nÄ±, <span>Infinitum IT</span> ve <span>Ä°Ã§iÅŸleri BakanlÄ±ÄŸÄ±</span> ise blue team ve SOC tarafÄ±nÄ± gÃ¶sterdi. Bu yÃ¼zden benim iÃ§in iÅŸ sadece aÃ§Ä±ÄŸÄ± bulmak deÄŸil; log, telemetry, alarm akÄ±ÅŸÄ± ve operasyonel etkiyi de okumak.</p>
+        <p><span>BITES</span>, <span>Deneyap TÃ¼rkiye</span> ve <span>CyberHero Academy</span> sÃ¼reÃ§leri de izleme, otomasyon, laboratuvar kurma ve mentorluk tarafÄ±nÄ± ekledi. KÄ±sacasÄ± bu profil gÃ¶rselden deÄŸil, sahaya temas eden uygulamalÄ± gÃ¼venlik iÅŸlerinden oluÅŸuyor.</p>
         <div style="margin-top:1.5rem">
-          <a href="about.html" class="d2 d0" style="font-size:0.75rem">Hakkımda Sayfası</a>
-          <a href="https://medium.com/@songulkizilay" class="d2 d1" style="font-size:0.75rem;margin-left:.5rem;" target="_blank" rel="noopener noreferrer">Medium'da Oku</a>
+          <a href="about.html" class="btn btn-primary" style="font-size:0.75rem">HakkÄ±mda SayfasÄ±</a>
+          <a href="https://medium.com/@songulkizilay" class="btn btn-outline" style="font-size:0.75rem;margin-left:.5rem;" target="_blank" rel="noopener noreferrer">Medium'da Oku</a>
         </div>
       </div>
-      <div class="b2 v0">
-        <h3>&#x25B6; Yetenekler &amp; Odak Alanları</h3>
-        <div class="b3">
-          <a href="blog.html?cat=PortSwigger" class="b4">Web Pentesting</a>
-          <a href="blog.html?cat=Web Security" class="b4">Web Uygulama Güvenliği</a>
-          <a href="blog.html?cat=PortSwigger" class="b4">SQL Injection</a>
-          <a href="../posts/2026-02-17_Cross-Site-Scripting--XSS--3e1ef0d5d958.html" class="b4">XSS</a>
-          <a href="../posts/2026-02-17_Cross-Site-Request-Forgery--CSRF--9f95ab2f013b.html" class="b4">CSRF</a>
-          <a href="blog.html?cat=Makale" class="b4">Bug Bounty</a>
-          <a href="blog.html?cat=Makale" class="b4">Recon</a>
-          <a href="blog.html?cat=CTF" class="b4">CTF</a>
-          <a href="blog.html?cat=Web Security" class="b4">API Güvenliği</a>
-          <a href="blog.html?cat=PortSwigger" class="b4">Burp Suite</a>
-          <a href="blog.html?cat=Makale" class="b4">Red Team</a>
-          <a href="blog.html?cat=Makale" class="b4">Ofansif Araştırma</a>
-          <a href="blog.html?cat=Makale" class="b4">Python</a>
-          <a href="blog.html?cat=Makale" class="b4">Bash</a>
-          <a href="https://bugcrowd.com/songulkizilay" target="_blank" rel="noopener noreferrer" class="b4">Bugcrowd</a>
+      <div class="skills-box reveal">
+        <h3>&#x25B6; Yetenekler &amp; Odak AlanlarÄ±</h3>
+        <div class="skill-tags">
+          <a href="blog.html?cat=PortSwigger" class="skill-tag">Web Pentesting</a>
+          <a href="blog.html?cat=Web Security" class="skill-tag">Web App Security</a>
+          <a href="blog.html?cat=PortSwigger" class="skill-tag">SQL Injection</a>
+          <a href="../posts/2026-02-17_Cross-Site-Scripting--XSS--3e1ef0d5d958.html" class="skill-tag">XSS</a>
+          <a href="../posts/2026-02-17_Cross-Site-Request-Forgery--CSRF--9f95ab2f013b.html" class="skill-tag">CSRF</a>
+          <a href="blog.html?cat=Makale" class="skill-tag">Bug Bounty</a>
+          <a href="blog.html?cat=Makale" class="skill-tag">Recon</a>
+          <a href="blog.html?cat=CTF" class="skill-tag">CTF</a>
+          <a href="blog.html?cat=Web Security" class="skill-tag">API Security</a>
+          <a href="blog.html?cat=PortSwigger" class="skill-tag">Burp Suite</a>
+          <a href="blog.html?cat=Makale" class="skill-tag">Ofansif Ara?t?rma</a>
+          <a href="blog.html?cat=Makale" class="skill-tag">Sald?r? Yolu Analizi</a>
+          <a href="blog.html?cat=Makale" class="skill-tag">Python</a>
+          <a href="blog.html?cat=Makale" class="skill-tag">Bash</a>
+          <a href="https://bugcrowd.com/songulkizilay" target="_blank" rel="noopener noreferrer" class="skill-tag">Bugcrowd</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+
+<!-- CTA -->
 <section id="cta">
-  <div class="w0">
-    <div class="w1 v0"><h2># Birlikte Çalışalım Mı</h2></div>
-    <div class="t0 v0">
-      <div class="t1">
-        <h3>Hem zafiyet bulup hem de net anlatabilen birine mi ihtiyacınız var</h3>
-        <p>Pentest ve security research odaklı rollerde; pratik test, açık raporlama ve görünür proof of work ile değer üreten bir çizgide ilerliyorum.</p>
+  <div class="content-wrap">
+    <div class="section-header reveal"><h2># Birlikte Ã‡alÄ±ÅŸalÄ±m MÄ±?</h2></div>
+    <div class="cta-panel reveal">
+      <div class="cta-copy">
+        <h3>Hem zafiyet bulup hem de net anlatabilen birine mi ihtiyacÄ±nÄ±z var?</h3>
+        <p>Pentest, junior security analyst ve security research odaklÄ± rollerde; pratik test, aÃ§Ä±k raporlama ve gÃ¶rÃ¼nÃ¼r proof of work ile deÄŸer Ã¼reten bir Ã§izgide ilerliyorum.</p>
       </div>
-      <div class="t2">
-        <a href="mailto:songulkizilay46@gmail.com" class="d2 d0">E-posta</a>
-        <a href="https://www.linkedin.com/in/songulozugurler/" class="d2 d1" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://medium.com/@songulkizilay" class="d2 d1" target="_blank" rel="noopener noreferrer">Medium</a>
+      <div class="cta-links">
+        <a href="mailto:songulkizilay46@gmail.com" class="btn btn-primary">E-posta</a>
+        <a href="https://www.linkedin.com/in/songulozugurler/" class="btn btn-outline" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/Songul-Kizilay" class="btn btn-outline" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://medium.com/@songulkizilay" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Medium</a>
       </div>
     </div>
   </div>
 </section>
 
+
+<!-- FOOTER -->
 <footer>
-  <ul class="f0">
+  <ul class="footer-links">
+    <li><a href="https://github.com/Songul-Kizilay" target="_blank" rel="noopener noreferrer">GitHub</a></li>
     <li><a href="https://www.linkedin.com/in/songulozugurler/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
     <li><a href="https://medium.com/@songulkizilay" target="_blank" rel="noopener noreferrer">Medium</a></li>
-    <li><a href="mailto:songulkizilay46@gmail.com">İletişim</a></li>
+    <li><a href="mailto:songulkizilay46@gmail.com">Ä°letiÅŸim</a></li>
   </ul>
-  <p class="f1">&copy; 2026 Songül Özügürler | Siber Güvenlik Araştırmacısı</p>
+  <p class="footer-copy">&copy; 2026 SongÃ¼l Ã–zÃ¼gÃ¼rler | Siber GÃ¼venlik AraÅŸtÄ±rmacÄ±sÄ±</p>
 </footer>
 
+<!-- 
+     PARTICLE SYSTEM (vanilla JS, no deps)
+ -->
 <script>
-(() => {
-  const lines = [
-    "Song\u00fcl \u00d6z\u00fcg\u00fcrler - Siber G\u00fcvenlik Ara\u015ft\u0131rmac\u0131s\u0131",
-    "Web uygulamalar\u0131n\u0131 zorlamay\u0131 seviyorum.",
-    "Pentest, bug bounty ve red team operasyonlar\u0131na odakl\u0131."
-  ];
+(function () {
+  const canvas = document.getElementById('particles-canvas');
+  const ctx    = canvas.getContext('2d');
 
-  const el = document.getElementById("tw0");
-  let ci = 0;
-  const full = lines.join("\n");
+  let W, H, mouse = { x: -9999, y: -9999 };
+  const PARTICLE_COUNT = 132;
+  const LINK_DIST      = 125;
+  const REPULSE_DIST   = 135;
+  const SPEED = 0.16;
+  const ESCAPE_FORCE = 0.40;
+  const WANDER_FORCE = 0.006;
+  const COLOR          = '0, 255, 136'; // green channels
 
-  function type() {
-    if (ci >= full.length) return;
-    el.textContent += full[ci++];
-    setTimeout(type, ci === 1 ? 180 : 24);
+  let particles = [];
+
+  function resize() {
+    W = canvas.width  = window.innerWidth;
+    H = canvas.height = window.innerHeight;
   }
 
-  setTimeout(type, 500);
-
-  const menuToggle = document.getElementById("m0");
-  const navLinks = document.getElementById("n0");
-  menuToggle.addEventListener("click", () => navLinks.classList.toggle("open"));
-  navLinks.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => navLinks.classList.remove("open"));
-  });
-
-  const items = document.querySelectorAll(".v0");
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("v1");
-        obs.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  items.forEach((item) => obs.observe(item));
-
-  const spySections = document.querySelectorAll("section[id]");
-  const spyLinks = document.querySelectorAll('.n0 a[href^="#"]');
-  const spy = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      spyLinks.forEach((link) => {
-        link.classList.toggle("active", link.getAttribute("href") === "#" + entry.target.id);
-      });
-    });
-  }, { rootMargin: "-35% 0px -45% 0px", threshold: 0.01 });
-  spySections.forEach((section) => spy.observe(section));
-
-  const output = document.getElementById("o0");
-  const form = document.getElementById("tf0");
-  const input = document.getElementById("o4");
-
-
-  const bgCanvas = document.getElementById("p0");
-  const bgCtx = bgCanvas.getContext("2d");
-  const bgState = { nodes: [], pointer: { x: -9999, y: -9999 }, active: true };
-
-  function sizeBackground() {
-    const ratio = window.devicePixelRatio || 1;
-    bgCanvas.width = Math.floor(window.innerWidth * ratio);
-    bgCanvas.height = Math.floor(window.innerHeight * ratio);
-    bgCanvas.style.width = window.innerWidth + "px";
-    bgCanvas.style.height = window.innerHeight + "px";
-    bgCtx.setTransform(ratio, 0, 0, ratio, 0, 0);
+  function Particle() {
+    this.x  = Math.random() * W;
+    this.y  = Math.random() * H;
+    this.vx = (Math.random() - 0.5) * SPEED;
+    this.vy = (Math.random() - 0.5) * SPEED;
+    this.r  = Math.random() * 1.8 + 0.8;
+    this.angle = Math.random() * Math.PI * 2;
+    this.spin = (Math.random() - 0.5) * 0.08;
   }
 
-  function seedBackground() {
-    const count = Math.max(112, Math.floor((window.innerWidth * window.innerHeight) / 17000));
-    bgState.nodes = Array.from({ length: count }, () => ({
-      x: Math.random() * window.innerWidth,
-      y: Math.random() * window.innerHeight,
-      vx: (Math.random() - 0.5) * 0.2,
-      vy: (Math.random() - 0.5) * 0.2
-    }));
+  Particle.prototype.update = function () {
+    this.angle += this.spin;
+    this.vx += Math.cos(this.angle) * WANDER_FORCE;
+    this.vy += Math.sin(this.angle) * WANDER_FORCE;
+
+    // repulse from mouse
+    const dx   = this.x - mouse.x;
+    const dy   = this.y - mouse.y;
+    const dist = Math.sqrt(dx * dx + dy * dy);
+
+    if (dist < REPULSE_DIST && dist > 0) {
+      const force = Math.pow((REPULSE_DIST - dist) / REPULSE_DIST, 1.7);
+      this.vx += (dx / dist) * force * ESCAPE_FORCE;
+      this.vy += (dy / dist) * force * ESCAPE_FORCE;
+    }
+
+    // speed cap
+    const spd = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
+    if (spd > 1.45) { this.vx = (this.vx / spd) * 1.45; this.vy = (this.vy / spd) * 1.45; }
+
+    // damping
+    this.vx *= 0.992;
+    this.vy *= 0.992;
+
+    this.x += this.vx;
+    this.y += this.vy;
+
+    // wrap edges
+    if (this.x < 0)  this.x = W;
+    if (this.x > W)  this.x = 0;
+    if (this.y < 0)  this.y = H;
+    if (this.y > H)  this.y = 0;
+  };
+
+  function init() {
+    particles = [];
+    for (let i = 0; i < PARTICLE_COUNT; i++) particles.push(new Particle());
   }
 
-  function drawBackground() {
-    if (!bgState.active) return;
-    bgCtx.clearRect(0, 0, window.innerWidth, window.innerHeight);
-    for (let i = 0; i < bgState.nodes.length; i += 1) {
-      const a = bgState.nodes[i];
-      const neighbors = [];
-      a.x += a.vx;
-      a.y += a.vy;
-      if (a.x < -20 || a.x > window.innerWidth + 20) a.vx *= -1;
-      if (a.y < -20 || a.y > window.innerHeight + 20) a.vy *= -1;
-      const dxp = a.x - bgState.pointer.x;
-      const dyp = a.y - bgState.pointer.y;
-      const distPointer = Math.hypot(dxp, dyp);
-      if (distPointer < 110) {
-        const force = (110 - distPointer) / 110;
-        a.x += (dxp / (distPointer || 1)) * force * 1.6;
-        a.y += (dyp / (distPointer || 1)) * force * 1.6;
-      }
-      for (let j = i + 1; j < bgState.nodes.length; j += 1) {
-        const b = bgState.nodes[j];
-        const dx = a.x - b.x;
-        const dy = a.y - b.y;
-        const dist = Math.hypot(dx, dy);
-        if (dist < 150) {
-          if (neighbors.length < 5) neighbors.push(b);
-          bgCtx.strokeStyle = "rgba(0,255,136," + (0.18 * (1 - dist / 150)).toFixed(3) + ")";
-          bgCtx.lineWidth = 0.9;
-          bgCtx.beginPath();
-          bgCtx.moveTo(a.x, a.y);
-          bgCtx.lineTo(b.x, b.y);
-          bgCtx.stroke();
-        }
-      }
-      for (let n = 0; n < neighbors.length - 1; n += 1) {
-        for (let m = n + 1; m < neighbors.length; m += 1) {
-          const b = neighbors[n];
-          const c = neighbors[m];
-          const dbc = Math.hypot(b.x - c.x, b.y - c.y);
-          if (dbc < 150) {
-            bgCtx.fillStyle = "rgba(0,255,136,0.028)";
-            bgCtx.beginPath();
-            bgCtx.moveTo(a.x, a.y);
-            bgCtx.lineTo(b.x, b.y);
-            bgCtx.lineTo(c.x, c.y);
-            bgCtx.closePath();
-            bgCtx.fill();
-          }
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+
+    // draw links
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx   = particles[i].x - particles[j].x;
+        const dy   = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < LINK_DIST) {
+          const alpha = (1 - dist / LINK_DIST) * 0.14;
+          ctx.strokeStyle = `rgba(${COLOR}, ${alpha})`;
+          ctx.lineWidth   = 0.7;
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.stroke();
         }
       }
     }
-    bgState.nodes.forEach((node) => {
-      bgCtx.fillStyle = "rgba(0,255,136,0.52)";
-      bgCtx.beginPath();
-      bgCtx.arc(node.x, node.y, 2, 0, Math.PI * 2);
-      bgCtx.fill();
+
+    // draw dots
+    particles.forEach(p => {
+      p.update();
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${COLOR}, 0.48)`;
+      ctx.fill();
     });
-    window.requestAnimationFrame(drawBackground);
+
+    requestAnimationFrame(draw);
   }
 
-  const matrixCanvas = document.getElementById("mx0");
-  const matrixCtx = matrixCanvas.getContext("2d");
-  const matrixGlyphs = "01アイウエオカキクケコサシスセソ0123456789";
-  let matrixDrops = [];
-  let matrixFont = 18;
-  let matrixActive = false;
-  let matrixTimer = 0;
-  let matrixRaf = 0;
+  window.addEventListener('resize', () => { resize(); init(); });
+  window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
+  window.addEventListener('mouseleave', () => { mouse.x = -9999; mouse.y = -9999; });
 
-  function sizeMatrix() {
-    const ratio = window.devicePixelRatio || 1;
-    matrixCanvas.width = Math.floor(window.innerWidth * ratio);
-    matrixCanvas.height = Math.floor(window.innerHeight * ratio);
-    matrixCanvas.style.width = window.innerWidth + "px";
-    matrixCanvas.style.height = window.innerHeight + "px";
-    matrixCtx.setTransform(ratio, 0, 0, ratio, 0, 0);
-    matrixFont = window.innerWidth < 720 ? 14 : 18;
-    matrixDrops = Array(Math.ceil(window.innerWidth / matrixFont)).fill(0).map(() => Math.random() * -18);
-  }
-
-  function stopMatrixRain() {
-    matrixActive = false;
-    clearTimeout(matrixTimer);
-    cancelAnimationFrame(matrixRaf);
-    document.body.classList.remove("mx");
-    matrixCtx.clearRect(0, 0, matrixCanvas.width, matrixCanvas.height);
-  }
-
-  function drawMatrixRain() {
-    if (!matrixActive) return;
-    matrixCtx.fillStyle = "rgba(4, 8, 5, 0.16)";
-    matrixCtx.fillRect(0, 0, window.innerWidth, window.innerHeight);
-    matrixCtx.font = matrixFont + "px IBM Plex Mono, monospace";
-    matrixCtx.textBaseline = "top";
-    matrixDrops.forEach((drop, index) => {
-      const x = index * matrixFont;
-      const y = drop * matrixFont;
-      const glyph = matrixGlyphs[(Math.random() * matrixGlyphs.length) | 0];
-      matrixCtx.fillStyle = drop > 2 && Math.random() > 0.93 ? "#d8ffe6" : "#00ff66";
-      matrixCtx.fillText(glyph, x, y);
-      if (y > window.innerHeight + matrixFont * 2 && Math.random() > 0.972) {
-        matrixDrops[index] = Math.random() * -22;
-      } else {
-        matrixDrops[index] = drop + 0.72;
-      }
-    });
-    matrixRaf = window.requestAnimationFrame(drawMatrixRain);
-  }
-
-  function startMatrixRain() {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    clearTimeout(matrixTimer);
-    sizeMatrix();
-    document.body.classList.add("mx");
-    matrixCtx.fillStyle = "rgba(3, 7, 5, 0.92)";
-    matrixCtx.fillRect(0, 0, window.innerWidth, window.innerHeight);
-    if (!matrixActive) {
-      matrixActive = true;
-      cancelAnimationFrame(matrixRaf);
-      matrixRaf = window.requestAnimationFrame(drawMatrixRain);
-    }
-    matrixTimer = window.setTimeout(stopMatrixRain, 6500);
-  }
-
-
-  const commandMap = {
-    help: [
-      "Kullanilabilir komutlar:",
-      "",
-      "[gezinti]",
-      "about  skills  projects  writeups  blog  tools",
-      "experience  certs  github  medium  linkedin  lang  cv",
-      "flag  contact  clear  sudo",
-      "",
-      "[intel]",
-      "stats  now  history  search <terim>",
-      "writeups latest  tools featured",
-      "",
-
-      "[eglence]",
-      "hack  rm -rf /  passwords  self-destruct",
-      "coffee  matrix  aliens  sudo hire songul",
-      "",
-      "[operasyon]",
-      "scan target.com  recon  bruteforce login",
-      "sleep  bug  404  debug  developer  nmap localhost"
-    ],
-    about: ["Operat\u00f6r profili: web uygulama g\u00fcvenli\u011fi, bug bounty ve red team oda\u011f\u0131.", "Detayl\u0131 profil /tr/about.html sayfas\u0131nda."],
-    skills: ["web application security", "red team operasyonlar\u0131", "ofansif do\u011frulama", "bug bounty", "burp suite", "python / bash"],
-    projects: ["Bug Bounty Recon Workflow", "unionhunter", "Sald\u0131r\u0131 Yolu Notlar\u0131"],
-    writeups: ["/#writeups", "Son zafiyet writeup'lar\u0131, HTB walkthrough'lar\u0131 ve PortSwigger lab notlar\u0131"],
-    blog: ["/tr/blog.html", "Filtreli, aramal\u0131 t\u00fcm yaz\u0131 ar\u015fivi ve ara\u015ft\u0131rma kayd\u0131"],
-    tools: ["/#tools", "Se\u00e7ilmi\u015f vaka \u00e7al\u0131\u015fmalar\u0131, \u00f6zel i\u015f ak\u0131\u015flar\u0131 ve pratik ara\u015ft\u0131rma i\u015fleri"],
-    experience: ["/tr/about.html", "Red team oda\u011f\u0131, \u00f6nceki operasyon ba\u011flam\u0131, mentorluk ve lab deneyimi"],
-    certs: ['CEH Practical', 'BGA Penetration Tester Training Program', 'CCNA: Intro to Networks', 'AWS Security Fundamentals'],
-    github: ["Bu sitede proje kodlar\u0131 public de\u011fil.", "Vaka \u00e7al\u0131\u015fmas\u0131 g\u00f6r\u00fcn\u00fcm\u00fc var; detayl\u0131 eri\u015fim istek \u00fczerine payla\u015f\u0131labilir."],
-    medium: ["medium.com/@songulkizilay", "Writeup, walkthrough ve security research yaz\u0131lar\u0131"],
-    linkedin: ["linkedin.com/in/songulozugurler", "Deneyim, sertifika ve profesyonel profil"],
-    lang: ["/index.html -> English", "/tr/index.html -> T\u00fcrk\u00e7e"],
-    cv: ["/tr/about.html", "Deneyim, sertifikalar ve operat\u00f6r profili \u00f6zeti"],
-    flag: ["HTB{songul_security_lab}", "Komik g\u00f6rsel a\u00e7\u0131l\u0131yor..."],
-    contact: ['songulkizilay46@gmail.com', 'medium.com/@songulkizilay', 'linkedin.com/in/songulozugurler'],
-    stats: ["10 raporlanan bulgu", "95 arsiv girdisi", "4 sertifika", "3 ozel vaka calismasi"],
-    now: ["Su an baktigim konular:", "API erisim kontrolu kenar durumlari", "SQLi akisini hizlandiran kisayollar", "recon bilgisini etkiye donusturen saldiri yollari"],
-    history: ["Henuz komut gecmisi yok."],
-    sudo: ["Erişim reddedildi.", "Kanguru root yetkini iptal etti.", "Komik kontrol sayfası açılıyor..."]
-  };
-
-  const historyState = { items: [], index: -1 };
-
-  const commandActions = {
-    about: { type: "same-tab", target: "about.html" },
-    projects: { type: "hash", target: "#tools" },
-    writeups: { type: "hash", target: "#writeups" },
-    blog: { type: "same-tab", target: "blog.html" },
-    tools: { type: "hash", target: "#tools" },
-    experience: { type: "same-tab", target: "about.html#experience" },
-    certs: { type: "same-tab", target: "about.html#certifications" },
-    medium: { type: "new-tab", target: "https://medium.com/@songulkizilay" },
-    linkedin: { type: "new-tab", target: "https://www.linkedin.com/in/songulozugurler/" },
-    lang: { type: "same-tab", target: "../index.html" },
-    cv: { type: "same-tab", target: "about.html" },
-    flag: { type: "same-tab", target: "../flag.html" },
-    matrix: { type: "same-tab", target: "../matrix.html" },
-    sudo: { type: "same-tab", target: "../sudo.html" },
-    contact: { type: "mailto", target: "mailto:songulkizilay46@gmail.com" },
-    aliens: { type: "same-tab", target: "../aliens.html" },
-    developer: { type: "same-tab", target: "../developer.html" }
-  };
-
-  const autocompleteList = Array.from(new Set([...Object.keys(commandMap), ...Object.keys(commandActions), "search xss", "search sqli", "search ssrf", "search idor", "writeups latest", "tools featured", "stats", "now", "history", "scan target.com", "bruteforce login", "nmap localhost", "sudo hire songul"]));
-
-  function pushHistory(command) {
-    if (!command || command === "history") return;
-    if (!historyState.items.length || historyState.items[historyState.items.length - 1] !== command) historyState.items.push(command);
-    historyState.index = historyState.items.length;
-  }
-
-  function historyLines() {
-    if (!historyState.items.length) return commandMap.history;
-    const recent = historyState.items.slice(-8).map((entry, index) => `${index + 1}. ${entry}`);
-    return ["Recent commands:", ...recent];
-  }
-
-  function autocomplete(value) {
-    const query = value.trim().toLowerCase();
-    if (!query) return value;
-    return autocompleteList.find((item) => item.startsWith(query)) || value;
-  }
-
-  function dynamicLines(command) {
-    if (command === "history") return historyLines();
-    if (command === "stats") return commandMap.stats;
-    if (command === "now") return commandMap.now;
-    if (command === "writeups latest") return ["Son writeuplar aciliyor..."];
-    if (command === "tools featured") return ["One cikan vaka calismalari aciliyor..."];
-    if (command.startsWith("search ")) return ["Arsiv aramasina yonlendiriliyor...", command.slice(7)];
-    return null;
-  }
-
-  function dynamicAction(command) {
-    if (command === "writeups latest") { window.location.hash = "#writeups"; return true; }
-    if (command === "tools featured") { window.location.hash = "#tools"; return true; }
-    if (command.startsWith("search ")) { window.location.href = "blog.html?q=" + encodeURIComponent(command.slice(7).trim()); return true; }
-    return false;
-  }
-
-  function pushLine(text, extraClass) {
-    const line = document.createElement("div");
-    line.className = "terminal-line" + (extraClass ? " " + extraClass : "");
-    line.textContent = text;
-    output.appendChild(line);
-  }
-
-  function emitLines(lines) {
-    lines.forEach((line) => pushLine(line, "out"));
-  }
-
-  function runSpecial(command) {
-    if (command === "sudo") return ["Erişim reddedildi.", "", "Kanguru root yetkini iptal etti.", "", "Komik kontrol sayfası açılıyor..."];
-    if (command === "hack") return ["Initializing cyber attack...", "", "[####......] 40%", "[########..] 80%", "[##########] 100%", "", "Target hacked.", "Just kidding. I hack legally."];
-    if (command === "rm -rf /") return ["Permission denied.", "", "This system is protected by Songul Security(TM)"];
-    if (command === "passwords") return ["admin: admin123", "root: toor", "developer: password", "", "Just kidding.", "Use a password manager."];
-    if (command === "self-destruct") return ["Self destruct sequence initiated...", "", "5", "4", "3", "2", "1", "", "System survived.", "Nice try."];
-    if (command === "coffee") return ["Brewing coffee...", "", "Fuel for bug hunting."];
-    if (command === "matrix") {
-      startMatrixRain();
-      return ["Wake up Neo...", "The Matrix has you.", "", "Görsel payload açılıyor..."];
-    }
-    if (command === "aliens") return ["Scanning galaxy for vulnerabilities...", "", "No aliens found.", "", "But plenty of XSS."];
-    if (command === "sudo hire songul") return ["Access granted.", "", "Welcome to the team.", "Recruiter bait."];
-    if (command.startsWith("scan ")) return ["Scanning " + command.slice(5) + "...", "", "[..........]", "[#.........]", "[####......]", "[######....]", "[########..]", "[##########]", "", "Scan complete.", "No vulnerabilities found."];
-    if (command === "recon") return ["Gathering intelligence...", "", "Subdomains found: 12", "Open ports: 4", "Interesting endpoints: /admin /api /debug", "", "Recon complete."];
-    if (command.startsWith("bruteforce ")) return ["Trying passwords...", "", "admin123", "password", "letmein", "123456", "", "Success.", "", "Developers still reuse passwords."];
-    if (command === "sleep") return ["Security researchers don't sleep.", "", "They wait for scans to finish."];
-    if (command === "bug") return ["Searching for bugs...", "", "Bug found.", "", "It's called developer logic."];
-    if (command === "404") return ["Error 404", "", "Sleep not found.", "Coffee required."];
-    if (command === "debug") return ["Problem located.", "", "Between keyboard and chair."];
-    if (command === "developer") return ["Developer detected.", "", "Security level decreased."];
-    if (command.startsWith("nmap ")) return ["PORT     STATE SERVICE", "22/tcp   open  ssh", "80/tcp   open  http", "443/tcp  open  https", "", "Host looks secure."];
-    return null;
-  }
-
-  function performCommandAction(command) {
-    const action = commandActions[command];
-    if (!action) return;
-    window.setTimeout(() => {
-      if (action.type === "hash") {
-        window.location.hash = action.target;
-      } else if (action.type === "same-tab" || action.type === "mailto") {
-        window.location.href = action.target;
-      } else if (action.type === "new-tab") {
-        window.open(action.target, "_blank", "noopener");
-      }
-    }, 180);
-  }
-
-  function runCommand(value) {
-    const command = value.trim().toLowerCase();
-    if (!command) return;
-    pushHistory(command);
-    pushLine("songul@sec:~$ " + command);
-    if (command === "clear") {
-      output.innerHTML = "";
-      return;
-    }
-    const dynamic = dynamicLines(command);
-    if (dynamic) {
-      emitLines(dynamic);
-      output.scrollTop = output.scrollHeight;
-      window.setTimeout(() => dynamicAction(command), 180);
-      return;
-    }
-    const special = runSpecial(command);
-    if (special) {
-      emitLines(special);
-      if (command === "flag" || command === "aliens" || command === "developer" || command === "sudo" || command === "matrix") performCommandAction(command);
-      output.scrollTop = output.scrollHeight;
-      return;
-    }
-    emitLines(commandMap[command] || ["Komut bulunamad\u0131.", "Dene: help"]);
-    output.scrollTop = output.scrollHeight;
-    performCommandAction(command);
-  }
-
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    runCommand(input.value);
-    input.value = "";
-    historyState.index = historyState.items.length;
-  });
-
-  input.addEventListener("keydown", (event) => {
-    if (event.key === "ArrowUp") {
-      event.preventDefault();
-      if (!historyState.items.length) return;
-      historyState.index = Math.max(0, historyState.index - 1);
-      input.value = historyState.items[historyState.index] || input.value;
-      return;
-    }
-    if (event.key === "ArrowDown") {
-      event.preventDefault();
-      if (!historyState.items.length) return;
-      historyState.index = Math.min(historyState.items.length, historyState.index + 1);
-      input.value = historyState.items[historyState.index] || "";
-      return;
-    }
-    if (event.key === "Tab") {
-      event.preventDefault();
-      input.value = autocomplete(input.value);
-    }
-  });
-
-  document.querySelectorAll(".o2").forEach((button) => {
-    button.addEventListener("click", () => runCommand(button.dataset.command));
-  });
-
-  document.querySelectorAll("[data-quick]").forEach((button) => {
-    button.addEventListener("click", () => runCommand(button.dataset.quick));
-  });
-
-  const track = document.getElementById("k6");
-  const dots = document.querySelectorAll(".k5");
-  const prev = document.getElementById("k7");
-  const next = document.getElementById("k8");
-  let currentSlide = 0;
-
-  sizeBackground();
-  seedBackground();
-  drawBackground();
-
-  function setSlide(index) {
-    currentSlide = (index + dots.length) % dots.length;
-    track.style.transform = "translateX(-" + (currentSlide * 100) + "%)";
-    dots.forEach((dot, dotIndex) => dot.classList.toggle("active", dotIndex === currentSlide));
-  }
-
-  prev.addEventListener("click", () => setSlide(currentSlide - 1));
-  next.addEventListener("click", () => setSlide(currentSlide + 1));
-  dots.forEach((dot) => dot.addEventListener("click", () => setSlide(Number(dot.dataset.slide))));
-
-  window.addEventListener("resize", () => {
-    sizeBackground();
-    seedBackground();
-    if (matrixActive) sizeMatrix();
-  });
-  window.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") stopMatrixRain();
-  });
-  window.addEventListener("pointermove", (event) => {
-    bgState.pointer.x = event.clientX;
-    bgState.pointer.y = event.clientY;
-  }, { passive: true });
-  window.addEventListener("pointerleave", () => {
-    bgState.pointer.x = -9999;
-    bgState.pointer.y = -9999;
-  });
-  window.addEventListener("pointerdown", () => {
-    if (matrixActive) stopMatrixRain();
-  }, { passive: true });
+  resize();
+  init();
+  draw();
 })();
 </script>
 
+<!-- TYPEWRITER -->
+<script src="../assets/text-normalizer.js"></script><script src="../assets/terminal-engine.js" data-lang="tr"></script>
+
 </body>
 </html>
+
+
+
+
