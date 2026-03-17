@@ -299,6 +299,15 @@
       font-weight: 700;
     }
 
+    .terminal-hints {
+      margin-top: 0.72rem;
+      min-height: 1.2rem;
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: rgba(217,224,231,0.62);
+      letter-spacing: 0.01em;
+    }
+
     .terminal-sandbox {
       position: absolute;
       width: 1px;
@@ -977,6 +986,7 @@
         <input class="terminal-input" id="terminal-input" type="text" autocomplete="off" spellcheck="false" placeholder="Try: help, writeups, github, certs, lang" />
         <button class="terminal-submit" type="submit">Run</button>
       </form>
+      <div class="terminal-hints" id="terminal-hints"></div>
       <div id="vuln-app" class="terminal-sandbox" aria-hidden="true"></div>
     </div>
 

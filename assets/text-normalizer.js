@@ -1,23 +1,41 @@
 (() => {
-  const replacements = [
+  const directReplacements = [
     ["Ã¼", "ü"], ["Ãœ", "Ü"], ["Ã¶", "ö"], ["Ã–", "Ö"], ["Ã§", "ç"], ["Ã‡", "Ç"],
-    ["ÄŸ", "ğ"], ["Ä", "Ğ"], ["Ä±", "ı"], ["Ä°", "İ"], ["ÅŸ", "ş"], ["Å", "Ş"],
-    ["ÃƒÂ¼", "ü"], ["ÃƒÅ“", "Ü"], ["ÃƒÂ¶", "ö"], ["Ãƒâ€“", "Ö"], ["ÃƒÂ§", "ç"], ["Ãƒâ€¡", "Ç"],
-    ["Ã„Å¸", "ğ"], ["Ã„Å¾", "Ğ"], ["Ã…Å¸", "ş"], ["Ã…Å¾", "Ş"], ["Ã„Â±", "ı"], ["Ã„Â°", "İ"],
-    ["Ã¢â‚¬â„¢", "’"], ["Ã¢â‚¬Ëœ", "‘"], ["Ã¢â‚¬Å“", "“"], ["Ã¢â‚¬Â", "”"], ["Ã¢â‚¬â€œ", "–"], ["Ã¢â‚¬â€", "—"],
-    ["Ã¢â‚¬Â¦", "…"], ["Ã¢â‚¬Â¢", "•"], ["Ã¢â€ â€™", "→"], ["Ã‚ ", " "], ["Ã‚", ""], ["ï¿½", ""]
+    ["ÄŸ", "ğ"], ["Äž", "Ğ"], ["Ä±", "ı"], ["Ä°", "İ"], ["ÅŸ", "ş"], ["Åž", "Ş"],
+    ["â€™", "'"], ["â€˜", "'"], ["â€œ", "\""], ["â€", "\""], ["â€“", "-"], ["â€”", "-"],
+    ["â€¦", "..."], ["â€¢", "•"], ["Â ", " "], ["Â", ""], ["ï¿½", ""]
   ];
 
   const selectors = ["title", "input[placeholder]", "meta[name='description']", "[aria-label]", "[title]"];
   const skipTags = new Set(["SCRIPT", "STYLE", "NOSCRIPT", "TEXTAREA"]);
-  const suspicious = /Ã|Ä|Å|Â|â€™|â€|ï¿½/;
+  const suspicious = /Ã|Ä|Å|Â|â€|ï¿½/;
 
-  function fixText(value) {
+  function latin1ToUtf8(value) {
+    try {
+      return decodeURIComponent(Array.from(value, ch => {
+        const code = ch.charCodeAt(0);
+        return "%" + (code & 0xff).toString(16).padStart(2, "0").toUpperCase();
+      }).join(""));
+    } catch (error) {
+      return value;
+    }
+  }
+
+  function repairMojibake(value) {
     if (!value || !suspicious.test(value)) return value;
     let next = value;
-    replacements.forEach(([from, to]) => {
+
+    for (let i = 0; i < 3; i++) {
+      const decoded = latin1ToUtf8(next);
+      if (decoded === next) break;
+      next = decoded;
+      if (!suspicious.test(next)) break;
+    }
+
+    directReplacements.forEach(([from, to]) => {
       next = next.split(from).join(to);
     });
+
     return next;
   }
 
@@ -34,7 +52,7 @@
     const nodes = [];
     while (walker.nextNode()) nodes.push(walker.currentNode);
     nodes.forEach(node => {
-      node.nodeValue = fixText(node.nodeValue);
+      node.nodeValue = repairMojibake(node.nodeValue);
     });
   }
 
@@ -42,21 +60,29 @@
     selectors.forEach(selector => {
       document.querySelectorAll(selector).forEach(node => {
         if (node.tagName === "TITLE") {
-          node.textContent = fixText(node.textContent);
+          node.textContent = repairMojibake(node.textContent);
         } else if (node.tagName === "META") {
-          node.setAttribute("content", fixText(node.getAttribute("content") || ""));
+          node.setAttribute("content", repairMojibake(node.getAttribute("content") || ""));
         } else if (node.hasAttribute("placeholder")) {
-          node.setAttribute("placeholder", fixText(node.getAttribute("placeholder") || ""));
+          node.setAttribute("placeholder", repairMojibake(node.getAttribute("placeholder") || ""));
         } else if (node.hasAttribute("aria-label")) {
-          node.setAttribute("aria-label", fixText(node.getAttribute("aria-label") || ""));
+          node.setAttribute("aria-label", repairMojibake(node.getAttribute("aria-label") || ""));
         } else if (node.hasAttribute("title")) {
-          node.setAttribute("title", fixText(node.getAttribute("title") || ""));
+          node.setAttribute("title", repairMojibake(node.getAttribute("title") || ""));
         }
       });
     });
-    document.title = fixText(document.title);
+    document.title = repairMojibake(document.title);
   }
 
-  fixAttributes();
-  if (document.body) walk(document.body);
+  function normalize() {
+    fixAttributes();
+    if (document.body) walk(document.body);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", normalize, { once: true });
+  } else {
+    normalize();
+  }
 })();

@@ -24,6 +24,13 @@
       hintItems2: "developer  bruteforce login  sudo hire songul",
       hintItems3: "ls  pwd  cd /admin  cat /notes.txt",
       helpNote: "More exist. Type around.",
+      hintCycle: [
+        "Hint: not every command is listed. Try coffee or aliens.",
+        "Hint: filesystem answers to ls, cd /admin, and cat /notes.txt.",
+        "Hint: the lab starts with start, then recon, then scan admin.songul.lab.",
+        "Hint: some commands are phrases: sudo hire songul.",
+        "Hint: chaos reacts to rm -rf / and self-destruct."
+      ],
       notFound: "Command not found.",
       tryHelp: "Try: help",
       ctfHelp: "That command will not help you hack this lab.",
@@ -153,6 +160,13 @@
       hintItems2: "developer  bruteforce login  sudo hire songul",
       hintItems3: "ls  pwd  cd /admin  cat /notes.txt",
       helpNote: "Daha fazlasi var. Kurcala.",
+      hintCycle: [
+        "Ipucu: her komut listede degil. coffee ya da aliens dene.",
+        "Ipucu: sahte dosya sistemi ls, cd /admin ve cat /notes.txt ile cevap verir.",
+        "Ipucu: lab start ile baslar, sonra recon, sonra scan admin.songul.lab gelir.",
+        "Ipucu: bazi komutlar birden fazla kelimeden olusur: sudo hire songul.",
+        "Ipucu: kaos rm -rf / ve self-destruct ile konusur."
+      ],
       notFound: "Komut bulunamadi.",
       tryHelp: "Dene: help",
       ctfHelp: "Bu komut labi gecmene yardim etmez.",
@@ -272,6 +286,7 @@
   const output = document.getElementById("terminal-output") || document.getElementById("o0");
   const form = document.getElementById("terminal-form");
   const input = document.getElementById("terminal-input");
+  const hintBar = document.getElementById("terminal-hints");
   const vulnApp = document.getElementById("vuln-app");
   const items = document.querySelectorAll(".reveal");
   const spySections = document.querySelectorAll("section[id]");
@@ -510,6 +525,16 @@
   if (menuToggle && navLinks) {
     menuToggle.addEventListener("click", () => navLinks.classList.toggle("open"));
     navLinks.querySelectorAll("a").forEach(link => link.addEventListener("click", () => navLinks.classList.remove("open")));
+  }
+  function startHintCycle() {
+    if (!hintBar || !t.hintCycle || !t.hintCycle.length) return;
+    let idx = 0;
+    const render = () => {
+      hintBar.textContent = t.hintCycle[idx];
+      idx = (idx + 1) % t.hintCycle.length;
+    };
+    render();
+    window.setInterval(render, 4200);
   }
   const obs = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -841,5 +866,6 @@
   renderHistoryPanel();
   renderAchievementDock();
   bootSequence();
+  startHintCycle();
 })();
 
