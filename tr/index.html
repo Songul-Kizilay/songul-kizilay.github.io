@@ -995,7 +995,6 @@
       <a href="#writeups" class="btn btn-primary">Writeup'lara Git</a>
       <a href="blog.html" class="btn btn-outline">Blog'u Oku</a>
       <a href="https://medium.com/@songulkizilay" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Medium Profili</a>
-      <a href="https://github.com/Songul-Kizilay" class="btn btn-outline" target="_blank" rel="noopener noreferrer">GitHub</a>
     </div>
   </div>
 </section>
@@ -1352,14 +1351,13 @@
   const ctx    = canvas.getContext('2d');
 
   let W, H, mouse = { x: -9999, y: -9999 };
-  const PARTICLE_COUNT = 224;
+  const PARTICLE_COUNT = 312;
   const LINK_DIST      = 138;
   const REPULSE_DIST   = 152;
-  const SPEED = 0.18;
+  const SPEED = 0.22;
   const ESCAPE_FORCE = 0.46;
-  const WANDER_FORCE = 0.0085;
-  const HOME_FORCE = 0.0013;
-  const MAX_TRIANGLES = 110;
+  const WANDER_FORCE = 0.011;
+  const MAX_TRIANGLES = 160;
   const COLOR          = '0, 255, 136'; // green channels
 
   let particles = [];
@@ -1370,10 +1368,8 @@
   }
 
   function Particle() {
-    this.homeX = Math.random() * W;
-    this.homeY = Math.random() * H;
-    this.x  = this.homeX;
-    this.y  = this.homeY;
+    this.x  = Math.random() * W;
+    this.y  = Math.random() * H;
     this.vx = (Math.random() - 0.5) * SPEED;
     this.vy = (Math.random() - 0.5) * SPEED;
     this.r  = Math.random() * 1.8 + 0.8;
@@ -1385,9 +1381,6 @@
     this.angle += this.spin;
     this.vx += Math.cos(this.angle) * WANDER_FORCE;
     this.vy += Math.sin(this.angle) * WANDER_FORCE;
-    this.vx += (this.homeX - this.x) * HOME_FORCE;
-    this.vy += (this.homeY - this.y) * HOME_FORCE;
-
     // repulse from mouse
     const dx   = this.x - mouse.x;
     const dy   = this.y - mouse.y;
@@ -1497,6 +1490,4 @@
 
 </body>
 </html>
-
-
 
