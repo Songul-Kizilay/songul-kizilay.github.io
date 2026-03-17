@@ -245,15 +245,15 @@
     .terminal-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 0.8rem;
+      gap: 0.82rem;
+      margin-bottom: 1rem;
     }
 
     .terminal-action {
       border: 1px solid var(--border);
       background: transparent;
       color: var(--text-dim);
-      padding: 0.35rem 0.65rem;
+      padding: 0.48rem 0.94rem;
       border-radius: 999px;
       font-family: var(--mono);
       font-size: 0.72rem;
@@ -938,18 +938,18 @@
     <div class="hero-badge">Güvenlik Araştırmacısı</div>
     <h1 class="hero-name"><span class="accent">Songül</span> Özügürler</h1>
     <p class="hero-role">Siber Güvenlik Araştırmacısı | Pentest | Tehdit Avcılığı</p>
-    <div class="o6">
+    <div class="o6 terminal-box">
       <div class="terminal-top">
         <span class="dot dot-r"></span>
         <span class="dot dot-y"></span>
         <span class="dot dot-g"></span>
       </div>
-      <div class="o0" id="o0">
+      <div class="o0 terminal-output" id="terminal-output">
         <div class="terminal-line">
           <span class="prompt">songul@sec:~$ </span><span class="cmd">whoami</span>
         </div>
         <div class="terminal-line" style="margin-bottom:0.5rem">
-          <span class="out" id="tw0"></span><span class="cursor"></span>
+          <span class="out" id="typewriter"></span><span class="cursor"></span>
         </div>
       </div>
 
@@ -1342,12 +1342,14 @@
   const ctx    = canvas.getContext('2d');
 
   let W, H, mouse = { x: -9999, y: -9999 };
-  const PARTICLE_COUNT = 132;
+  const PARTICLE_COUNT = 168;
   const LINK_DIST      = 125;
   const REPULSE_DIST   = 135;
   const SPEED = 0.16;
   const ESCAPE_FORCE = 0.40;
   const WANDER_FORCE = 0.006;
+  const HOME_FORCE = 0.0018;
+  const MAX_TRIANGLES = 72;
   const COLOR          = '0, 255, 136'; // green channels
 
   let particles = [];
@@ -1358,8 +1360,10 @@
   }
 
   function Particle() {
-    this.x  = Math.random() * W;
-    this.y  = Math.random() * H;
+    this.homeX = Math.random() * W;
+    this.homeY = Math.random() * H;
+    this.x  = this.homeX;
+    this.y  = this.homeY;
     this.vx = (Math.random() - 0.5) * SPEED;
     this.vy = (Math.random() - 0.5) * SPEED;
     this.r  = Math.random() * 1.8 + 0.8;
@@ -1371,6 +1375,8 @@
     this.angle += this.spin;
     this.vx += Math.cos(this.angle) * WANDER_FORCE;
     this.vy += Math.sin(this.angle) * WANDER_FORCE;
+    this.vx += (this.homeX - this.x) * HOME_FORCE;
+    this.vy += (this.homeY - this.y) * HOME_FORCE;
 
     // repulse from mouse
     const dx   = this.x - mouse.x;
@@ -1394,11 +1400,14 @@
     this.x += this.vx;
     this.y += this.vy;
 
-    // wrap edges
-    if (this.x < 0)  this.x = W;
-    if (this.x > W)  this.x = 0;
-    if (this.y < 0)  this.y = H;
-    if (this.y > H)  this.y = 0;
+    if (this.x < 0 || this.x > W) {
+      this.x = Math.max(0, Math.min(W, this.x));
+      this.vx *= -0.85;
+    }
+    if (this.y < 0 || this.y > H) {
+      this.y = Math.max(0, Math.min(H, this.y));
+      this.vy *= -0.85;
+    }
   };
 
   function init() {
@@ -1409,20 +1418,44 @@
   function draw() {
     ctx.clearRect(0, 0, W, H);
 
+    let triangles = 0;
     // draw links
     for (let i = 0; i < particles.length; i++) {
+      const near = [];
       for (let j = i + 1; j < particles.length; j++) {
         const dx   = particles[i].x - particles[j].x;
         const dy   = particles[i].y - particles[j].y;
         const dist = Math.sqrt(dx * dx + dy * dy);
         if (dist < LINK_DIST) {
-          const alpha = (1 - dist / LINK_DIST) * 0.14;
+          near.push({ j, dist });
+          const alpha = (1 - dist / LINK_DIST) * 0.17;
           ctx.strokeStyle = `rgba(${COLOR}, ${alpha})`;
-          ctx.lineWidth   = 0.7;
+          ctx.lineWidth   = 0.85;
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
           ctx.stroke();
+        }
+      }
+      for (let a = 0; a < near.length && triangles < MAX_TRIANGLES; a++) {
+        for (let b = a + 1; b < near.length && triangles < MAX_TRIANGLES; b++) {
+          const p1 = particles[i];
+          const p2 = particles[near[a].j];
+          const p3 = particles[near[b].j];
+          const dx = p2.x - p3.x;
+          const dy = p2.y - p3.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < LINK_DIST * 0.95) {
+            const alpha = Math.max(0.016, (1 - ((near[a].dist + near[b].dist + dist) / 3) / LINK_DIST) * 0.07);
+            ctx.fillStyle = `rgba(${COLOR}, ${alpha})`;
+            ctx.beginPath();
+            ctx.moveTo(p1.x, p1.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.lineTo(p3.x, p3.y);
+            ctx.closePath();
+            ctx.fill();
+            triangles++;
+          }
         }
       }
     }
@@ -1432,7 +1465,7 @@
       p.update();
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${COLOR}, 0.48)`;
+      ctx.fillStyle = `rgba(${COLOR}, 0.54)`;
       ctx.fill();
     });
 

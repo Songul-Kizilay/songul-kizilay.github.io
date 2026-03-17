@@ -63,7 +63,7 @@
       passwords: ["admin: admin123", "root: toor", "developer: password", "", "Just kidding. Use a password manager."],
       flag: ["HTB{songul_security_lab}", "Opening decoy image..."],
       selfDestruct: ["Self destruct sequence initiated...", "", "5", "4", "3", "2", "1", "", "System survived.", "Nice try."],
-      hack: ["Initializing cyber attack...", "[â–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘â–‘â–‘â–‘â–‘] 40%", "[â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘] 80%", "[â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ] 100%"],
+      hack: ["Initializing cyber attack...", "[####......] 40%", "[########..] 80%", "[##########] 100%"],
       hackEnd: ["Target hacked.", "Just kidding. I hack legally."],
       coffee: ["Brewing coffee...", "", "Fuel for bug hunting."],
       aliens: ["Scanning galaxy for vulnerabilities...", "", "No aliens found.", "But plenty of XSS."],
@@ -188,7 +188,7 @@
       passwords: ["admin: admin123", "root: toor", "developer: password", "", "Saka. Bir sifre yoneticisi kullan."],
       flag: ["HTB{songul_security_lab}", "Komik gorsel aciliyor..."],
       selfDestruct: ["Self destruct sequence baslatiliyor...", "", "5", "4", "3", "2", "1", "", "Sistem hayatta kaldi.", "Guzel deneme."],
-      hack: ["Siber saldiri modulleri baslatiliyor...", "[â–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘â–‘â–‘â–‘â–‘] 40%", "[â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘] 80%", "[â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ] 100%"],
+      hack: ["Siber saldiri modulleri baslatiliyor...", "[####......] 40%", "[########..] 80%", "[##########] 100%"],
       hackEnd: ["Hedef ele gecirildi.", "Saka. Yasal hack yapiyorum."],
       coffee: ["Kahve demleniyor...", "", "Bug avinin yakiti hazir."],
       aliens: ["Galakside zafiyet taraniyor...", "", "Alien bulunamadi.", "Ama bolca XSS var."],
@@ -257,11 +257,11 @@
     ? { about: "about.html", blog: "blog.html", lang: "../index.html", flag: "../flag.html", matrix: "../matrix.html", leaderboard: "songul-terminal-leaderboard-tr" }
     : { about: "about.html", blog: "blog.html", lang: "tr/index.html", flag: "flag.html", matrix: "matrix.html", leaderboard: "songul-terminal-leaderboard" };
 
-  const typewriter = document.getElementById("typewriter");
-  const terminalBox = document.querySelector(".terminal-box");
-  const menuToggle = document.getElementById("menu-toggle");
-  const navLinks = document.getElementById("nav-links");
-  const output = document.getElementById("terminal-output");
+  const typewriter = document.getElementById("typewriter") || document.getElementById("tw0");
+  const terminalBox = document.querySelector(".terminal-box") || document.querySelector(".o6");
+  const menuToggle = document.getElementById("menu-toggle") || document.getElementById("m0");
+  const navLinks = document.getElementById("nav-links") || document.getElementById("n0");
+  const output = document.getElementById("terminal-output") || document.getElementById("o0");
   const form = document.getElementById("terminal-form");
   const input = document.getElementById("terminal-input");
   const vulnApp = document.getElementById("vuln-app");
@@ -282,8 +282,8 @@
   let game = { active: false, level: 0, score: 0, flags: [] };
   let leaderboard = loadLeaderboard();
   const achievementKey = paths.leaderboard + "-achievements";
-  const historyPanel = mountHistoryPanel();
-  const achievementDock = mountAchievementDock();
+  const historyPanel = null;
+  const achievementDock = null;
   let achievements = loadAchievements();
   let cwd = "/";
   const fileSystem = {
@@ -314,22 +314,8 @@
   function saveLeaderboard() { localStorage.setItem(paths.leaderboard, JSON.stringify(leaderboard)); }
   function saveAchievements() { localStorage.setItem(achievementKey, JSON.stringify(achievements)); }
   function resetGame() { game = { active: false, level: 0, score: 0, flags: [] }; }
-  function mountHistoryPanel() {
-    if (!terminalBox) return null;
-    const panel = document.createElement("div");
-    panel.className = "terminal-history-panel";
-    terminalBox.appendChild(panel);
-    return panel;
-  }
-  function mountAchievementDock() {
-    if (!terminalBox) return null;
-    const dock = document.createElement("button");
-    dock.type = "button";
-    dock.className = "terminal-achievement-dock";
-    dock.addEventListener("click", () => openAchievementModal());
-    terminalBox.appendChild(dock);
-    return dock;
-  }
+  function mountHistoryPanel() { return null; }
+  function mountAchievementDock() { return null; }
   function renderHistoryPanel() {
     if (!historyPanel) return;
     const items = history.slice(-6);
@@ -513,8 +499,10 @@
       await sleep(110);
     }
   }
-  menuToggle.addEventListener("click", () => navLinks.classList.toggle("open"));
-  navLinks.querySelectorAll("a").forEach(link => link.addEventListener("click", () => navLinks.classList.remove("open")));
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener("click", () => navLinks.classList.toggle("open"));
+    navLinks.querySelectorAll("a").forEach(link => link.addEventListener("click", () => navLinks.classList.remove("open")));
+  }
   const obs = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -547,39 +535,6 @@
     style.id = "terminal-engine-extra-style";
     style.textContent = ".terminal-history-panel{margin-top:1rem;padding-top:.95rem;border-top:1px solid rgba(0,255,136,.12)}.terminal-history-title{font-family:var(--mono);font-size:.67rem;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:.6rem}.terminal-history-empty{font-family:var(--mono);font-size:.73rem;color:var(--text-dim)}.terminal-history-list{display:flex;flex-wrap:wrap;gap:.5rem}.terminal-history-chip{border:1px solid rgba(0,255,136,.12);background:rgba(255,255,255,.025);color:var(--text-dim);border-radius:999px;padding:.32rem .7rem;font-family:var(--mono);font-size:.67rem;cursor:pointer;transition:border-color .2s,color .2s,transform .2s}.terminal-history-chip:hover{border-color:var(--green);color:var(--green);transform:translateY(-1px)}.terminal-achievement-dock{display:flex;align-items:center;justify-content:space-between;gap:.9rem;width:100%;margin-top:1rem;padding:.95rem 1rem;border:1px solid rgba(0,255,136,.12);border-radius:14px;background:linear-gradient(180deg,rgba(16,22,24,.9),rgba(10,14,15,.97));color:var(--text);text-align:left;cursor:pointer;transition:border-color .2s,transform .2s,box-shadow .2s}.terminal-achievement-dock:hover{border-color:rgba(0,255,136,.32);transform:translateY(-1px);box-shadow:0 14px 34px rgba(0,255,136,.07)}.terminal-achievement-meta{display:block;font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--green)}.terminal-achievement-count{display:block;font-family:var(--mono);font-size:.84rem;color:#fff;margin-top:.28rem}.terminal-achievement-list{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:.45rem}.terminal-achievement-chip{display:inline-flex;align-items:center;gap:.32rem;padding:.32rem .64rem;border:1px solid rgba(0,255,136,.12);border-radius:999px;background:rgba(255,255,255,.025);font-family:var(--mono);font-size:.64rem;color:var(--text-dim)}.achievement-modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:radial-gradient(circle at top,rgba(0,255,136,.08),transparent 35%),rgba(6,10,11,.78);backdrop-filter:blur(12px);z-index:1250;padding:1.2rem}.achievement-modal.open{display:flex}.achievement-dialog{width:min(780px,100%);background:linear-gradient(180deg,rgba(15,20,22,.98),rgba(10,14,15,.99));border:1px solid rgba(0,255,136,.16);border-radius:18px;padding:1.55rem;box-shadow:0 28px 80px rgba(0,0,0,.45)}.achievement-head{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:1rem}.achievement-head h3{font-family:var(--mono);font-size:1rem;color:#fff;line-height:1.5}.achievement-kicker,.achievement-head span,.achievement-card .achievement-kicker{display:block;font-family:var(--mono);font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-bottom:.42rem}.achievement-close{border:1px solid rgba(0,255,136,.12);background:rgba(255,255,255,.02);color:var(--text-dim);width:2.3rem;height:2.3rem;border-radius:10px;cursor:pointer;transition:border-color .2s,color .2s,transform .2s}.achievement-close:hover{border-color:var(--green);color:var(--green);transform:translateY(-1px)}.achievement-modal-body{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.85rem;margin-top:1rem}.achievement-card{border:1px solid rgba(0,255,136,.12);border-radius:14px;padding:1rem;background:rgba(255,255,255,.02);text-align:left;color:inherit;cursor:pointer;transition:border-color .2s,transform .2s,box-shadow .2s}.achievement-card:hover{border-color:rgba(0,255,136,.32);transform:translateY(-1px);box-shadow:0 14px 34px rgba(0,255,136,.07)}.achievement-card strong{display:block;font-family:var(--mono);font-size:.82rem;color:#fff;line-height:1.5}.achievement-card small{display:block;margin-top:.45rem;font-family:var(--mono);font-size:.66rem;color:var(--text-dim)}.achievement-empty{padding:1rem;border:1px dashed rgba(0,255,136,.12);border-radius:14px;color:var(--text-dim);font-family:var(--mono);font-size:.75rem}.achievement-modal-hint{margin-top:1rem;color:var(--text-dim);font-size:.78rem;line-height:1.7}.proof-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.95rem;margin:2.2rem auto 0;max-width:980px}.proof-strip-item{padding:1rem 1.05rem;text-align:left;background:linear-gradient(180deg,rgba(15,20,22,.92),rgba(10,14,15,.96));border:1px solid rgba(0,255,136,.12);border-radius:12px;box-shadow:0 18px 36px rgba(0,0,0,.16)}.proof-strip-item span{display:block;font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-bottom:.42rem}.proof-strip-item strong{display:block;font-family:var(--mono);font-size:.86rem;color:#fff;margin-bottom:.32rem;line-height:1.45}.proof-strip-item p{font-size:.77rem;color:var(--text-dim);line-height:1.7}.research-log{max-width:1100px;margin:1rem auto 0;padding:0 1.5rem;border:none;background:transparent}.research-log-inner{display:grid;grid-template-columns:1.12fr .88fr;gap:1rem}.research-log-card{background:linear-gradient(180deg,rgba(15,20,22,.96),rgba(10,14,15,.98));border:1px solid rgba(0,255,136,.12);border-radius:14px;padding:1.3rem 1.4rem;box-shadow:0 20px 42px rgba(0,0,0,.16)}.research-log-card h3{font-family:var(--mono);font-size:.84rem;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-bottom:.8rem}.research-log-card p{font-size:.84rem;color:var(--text-dim);line-height:1.88}.research-log-list{display:flex;flex-wrap:wrap;gap:.6rem}.research-log-chip{font-family:var(--mono);font-size:.66rem;color:var(--text);border:1px solid rgba(0,255,136,.12);border-radius:999px;padding:.36rem .74rem;background:rgba(255,255,255,.025)}.case-study-modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:radial-gradient(circle at top,rgba(0,255,136,.08),transparent 35%),rgba(6,10,11,.78);backdrop-filter:blur(12px);z-index:1200;padding:1.2rem}.case-study-modal.open{display:flex}.case-study-dialog{width:min(720px,100%);background:linear-gradient(180deg,rgba(15,20,22,.98),rgba(10,14,15,.99));border:1px solid rgba(0,255,136,.16);border-radius:16px;padding:1.5rem 1.55rem;box-shadow:0 28px 80px rgba(0,0,0,.45)}.case-study-head{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:1rem}.case-study-head h3{font-family:var(--mono);font-size:1rem;color:#fff;line-height:1.5}.case-study-kicker{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-bottom:.48rem}.case-study-close{border:1px solid rgba(0,255,136,.12);background:rgba(255,255,255,.02);color:var(--text-dim);width:2.3rem;height:2.3rem;border-radius:10px;cursor:pointer;transition:border-color .2s,color .2s,transform .2s}.case-study-close:hover{border-color:var(--green);color:var(--green);transform:translateY(-1px)}.case-study-body p{font-size:.84rem;color:var(--text-dim);line-height:1.86;margin-bottom:1rem}.case-study-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.85rem;margin-top:.8rem}.case-study-grid div{border:1px solid rgba(0,255,136,.12);border-radius:12px;padding:.9rem;background:rgba(255,255,255,.02)}.case-study-grid span{display:block;font-family:var(--mono);font-size:.63rem;color:var(--green);letter-spacing:.11em;text-transform:uppercase;margin-bottom:.34rem}.case-study-grid strong{display:block;font-size:.79rem;color:#fff;line-height:1.68}.tool-card[data-case-study],.repo-card[data-case-study]{cursor:pointer;transition:border-color .2s,transform .2s,box-shadow .2s}.tool-card[data-case-study]:hover,.repo-card[data-case-study]:hover{box-shadow:0 14px 34px rgba(0,255,136,.08)}@media(max-width:840px){.proof-strip,.research-log-inner,.case-study-grid,.achievement-modal-body{grid-template-columns:1fr}.terminal-achievement-dock{align-items:flex-start;flex-direction:column}.terminal-achievement-list{justify-content:flex-start}}";
     document.head.appendChild(style);
-
-    const heroInner = document.querySelector("#hero .hero-inner");
-    const heroButtons = document.querySelector("#hero .hero-buttons");
-    const proofSection = document.getElementById("proof");
-    if (heroInner && heroButtons && !document.querySelector(".proof-strip")) {
-      const strip = document.createElement("div");
-      strip.className = "proof-strip";
-      const stripItems = lang === "tr"
-        ? [
-            ["95+ yazi", "Arsiv", "PortSwigger, HTB, TryHackMe ve pratik notlar."],
-            ["10 bulgu", "Bug bounty", "Gercek uygulamalarda raporlanmis zafiyetler."],
-            ["3 asamali lab", "Terminal oyun", "Recon, XSS ve SQLi akisiyla oynanabilir demo."],
-            ["Ozel workflow", "Case study", "Public repodan cok metodoloji ve etki odagi."]
-          ]
-        : [
-            ["95+ posts", "Archive", "PortSwigger, HTB, TryHackMe, and practical notes."],
-            ["10 findings", "Bug bounty", "Real reports across exploitable web behavior."],
-            ["3-stage lab", "Terminal game", "Playable recon, XSS, and SQLi flow."],
-            ["Private workflow", "Case studies", "Methodology and impact over raw repo dumps."]
-          ];
-      strip.innerHTML = stripItems.map(item => '<div class="proof-strip-item reveal"><span>' + item[1] + '</span><strong>' + item[0] + '</strong><p>' + item[2] + '</p></div>').join("");
-      heroButtons.insertAdjacentElement("afterend", strip);
-      strip.querySelectorAll(".reveal").forEach(item => obs.observe(item));
-    }
-    if (proofSection && !document.querySelector(".research-log")) {
-      const research = document.createElement("section");
-      research.className = "research-log";
-      research.innerHTML = lang === "tr"
-        ? '<div class="research-log-inner"><div class="research-log-card reveal"><h3>Su anda baktigim seyler</h3><p>Auth bypass kaliplari, edge-case request zincirleri, header guveni, ve tekrar kullanilabilir ofansif tooling akislari. Bu blok sabit bir ozgecmis alani degil; sahada neye baktigimi gosteren kisa bir operator notu.</p></div><div class="research-log-card reveal"><h3>Canli odak listesi</h3><div class="research-log-list"><span class="research-log-chip">Auth logic flaws</span><span class="research-log-chip">Request smuggling patterns</span><span class="research-log-chip">Burp extensions</span><span class="research-log-chip">Recon automation</span><span class="research-log-chip">XSS chains</span><span class="research-log-chip">SSRF edge cases</span></div></div></div>'
-        : '<div class="research-log-inner"><div class="research-log-card reveal"><h3>Currently researching</h3><p>Auth bypass patterns, edge-case request chains, header trust, and reusable offensive tooling workflows. This is not a static resume block; it is a short operator note about what is active right now.</p></div><div class="research-log-card reveal"><h3>Active tracks</h3><div class="research-log-list"><span class="research-log-chip">Auth logic flaws</span><span class="research-log-chip">Request smuggling patterns</span><span class="research-log-chip">Burp extensions</span><span class="research-log-chip">Recon automation</span><span class="research-log-chip">XSS chains</span><span class="research-log-chip">SSRF edge cases</span></div></div></div>';
-      proofSection.parentNode.insertBefore(research, proofSection);
-      research.querySelectorAll(".reveal").forEach(item => obs.observe(item));
-    }
     if (!document.getElementById("case-study-modal")) {
       const modal = document.createElement("div");
       modal.id = "case-study-modal";
@@ -646,17 +601,6 @@
         modal.classList.add("open");
       });
     });
-    const actionRow = document.querySelector(".terminal-actions");
-    if (actionRow && !actionRow.querySelector('[data-command="history"]')) {
-      ["history", "achievements", "ls", "pwd"].forEach(name => {
-        const button = document.createElement("button");
-        button.type = "button";
-        button.className = "terminal-action";
-        button.dataset.command = name;
-        button.textContent = name;
-        actionRow.appendChild(button);
-      });
-    }
   }
 
   registerCommand("help", async () => {
@@ -852,36 +796,38 @@
     }
     await resolved.handler(resolved.args, raw);
   }
-  form.addEventListener("submit", event => {
-    event.preventDefault();
-    const value = input.value;
-    input.value = "";
-    runCommand(value);
-  });
-  input.addEventListener("keydown", event => {
-    if (event.key === "ArrowUp") {
+  if (form && input && output) {
+    form.addEventListener("submit", event => {
       event.preventDefault();
-      if (!history.length) return;
-      historyIndex = Math.max(0, historyIndex - 1);
-      input.value = history[historyIndex] || "";
-      return;
-    }
-    if (event.key === "ArrowDown") {
-      event.preventDefault();
-      if (!history.length) return;
-      historyIndex = Math.min(history.length, historyIndex + 1);
-      input.value = history[historyIndex] || "";
-      return;
-    }
-    if (event.key === "Tab") {
-      event.preventDefault();
-      const raw = input.value.trim().toLowerCase();
-      if (!raw) return;
-      const matches = findMatches(raw);
-      if (matches.length === 1) input.value = matches[0];
-      else if (matches.length > 1) printLine(t.matches + matches.join(", "), "out");
-    }
-  });
+      const value = input.value;
+      input.value = "";
+      runCommand(value);
+    });
+    input.addEventListener("keydown", event => {
+      if (event.key === "ArrowUp") {
+        event.preventDefault();
+        if (!history.length) return;
+        historyIndex = Math.max(0, historyIndex - 1);
+        input.value = history[historyIndex] || "";
+        return;
+      }
+      if (event.key === "ArrowDown") {
+        event.preventDefault();
+        if (!history.length) return;
+        historyIndex = Math.min(history.length, historyIndex + 1);
+        input.value = history[historyIndex] || "";
+        return;
+      }
+      if (event.key === "Tab") {
+        event.preventDefault();
+        const raw = input.value.trim().toLowerCase();
+        if (!raw) return;
+        const matches = findMatches(raw);
+        if (matches.length === 1) input.value = matches[0];
+        else if (matches.length > 1) printLine(t.matches + matches.join(", "), "out");
+      }
+    });
+  }
   mountLandingEnhancements();
   document.querySelectorAll(".terminal-action").forEach(button => button.addEventListener("click", () => runCommand(button.dataset.command)));
   renderHistoryPanel();
